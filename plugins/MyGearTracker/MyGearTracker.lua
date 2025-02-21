@@ -47,10 +47,14 @@ textArea:SetScript("OnTextChanged", function(self)
     scrollFrame:UpdateScrollChildRect()
 end)
 
+-- Tooltip scanner frame (hidden)
+local tooltipScanner = CreateFrame("GameTooltip", "GearTrackerTooltip", nil, "GameTooltipTemplate")
+tooltipScanner:SetOwner(UIParent, "ANCHOR_NONE")
+
 -- Data storage
 local exportData = {}
 
--- Gear Info
+-- Gear Info with Upgrade Status
 local function GetGearInfo()
     local gearText = "--- Equipped Gear ---\n"
     exportData.gear = {}
@@ -59,8 +63,33 @@ local function GetGearInfo()
         if itemLink then
             local itemName = GetItemInfo(itemLink) or "Loading..."
             local itemLevel = GetDetailedItemLevelInfo(itemLink) or "N/A"
-            gearText = gearText .. string.format("Slot %d: %s (iLvl: %s)\n", slot, itemName, itemLevel)
-            exportData.gear[slot] = { name = itemName, itemLevel = itemLevel }
+            local upgradeInfo = "N/A"
+            
+            -- Scan tooltip for upgrade status
+            tooltipScanner:ClearLines()
+            tooltipScanner:SetHyperlink(itemLink)
+            for i = 1, tooltipScanner:NumLines() do
+                local line = _G["GearTrackerTooltipTextLeft" .. i]
+                if line then
+                    local text = line:GetText()
+                    if text then
+                        local tier, current, max = text:match("(%a+)%s+(%d+)/(%d+)") -- e.g., "Veteran 3/8"
+                        if tier and current and max then
+                            upgradeInfo = tier .. " " .. current .. "/" .. max
+                            print("Slot " .. slot .. " upgrade found: " .. upgradeInfo) -- Debug
+                            break
+                        elseif text:match("Upgrade Level:%s+(%a+)%s+(%d+)/(%d+)") then -- Fallback pattern
+                            tier, current, max = text:match("Upgrade Level:%s+(%a+)%s+(%d+)/(%d+)")
+                            upgradeInfo = tier .. " " .. current .. "/" .. max
+                            print("Slot " .. slot .. " upgrade found (fallback): " .. upgradeInfo) -- Debug
+                            break
+                        end
+                    end
+                end
+            end
+            
+            gearText = gearText .. string.format("Slot %d: %s (iLvl: %s, Upgrade: %s)\n", slot, itemName, itemLevel, upgradeInfo)
+            exportData.gear[slot] = { name = itemName, itemLevel = itemLevel, upgrade = upgradeInfo }
         end
     end
     return gearText
