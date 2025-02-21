@@ -1,0 +1,5 @@
+## Interface: 110007
+## Title: TameCheck
+## Notes: Checks if your focus target is tameable
+TameCheck.lua
+
