@@ -4,7 +4,7 @@ local frame = CreateFrame("Frame", "TameCheck", UIParent)
 -- Default settings
 local defaults = {
     searchTarget = "Soaring Plainshawk",
-    alertSound = 552144 -- Default to "how are you" voice
+    alertSound = 567505 -- Default to "how are you" voice
 }
 
 -- Saved variables
@@ -105,10 +105,26 @@ local function CreateSoundDropdown(parent, editBox)
     local soundDropdown = CreateFrame("Frame", "TameCheckSoundDropdown", parent, "UIDropDownMenuTemplate")
     soundDropdown:SetPoint("TOPLEFT", editBox, "BOTTOMLEFT", -15, -10)
     local soundOptions = {
-        { text = "How Are You", value = 552144 }, -- Your working sound
-        { text = "Auction Open", value = 567458 },
-        { text = "Quest Accept", value = 567482 },
-        { text = "Raid Warning", value = 567514 },
+        { text = "Gold (Coin Clink)", value = 567436 },
+        { text = "Discovery (Quest Ding)", value = 567482 },
+        { text = "Exhilaration (Raid Alert)", value = 567514 },
+        { text = "Woo Hooo (Voice)", value = 552144 },
+        { text = "Found You (Ping)", value = 567524 },
+        { text = "Yay (Bell Toll)", value = 567458 },
+        { text = "Not Junk Treasure (Chime)", value = 567467 },
+        { text = "Treasure (Loot Open)", value = 567475 },
+        { text = "Chest Found (Creak)", value = 567486 },
+        { text = "Mouths to Feed (Laugh)", value = 552148 },
+        { text = "Coins Drop", value = 567439 },
+        { text = "Cheer (Level Up)", value = 567500 },
+        { text = "Alert (Invite)", value = 567491 },
+        { text = "Shout (Male Woo)", value = 552152 },
+        { text = "Ding (Repair)", value = 567496 },
+        { text = "Victory (Horde)", value = 567510 },
+        { text = "Loot (Big Coin)", value = 567472 },
+        { text = "Creak (Quest Done)", value = 567483 },
+        { text = "Taunt (Female)", value = 552146 },
+        { text = "Fanfare (Flag Capture)", value = 567505 },
     }
     UIDropDownMenu_Initialize(soundDropdown, function(self)
         for _, option in ipairs(soundOptions) do
