@@ -1,11 +1,20 @@
--- Create the UI frame
+-- Event handler
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, ...)
+    if event == "PLAYER_LOGIN" then
+        print("My Gear Tracker loaded! Use /mgt to toggle the UI.")
+    end
+end)
+
+-- UI Frame
 local uiFrame = CreateFrame("Frame", "GearTrackerUI", UIParent, "BasicFrameTemplateWithInset")
 uiFrame:SetSize(400, 600)
 uiFrame:SetPoint("CENTER")
 uiFrame:Hide()
-uiFrame:SetMovable(true) -- Make it movable
-uiFrame:SetClampedToScreen(true) -- Keep it on screen
-uiFrame:EnableMouse(true) -- Enable mouse interaction
+uiFrame:SetMovable(true)
+uiFrame:SetClampedToScreen(true)
+uiFrame:EnableMouse(true)
 uiFrame:SetScript("OnMouseDown", function(self, button)
     if button == "LeftButton" then
         self:StartMoving()
@@ -19,7 +28,6 @@ uiFrame.title = uiFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 uiFrame.title:SetPoint("TOP", 0, -5)
 uiFrame.title:SetText("My Gear Tracker")
 
--- Scroll frame setup
 local scrollFrame = CreateFrame("ScrollFrame", nil, uiFrame, "UIPanelScrollFrameTemplate")
 scrollFrame:SetPoint("TOPLEFT", 10, -30)
 scrollFrame:SetPoint("BOTTOMRIGHT", -30, 10)
@@ -27,21 +35,22 @@ scrollFrame:SetPoint("BOTTOMRIGHT", -30, 10)
 local textArea = CreateFrame("EditBox", nil, scrollFrame)
 textArea:SetMultiLine(true)
 textArea:SetFontObject("GameFontNormal")
-textArea:SetWidth(340) -- Slightly narrower to fit scrollbar
+textArea:SetWidth(340)
 textArea:SetAutoFocus(false)
 textArea:SetEnabled(false)
-textArea:SetMaxLetters(0) -- Unlimited text
+textArea:SetMaxLetters(0)
 scrollFrame:SetScrollChild(textArea)
 
--- Ensure textArea resizes dynamically
 textArea:SetScript("OnTextChanged", function(self)
     local height = self:GetText():len() > 0 and self:GetStringHeight() or 600
     self:SetHeight(height)
     scrollFrame:UpdateScrollChildRect()
 end)
 
+-- Data storage
 local exportData = {}
 
+-- Gear Info
 local function GetGearInfo()
     local gearText = "--- Equipped Gear ---\n"
     exportData.gear = {}
@@ -57,6 +66,7 @@ local function GetGearInfo()
     return gearText
 end
 
+-- Currency Info
 local function GetCurrencyInfo()
     local currencyText = "--- Currency ---\n"
     exportData.currencies = {}
@@ -70,42 +80,13 @@ local function GetCurrencyInfo()
     return currencyText
 end
 
-local function GetTalentInfo()
-    local talentText = "--- Talent Spec ---\n"
-    local specID = GetSpecialization()
-    local specName = specID and GetSpecializationInfo(specID) or "Unknown"
-    talentText = talentText .. string.format("Spec: %s\n", specName)
-    
-    exportData.talents = { specialization = specName, talents = {} }
-    local configID = C_Traits.GetConfigIDBySystemID(1)
-    if configID then
-        local treeInfo = C_Traits.GetTreeInfo(configID, 1)
-        if treeInfo and treeInfo.nodes then
-            for _, node in ipairs(treeInfo.nodes) do
-                local nodeInfo = C_Traits.GetNodeInfo(configID, node.ID)
-                if nodeInfo and nodeInfo.isActive and nodeInfo.entryIDs then
-                    local entryInfo = C_Traits.GetEntryInfo(configID, nodeInfo.entryIDs[1])
-                    if entryInfo and entryInfo.definitionID then
-                        local definitionInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
-                        if definitionInfo and definitionInfo.spellID then
-                            local spellName = GetSpellInfo(definitionInfo.spellID)
-                            talentText = talentText .. string.format("Talent: %s\n", spellName or "Unknown")
-                            table.insert(exportData.talents.talents, { name = spellName or "Unknown" })
-                        end
-                    end
-                end
-            end
-        end
-    end
-    return talentText
-end
-
+-- Update UI
 local function UpdateUI()
-    local fullText = GetGearInfo() .. "\n" .. GetCurrencyInfo() .. "\n" .. GetTalentInfo()
+    local fullText = GetGearInfo() .. "\n" .. GetCurrencyInfo()
     textArea:SetText(fullText)
 end
 
--- Slash command
+-- Slash commands
 SLASH_MYGEARTRACKER1 = "/mgt"
 SlashCmdList["MYGEARTRACKER"] = function(msg)
     if uiFrame:IsShown() then
@@ -116,16 +97,6 @@ SlashCmdList["MYGEARTRACKER"] = function(msg)
     end
 end
 
--- Event handler
-local frame = CreateFrame("Frame")
-frame:RegisterEvent("PLAYER_LOGIN")
-frame:SetScript("OnEvent", function(self, event, ...)
-    if event == "PLAYER_LOGIN" then
-        print("My Gear Tracker loaded! Use /mgt to toggle the UI.")
-    end
-end)
-
--- Export command
 SLASH_MYGEAREXPORT1 = "/mgtexport"
 SlashCmdList["MYGEAREXPORT"] = function()
     UpdateUI()
@@ -134,6 +105,7 @@ SlashCmdList["MYGEAREXPORT"] = function()
     print(exportString)
 end
 
+-- Table to string function
 function table.tostring(tbl, indent)
     if not indent then indent = 0 end
     local str = "{\n"
