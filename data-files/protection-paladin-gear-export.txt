@@ -1,0 +1,174 @@
+exportData = {
+  ["gear"] = {
+    1 = {
+      ["itemLevel"] = 590,
+      ["name"] = "Sedimentary Helm of the Feverflare",
+      ["upgrade"] = "Veteran 3/8",
+    },
+    2 = {
+      ["itemLevel"] = 584,
+      ["name"] = "Conch Collector's Locket",
+      ["upgrade"] = "Veteran 1/8",
+    },
+    3 = {
+      ["itemLevel"] = 590,
+      ["name"] = "Earthen Landlubber's Mantle",
+      ["upgrade"] = "Veteran 3/8",
+    },
+    5 = {
+      ["itemLevel"] = 590,
+      ["name"] = "Earthen Landlubber's Breastplate",
+      ["upgrade"] = "Veteran 3/8",
+    },
+    6 = {
+      ["itemLevel"] = 590,
+      ["name"] = "Sedimentary Girdle of the Feverflare",
+      ["upgrade"] = "Veteran 3/8",
+    },
+    7 = {
+      ["itemLevel"] = 590,
+      ["name"] = "Earthen Landlubber's Legguards",
+      ["upgrade"] = "Veteran 3/8",
+    },
+    8 = {
+      ["itemLevel"] = 593,
+      ["name"] = "Secret-Dredger's Sabatons",
+      ["upgrade"] = "Veteran 4/8",
+    },
+    9 = {
+      ["itemLevel"] = 584,
+      ["name"] = "Earthen Landlubber's Armplates",
+      ["upgrade"] = "Veteran 1/8",
+    },
+    10 = {
+      ["itemLevel"] = 584,
+      ["name"] = "Sedimentary Gauntlets of the Aurora",
+      ["upgrade"] = "Veteran 1/8",
+    },
+    11 = {
+      ["itemLevel"] = 655,
+      ["name"] = "Cyrce's Circlet",
+      ["upgrade"] = "N/A",
+    },
+    12 = {
+      ["itemLevel"] = 584,
+      ["name"] = "Scurvy Sailor's Ring",
+      ["upgrade"] = "Veteran 1/8",
+    },
+    13 = {
+      ["itemLevel"] = 584,
+      ["name"] = "Concoction: Kiss of Death",
+      ["upgrade"] = "Veteran 1/8",
+    },
+    14 = {
+      ["itemLevel"] = 584,
+      ["name"] = "Silken Chain Weaver",
+      ["upgrade"] = "Veteran 1/8",
+    },
+    15 = {
+      ["itemLevel"] = 584,
+      ["name"] = "Earthen Scallywag's Cloak",
+      ["upgrade"] = "Veteran 1/8",
+    },
+    16 = {
+      ["itemLevel"] = 593,
+      ["name"] = "Earthen Landlubber's Sword",
+      ["upgrade"] = "Veteran 4/8",
+    },
+    17 = {
+      ["itemLevel"] = 606,
+      ["name"] = "Earthen Landlubber's Shield",
+      ["upgrade"] = "Veteran 8/8",
+    },
+  },
+  ["currencies"] = {
+    "Dream Infusion" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 2,
+    },
+    "Resonance Crystals" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 7010,
+    },
+    "Timewarped Badge" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 200,
+    },
+    "Carved Harbinger Crest" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 124,
+    },
+    "Flightstones" = {
+      ["maxQuantity"] = 2000,
+      ["quantity"] = 0,
+    },
+    "Flame-Blessed Iron" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 180,
+    },
+    "Paracausal Flakes" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 3158,
+    },
+    "Elemental Overflow" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 30,
+    },
+    "Valorstones" = {
+      ["maxQuantity"] = 2000,
+      ["quantity"] = 219,
+    },
+    "Dragon Isles Supplies" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 12143,
+    },
+    "Undercoin" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 2059,
+    },
+    "Weathered Harbinger Crest" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 35,
+    },
+    "Bloody Tokens" = {
+      ["maxQuantity"] = 200000,
+      ["quantity"] = 0,
+    },
+    "Residual Memories" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 3263,
+    },
+    "Whelpling's Awakened Crest" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 0,
+    },
+    "Emerald Dewdrop" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 2630,
+    },
+    "Drake's Awakened Crest" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 0,
+    },
+    "Trader's Tender" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 4670,
+    },
+    "Kej" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 3074,
+    },
+    "Restored Coffer Key" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 2,
+    },
+    "Conquest" = {
+      ["maxQuantity"] = 0,
+      ["quantity"] = 0,
+    },
+    "Honor" = {
+      ["maxQuantity"] = 15000,
+      ["quantity"] = 0,
+    },
+  },
+}
