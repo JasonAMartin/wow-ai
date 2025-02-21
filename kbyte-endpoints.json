@@ -1,0 +1,141 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte?namespace=profile-us"
+    }
+  },
+  "id": 174929115,
+  "name": "Kbyte",
+  "gender": {
+    "type": "MALE",
+    "name": "Male"
+  },
+  "faction": {
+    "type": "ALLIANCE",
+    "name": "Alliance"
+  },
+  "race": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/playable-race/37?namespace=static-11.0.7_57788-us"
+    },
+    "name": "Mechagnome",
+    "id": 37
+  },
+  "character_class": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/playable-class/3?namespace=static-11.0.7_57788-us"
+    },
+    "name": "Hunter",
+    "id": 3
+  },
+  "active_spec": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/playable-specialization/253?namespace=static-11.0.7_57788-us"
+    },
+    "name": "Beast Mastery",
+    "id": 253
+  },
+  "realm": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/realm/1?namespace=dynamic-us"
+    },
+    "name": "Lightbringer",
+    "id": 1,
+    "slug": "lightbringer"
+  },
+  "guild": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/guild/lightbringer/the-%C3%B8ld-gods?namespace=profile-us"
+    },
+    "name": "The Øld Gods",
+    "id": 58571097,
+    "realm": {
+      "key": {
+        "href": "https://us.api.blizzard.com/data/wow/realm/1?namespace=dynamic-us"
+      },
+      "name": "Lightbringer",
+      "id": 1,
+      "slug": "lightbringer"
+    },
+    "faction": {
+      "type": "ALLIANCE",
+      "name": "Alliance"
+    }
+  },
+  "level": 80,
+  "experience": 0,
+  "achievement_points": 14365,
+  "achievements": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/achievements?namespace=profile-us"
+  },
+  "titles": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/titles?namespace=profile-us"
+  },
+  "pvp_summary": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/pvp-summary?namespace=profile-us"
+  },
+  "encounters": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/encounters?namespace=profile-us"
+  },
+  "media": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/character-media?namespace=profile-us"
+  },
+  "hunter_pets": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/hunter-pets?namespace=profile-us"
+  },
+  "last_login_timestamp": 1740114603000,
+  "average_item_level": 595,
+  "equipped_item_level": 592,
+  "specializations": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/specializations?namespace=profile-us"
+  },
+  "statistics": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/statistics?namespace=profile-us"
+  },
+  "mythic_keystone_profile": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/mythic-keystone-profile?namespace=profile-us"
+  },
+  "equipment": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/equipment?namespace=profile-us"
+  },
+  "appearance": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/appearance?namespace=profile-us"
+  },
+  "collections": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/collections?namespace=profile-us"
+  },
+  "active_title": {
+    "key": {
+      "href": "https://us.api.blizzard.com/data/wow/title/335?namespace=static-11.0.7_57788-us"
+    },
+    "name": "Huntmaster",
+    "id": 335,
+    "display_string": "Huntmaster {name}"
+  },
+  "reputations": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/reputations?namespace=profile-us"
+  },
+  "quests": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/quests?namespace=profile-us"
+  },
+  "achievements_statistics": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/achievements/statistics?namespace=profile-us"
+  },
+  "professions": {
+    "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/professions?namespace=profile-us"
+  },
+  "covenant_progress": {
+    "chosen_covenant": {
+      "key": {
+        "href": "https://us.api.blizzard.com/data/wow/covenant/2?namespace=static-11.0.7_57788-us"
+      },
+      "name": "Venthyr",
+      "id": 2
+    },
+    "renown_level": 80,
+    "soulbinds": {
+      "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte/soulbinds?namespace=profile-us"
+    }
+  },
+  "name_search": "Kbyte"
+}

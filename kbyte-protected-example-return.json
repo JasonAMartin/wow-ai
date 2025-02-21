@@ -1,0 +1,70 @@
+{
+  "_links": {
+    "self": {
+      "href": "https://us.api.blizzard.com/profile/user/wow/protected-character/1-174929115?namespace=profile-us"
+    },
+    "user": {
+      "href": "https://us.api.blizzard.com/profile/user"
+    },
+    "profile": {
+      "href": "https://us.api.blizzard.com/profile/user/wow?namespace=profile-us"
+    }
+  },
+  "id": 174929115,
+  "name": "Kbyte",
+  "money": 718857602,
+  "character": {
+    "key": {
+      "href": "https://us.api.blizzard.com/profile/wow/character/lightbringer/kbyte?namespace=profile-us"
+    },
+    "name": "Kbyte",
+    "id": 174929115,
+    "realm": {
+      "key": {
+        "href": "https://us.api.blizzard.com/data/wow/realm/1?namespace=dynamic-us"
+      },
+      "name": "Lightbringer",
+      "id": 1,
+      "slug": "lightbringer"
+    }
+  },
+  "protected_stats": {
+    "total_number_deaths": 141,
+    "total_gold_gained": 3214093994,
+    "total_gold_lost": 2495346392,
+    "total_item_value_gained": 629831434,
+    "level_number_deaths": 4,
+    "level_gold_gained": 455873711,
+    "level_gold_lost": 537240864,
+    "level_item_value_gained": 87000396
+  },
+  "position": {
+    "zone": {
+      "name": "The Coreway",
+      "id": 15046
+    },
+    "map": {
+      "name": "Khaz Algar (Surface)",
+      "id": 2552
+    },
+    "x": 2504.241,
+    "y": -2196.7952,
+    "z": 181.59023,
+    "facing": 5.5664635
+  },
+  "bind_position": {
+    "zone": {
+      "name": "Dornogal",
+      "id": 14771
+    },
+    "map": {
+      "name": "Khaz Algar (Surface)",
+      "id": 2552
+    },
+    "x": 2647.5034,
+    "y": -2474.5557,
+    "z": 224.21321,
+    "facing": 3.6393647
+  },
+  "wow_account": 3858451
+}

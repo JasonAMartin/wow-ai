@@ -1,0 +1,7 @@
+## Interface: 110002  # Use the current WoW interface version (11.0.2 as of Feb 2025, check your game version)
+## Title: My Gear Tracker
+## Notes: Displays equipped gear and currency info for personal use
+## Author: [Your Name]
+## Version: 1.0
+
+MyGearTracker.lua

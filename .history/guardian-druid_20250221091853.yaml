@@ -1,0 +1,144 @@
+---
+character:
+  name: "Guardian Druid"
+  spec: "Guardian"
+  level: 80
+  item_level: 587
+
+gear:
+  head:
+    name: "Unknown Helm"  # Update with actual item name, Veteran level, ilvl
+    veteran_level: "X/X"  # Replace with level (e.g., Veteran 1/8)
+    item_level: XXX  # Replace with ilvl (e.g., 587)
+  neck:
+    name: "Unknown Necklace"
+    veteran_level: "X/X"
+    item_level: XXX
+  shoulders:
+    name: "Unknown Shoulders"
+    veteran_level: "X/X"
+    item_level: XXX
+  back:
+    name: "Unknown Cloak"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant (e.g., +850 Speed)
+  chest:
+    name: "Unknown Chestguard"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant
+  wrist:
+    name: "Unknown Bracers"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant
+  main_hand:
+    name: "Unknown Weapon"  # Druids use 1H weapons or staves
+    veteran_level: "X/X"
+    item_level: XXX
+  off_hand:
+    name: "None"  # Optional, Druids may use off-hand or shield
+  hands:
+    name: "Unknown Gloves"
+    veteran_level: "X/X"
+    item_level: XXX
+  belt:
+    name: "Unknown Belt"
+    veteran_level: "X/X"
+    item_level: XXX
+  legs:
+    name: "Unknown Leggings"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant
+  feet:
+    name: "Unknown Boots"
+    veteran_level: "X/X"
+    item_level: XXX
+  ring_1:
+    name: "Unknown Ring"
+    gems:
+      - "Unknown Gem"  # Update with actual gems (e.g., Thunderlord's Crackling Citrine)
+      - "Unknown Gem"
+      - "Unknown Gem"
+    enchant: "Unknown Enchant"  # Update with enchant (e.g., +190 Haste)
+  ring_2:
+    name: "Unknown Ring"
+    veteran_level: "X/X"
+    item_level: XXX
+    gems:
+      - "Unknown Gem"
+      - "Unknown Gem"
+    enchant: "Unknown Enchant"
+  trinket_1:
+    name: "Unknown Trinket"
+    veteran_level: "X/X"
+    item_level: XXX
+  trinket_2:
+    name: "Unknown Trinket"
+    veteran_level: "X/X"
+    item_level: XXX
+
+stats:
+  crit: 13%
+  haste: 17%
+  mastery: 13%  # Mastery: Nature’s Guardian
+  versatility: 16%
+  leech: 2%
+  avoidance: 1%
+  dodge: 15%
+
+talents:
+  spec:
+    - "Mangle"
+    - "Thrash"
+    - "Incapacitating Roar"
+    - "Earthwarden"
+    - "Pulverize"
+    - "Gore"
+    - "Tooth and Claw"
+    - "Ursine Vigor"
+    - "Rage of the Sleeper"
+    - "Survival Instincts"
+    - "Fury of Nature"
+    - "Guardian of Elune"
+    - "After the Wildfire"
+    - "Bristling Fur"
+    - "Vulnerable Flesh"
+    - "Galactic Guardian"
+    - "Dream of Cenarius"
+  class:
+    - "Ironfur"
+    - "Frenzied Regeneration"
+    - "Wild Charge"
+    - "Thick Hide"
+    - "Renewal"
+    - "Barkskin"
+  hero:
+    - "Nature’s Fury (2)"
+    - "Harmony of the Grove (2)"
+    - "Guardian’s Wrath (2)"
+    - "Verdant Heart (2)"
+    - "Bark of the Wild (2)"
+
+currency:
+  carved_harbinger_crest: XXX  # Update with actual amount (e.g., 109)
+  flame_blessed_iron: XXX  # Update (e.g., 180)
+  kej: XXX  # Update (e.g., 3074)
+  resonance_crystals: XXX  # Update (e.g., 3992-4492)
+  restored_coffer_key: XXX  # Update (e.g., 2)
+  valorstones: XXX  # Update (e.g., 34)
+  weathered_harbinger_crest: XXX  # Update (e.g., 21)
+
+brann:
+  level: 21
+  combat_curio: "Light-Touched Idol (rank 1/4)"
+  utility_curio: "Amorphous Relic (rank 3/4)"
+
+recent_delves:
+  - name: "The Dread Pit, Tier 5"
+    boss: "Under-Lord Vik’tis"
+    fight_time: "115 seconds"
+    deaths: "None"
+    brann_health: "Died twice (revived once)"

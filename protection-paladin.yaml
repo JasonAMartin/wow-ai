@@ -1,0 +1,144 @@
+---
+character:
+  name: "Protection Paladin"
+  spec: "Protection"
+  level: 80
+  item_level: 589-595
+gear:
+  head:
+    name: "Sedimentary Helm of the Feverflare"
+    veteran_level: "3/8"
+    item_level: 590-592
+  neck:
+    name: "Conch Collector's Locket"
+    veteran_level: "1/8"
+    item_level: 588
+  shoulders:
+    name: "Earthen Landlubber's Mantle"
+    veteran_level: "3/8"
+    item_level: 590-592
+  back:
+    name: "Earthen Scallywag's Cloak"
+    veteran_level: "1/8"
+    item_level: 588
+    enchant: "+850 Speed (quality 2/3)"
+  chest:
+    name: "Earthen Landlubber's Breastplate"
+    veteran_level: "3/8"
+    item_level: 590-592
+    enchant: "Crystalline Radiance (quality 3/3)"
+  wrist:
+    name: "Earthen Landlubber's Armplates"
+    veteran_level: "1/8"
+    item_level: 588
+    enchant: "+850 Speed"
+  main_hand:
+    name: "Earthen Landlubber's Sword"
+    veteran_level: "4/8"
+    item_level: 591-593
+  shield:
+    name: "Earthen Landlubber's Shield"
+    veteran_level: "8/8"
+    item_level: 597
+  hands:
+    name: "Sedimentary Gauntlets of the Aurora"
+    veteran_level: "1/8"
+    item_level: 588
+  belt:
+    name: "Sedimentary Girdle of the Feverflare"
+    veteran_level: "3/8"
+    item_level: 590-592
+  legs:
+    name: "Earthen Landlubber's Legguards"
+    veteran_level: "3/8"
+    item_level: 590-592
+    enchant: "+930 Agility/Strength, +895 Stamina"
+  feet:
+    name: "Secret-Dredger's Sabatons"
+    veteran_level: "4/8"
+    item_level: 589-590
+  ring_1:
+    name: "Cyrce's Circlet"
+    gems:
+      - "Thunderlord's Crackling Citrine"
+      - "Seabed Leviathan's Citrine"
+      - "Windsinger's Runed Citrine"
+    enchant: "+190 Haste"
+  ring_2:
+    name: "Scurvy Sailor's Ring"
+    veteran_level: "1/8"
+    item_level: 588
+    gems:
+      - "Elusive Blasphemite"
+      - "Masterful Emerald"
+    enchant: "+190 Haste"
+  trinket_1:
+    name: "Concoction: Kiss of Death"
+    veteran_level: "1/8"
+    item_level: 588
+  trinket_2:
+    name: "Silken Chain Weaver"
+    veteran_level: "1/8"
+    item_level: 588
+stats:
+  crit: 15%
+  haste: 16-18%
+  mastery: 17-20%
+  versatility: 8-11%
+  speed: 8%
+  dodge: 3%
+  parry: 14%
+  block: 45-50%
+talents:
+  spec:
+    - "Avenger’s Shield"
+    - "Judgment"
+    - "Redoubt (1)"
+    - "Blessed Hammer (2)"
+    - "Bastion of Light (2)"
+    - "Holy Shield (2)"
+    - "Seraphim (2)"
+    - "Sanctuary (2)"
+    - "Ardent Defender (2)"
+    - "Crusader’s Judgment (1)"
+    - "Consecrated Ground (1)"
+    - "Judgment of Light (1)"
+    - "Bulwark of Order (1)"
+    - "Guardian of Ancient Kings (2)"
+    - "Last Defender (2)"
+    - "Uther’s Guard (1)"
+    - "Righteous Protector (1)"
+  class:
+    - "Lay on Hands"
+    - "Blessing of Freedom"
+    - "Cavalier (2)"
+    - "Fist of Justice (1)"
+    - "Divine Purpose (2)"
+    - "Shield of Vengeance (2)"
+    - "Blessing of Sacrifice (2)"
+    - "Afterimage (1)"
+  hero:
+    - "Templar’s Verdict (2)"
+    - "Templar’s Judgment (1)"
+    - "Holy Avenger (1)"
+    - "Zealous Vindication (2)"
+    - "Bonds of Fellowship (2)"
+    - "Endless Wrath (2)"
+currency:
+  carved_harbinger_crest: 109
+  flame_blessed_iron: 180
+  kej: 3074
+  resonance_crystals: 3992-4492
+  restored_coffer_key: 1
+  valorstones: 34
+  weathered_harbinger_crest: 21
+brann:
+  level: 21
+  combat_curio: "Light-Touched Idol (rank 1/4)"
+  utility_curio: "Olden Seeker Relic (rank 3/4)"
+recent_delves:
+name: "Kriegval’s Rest, Tier 5"
+boss: "Kobold Guardian"
+fight_time: "1:41 (101 seconds)"
+deaths: "None"
+brann_health: "Healthy"

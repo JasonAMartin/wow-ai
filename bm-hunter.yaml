@@ -1,0 +1,132 @@
+---
+character:
+  name: "Beast Mastery Hunter"
+  spec: "Beast Mastery"
+  level: 80
+  item_level: 592
+
+gear:
+  head:
+    name: "Unknown Helm"  # Update with actual item name, Veteran level, ilvl
+    veteran_level: "X/X"  # Replace with level (e.g., Veteran 1/8)
+    item_level: XXX  # Replace with ilvl (e.g., 592)
+  neck:
+    name: "Unknown Necklace"
+    veteran_level: "X/X"
+    item_level: XXX
+  shoulders:
+    name: "Unknown Shoulders"
+    veteran_level: "X/X"
+    item_level: XXX
+  back:
+    name: "Unknown Cloak"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant (e.g., +850 Speed)
+  chest:
+    name: "Unknown Chestguard"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant
+  wrist:
+    name: "Unknown Bracers"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant
+  main_hand:
+    name: "Unknown Bow/Gun"
+    veteran_level: "X/X"
+    item_level: XXX
+  off_hand:
+    name: "None"  # Hunters typically use 2H weapons, no off-hand
+  hands:
+    name: "Unknown Gloves"
+    veteran_level: "X/X"
+    item_level: XXX
+  belt:
+    name: "Unknown Belt"
+    veteran_level: "X/X"
+    item_level: XXX
+  legs:
+    name: "Unknown Leggings"
+    veteran_level: "X/X"
+    item_level: XXX
+    enchant: "Unknown Enchant"  # Update with enchant
+  feet:
+    name: "Unknown Boots"
+    veteran_level: "X/X"
+    item_level: XXX
+  ring_1:
+    name: "Unknown Ring"
+    gems:
+      - "Unknown Gem"  # Update with actual gems (e.g., Thunderlord's Crackling Citrine)
+      - "Unknown Gem"
+      - "Unknown Gem"
+    enchant: "Unknown Enchant"  # Update with enchant (e.g., +190 Haste)
+  ring_2:
+    name: "Unknown Ring"
+    veteran_level: "X/X"
+    item_level: XXX
+    gems:
+      - "Unknown Gem"
+      - "Unknown Gem"
+    enchant: "Unknown Enchant"
+  trinket_1:
+    name: "Unknown Trinket"
+    veteran_level: "X/X"
+    item_level: XXX
+  trinket_2:
+    name: "Unknown Trinket"
+    veteran_level: "X/X"
+    item_level: XXX
+
+stats:
+  crit: 25%
+  haste: 7%
+  mastery: 30%
+  versatility: 6%
+  avoidance: 8-10%
+  speed: 1%
+
+talents:
+  spec:
+    - "Kill Command"
+    - "Barbed Shot"
+    - "Animal Companion"
+    - "Bestial Wrath"
+    - "Call of the Wild"
+    - "Pack Leader"
+  class:
+    - "Kill Shot"
+    - "Binding Shot"
+    - "Posthaste"
+    - "Intimidation"
+    - "A Murder of Crows"
+    - "Aspect of the Wild"
+  hero:
+    - "Alpha Instincts (2)"  # Assuming Pack Leader as Hero Talent
+    - "Wild Instincts (2)"
+    - "Pack Tactics (2)"
+    - "Predatory Instincts (2)"
+    - "Pack Harmony (2)"
+
+currency:
+  carved_harbinger_crest: XXX  # Update with actual amount (e.g., 109)
+  flame_blessed_iron: XXX  # Update (e.g., 180)
+  kej: XXX  # Update (e.g., 3074)
+  resonance_crystals: XXX  # Update (e.g., 3992-4492)
+  restored_coffer_key: XXX  # Update (e.g., 2)
+  valorstones: XXX  # Update (e.g., 34)
+  weathered_harbinger_crest: XXX  # Update (e.g., 21)
+
+brann:
+  level: 21
+  combat_curio: "Light-Touched Idol (rank 1/4)"
+  utility_curio: "Olden Seeker Relic (rank 3/4)"
+
+recent_delves:
+  - name: "The Dread Pit, Tier 5"
+    boss: "Under-Lord Vik’tis"
+    fight_time: "57 seconds"
+    deaths: "None"
+    brann_health: "5% remaining"
