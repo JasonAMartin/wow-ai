@@ -146,65 +146,82 @@ local function GetCurrencyInfo()
     return currencyText
 end
 
--- Get spec name by ID
+-- Inventory Items (All Bags)
+local function GetInventoryItems()
+    local inventoryText = "--- Inventory Items ---\n"
+    exportData.inventory = {}
+    for bagID = 0, 4 do -- Bags 0-4
+        local numSlots = C_Container.GetContainerNumSlots(bagID)
+        for slot = 1, numSlots do
+            local itemLink = C_Container.GetContainerItemLink(bagID, slot)
+            if itemLink then
+                local itemName = GetItemInfo(itemLink) or "Unknown Item"
+                local itemInfo = C_Container.GetContainerItemInfo(bagID, slot)
+                local quantity = itemInfo and itemInfo.stackCount or 1
+                local itemType = select(6, GetItemInfo(itemLink)) or "Unknown"
+                local isGear = itemType == "Weapon" or itemType == "Armor"
+                local slotKey = tostring(bagID) .. "-" .. tostring(slot) -- Unique key for JSON
+                if isGear then
+                    local itemLevel = GetDetailedItemLevelInfo(itemLink) or "N/A"
+                    local upgradeInfo = "N/A"
+                    tooltipScanner:ClearLines()
+                    tooltipScanner:SetHyperlink(itemLink)
+                    for i = 1, tooltipScanner:NumLines() do
+                        local line = _G["GearTrackerTooltipTextLeft" .. i]
+                        if line then
+                            local text = line:GetText()
+                            if text then
+                                local tier, current, max = text:match("(%a+)%s+(%d+)/(%d+)")
+                                if tier and current and max then
+                                    upgradeInfo = tier .. " " .. current .. "/" .. max
+                                    break
+                                elseif text:match("Upgrade Level:%s+(%a+)%s+(%d+)/(%d+)") then
+                                    tier, current, max = text:match("Upgrade Level:%s+(%a+)%s+(%d+)/(%d+)")
+                                    upgradeInfo = tier .. " " .. current .. "/" .. max
+                                    break
+                                end
+                            end
+                        end
+                    end
+                    exportData.inventory[slotKey] = {
+                        name = itemName,
+                        itemLevel = itemLevel,
+                        upgrade = upgradeInfo,
+                        quantity = quantity
+                    }
+                else
+                    exportData.inventory[slotKey] = {
+                        name = itemName,
+                        quantity = quantity
+                    }
+                end
+                inventoryText = inventoryText .. string.format("Bag %d Slot %d: %s (Qty: %d)\n", bagID, slot, itemName or "Unknown", quantity)
+            end
+        end
+    end
+    return inventoryText
+end
+
+-- Get spec name by ID (placeholder for future use)
 function GetSpecNameByID(specID)
     print("Calling spec list with")
     print(specID)
     local specList = {
-        -- Death Knight
-        [250] = "Blood",
-        [251] = "Frost",
-        [252] = "Unholy",
-        -- Demon Hunter
-        [577] = "Havoc",
-        [581] = "Vengeance",
-        -- Druid
-        [102] = "Balance",
-        [103] = "Feral",
-        [104] = "Guardian",
-        [105] = "Restoration",
-        -- Hunter
-        [253] = "Beast Mastery",
-        [254] = "Marksmanship",
-        [255] = "Survival",
-        -- Mage
-        [62] = "Arcane",
-        [63] = "Fire",
-        [64] = "Frost",
-        -- Monk
-        [268] = "Brewmaster",
-        [269] = "Windwalker",
-        [270] = "Mistweaver",
-        -- Paladin
-        [65] = "Holy",
-        [66] = "Protection",
-        [70] = "Retribution",
-        -- Priest
-        [256] = "Discipline",
-        [257] = "Holy",
-        [258] = "Shadow",
-        -- Rogue
-        [259] = "Assassination",
-        [260] = "Outlaw",
-        [261] = "Subtlety",
-        -- Shaman
-        [262] = "Elemental",
-        [263] = "Enhancement",
-        [264] = "Restoration",
-        -- Warlock
-        [265] = "Affliction",
-        [266] = "Demonology",
-        [267] = "Destruction",
-        -- Warrior
-        [71] = "Arms",
-        [72] = "Fury",
-        [73] = "Protection",
-        -- Evoker
-        [1467] = "Devastation",
-        [1468] = "Preservation",
-        [1473] = "Augmentation"
+        [250] = "Blood", [251] = "Frost", [252] = "Unholy",
+        [577] = "Havoc", [581] = "Vengeance",
+        [102] = "Balance", [103] = "Feral", [104] = "Guardian", [105] = "Restoration",
+        [253] = "Beast Mastery", [254] = "Marksmanship", [255] = "Survival",
+        [62] = "Arcane", [63] = "Fire", [64] = "Frost",
+        [268] = "Brewmaster", [269] = "Windwalker", [270] = "Mistweaver",
+        [65] = "Holy", [66] = "Protection", [70] = "Retribution",
+        [256] = "Discipline", [257] = "Holy", [258] = "Shadow",
+        [259] = "Assassination", [260] = "Outlaw", [261] = "Subtlety",
+        [262] = "Elemental", [263] = "Enhancement", [264] = "Restoration",
+        [265] = "Affliction", [266] = "Demonology", [267] = "Destruction",
+        [71] = "Arms", [72] = "Fury", [73] = "Protection",
+        [1467] = "Devastation", [1468] = "Preservation", [1473] = "Augmentation"
     }
-    return specID --specList[specID] or "Unknown Spec ID"
+    return specID -- Pass-through for now
 end
 
 -- Update UI
@@ -248,6 +265,7 @@ end
 SLASH_MYGEAREXPORT1 = "/mgtexport"
 SlashCmdList["MYGEAREXPORT"] = function()
     UpdateUI()
+    GetInventoryItems() -- Populate inventory data
     local overallILvl, equippedILvl = GetAverageItemLevel()
     local jsonData = {
         character = {
@@ -257,7 +275,8 @@ SlashCmdList["MYGEAREXPORT"] = function()
             level = UnitLevel("player"),
             overallItemLevel = math.floor(equippedILvl),
             gear = {},
-            currencies = exportData.currencies
+            currencies = exportData.currencies,
+            inventory = exportData.inventory
         }
     }
     for k, v in pairs(exportData.gear) do
