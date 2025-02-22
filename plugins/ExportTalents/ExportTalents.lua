@@ -29,132 +29,116 @@ local function ShowOutputInWindow(text)
 end
 
 local function ExportTalents()
-    local output = "Debug Output:\n"
-    local talentOutput = "\nTalents:\n"
-    local heroOutput = "\nHero Talents:\n"
+    -- Known Hero Talent Spell IDs for Paladin, Druid, and Hunter specs
+    local heroTalentSpellIDs = {
+        -- Lightsmith (803) - Prot/Holy Paladin
+        [426427] = true, [431653] = true, [431539] = true, [431541] = true, [431566] = true,
+        [431576] = true, [431657] = true, [431568] = true, [431570] = true, [431655] = true, [431536] = true,
+        -- Herald of the Sun (805) - Prot/Ret/Holy Paladin
+        [426256] = true, [426296] = true, [426264] = true, [431481] = true, [431482] = true,
+        [431483] = true, [431484] = true, [431485] = true, [431486] = true, [431487] = true, [431488] = true,
+        -- Templar (807) - Ret Paladin
+        [426564] = true, [426578] = true, [426588] = true, [426600] = true, [426606] = true,
+        [426610] = true, [426614] = true, [426618] = true, [426622] = true, [426626] = true, [426630] = true,
+        -- Druid of the Claw (809) - Guardian/Feral Druid
+        [429261] = true, [429262] = true, [429263] = true, [429264] = true, [429265] = true,
+        [429266] = true, [429267] = true, [429268] = true, [429269] = true, [429270] = true,
+        -- Wildstalker (811) - Guardian/Resto/Feral Druid
+        [429271] = true, [429272] = true, [429273] = true, [429274] = true, [429275] = true,
+        [429276] = true, [429277] = true, [429278] = true, [429279] = true, [429280] = true,
+        -- Keeper of the Grove (813) - Resto/Balance Druid
+        [429281] = true, [429282] = true, [429283] = true, [429284] = true, [429285] = true,
+        [429286] = true, [429287] = true, [429288] = true, [429289] = true, [429290] = true,
+        -- Elune’s Chosen (815) - Balance Druid
+        [429291] = true, [429292] = true, [429293] = true, [429294] = true, [429295] = true,
+        [429296] = true, [429297] = true, [429298] = true, [429299] = true, [429300] = true,
+        -- Pack Leader (801) - Beast Mastery Hunter
+        [445404] = true, [445505] = true, [445707] = true, [445708] = true, [445710] = true,
+        [445715] = true, [445717] = true, [445721] = true, [450369] = true, [445696] = true,
+        [445700] = true, [445702] = true, [466932] = true,
+        -- Dark Ranger (817) - Beast Mastery Hunter
+        [426341] = true, [426342] = true, [426343] = true, [426344] = true, [426345] = true,
+        [426346] = true, [426347] = true, [426348] = true, [426349] = true, [426350] = true,
+    }
+
+    -- Collect talents and hero talents
+    local talents = {}
+    local heroTalents = {}
 
     -- Get active talent tree information
     local specID = PlayerUtil.GetCurrentSpecID()
     if not specID then
-        output = output .. "Error: Could not retrieve current spec ID\n"
-        ShowOutputInWindow(output)
+        ShowOutputInWindow('{"error": "Could not retrieve current spec ID"}')
         return
     end
     local specName = GetSpecializationNameForSpecID(specID)
-    talentOutput = talentOutput .. "Specialization: " .. (specName or "Unknown") .. "\n"
 
     local configID = C_ClassTalents.GetActiveConfigID()
     if not configID then
-        output = output .. "Error: No active config ID found\n"
-        ShowOutputInWindow(output)
+        ShowOutputInWindow('{"error": "No active config ID found"}')
         return
     end
-    output = output .. "ConfigID: " .. configID .. "\n"
 
     local configInfo = C_Traits.GetConfigInfo(configID)
-    output = output .. "Config TreeIDs: "
-    for i, treeID in ipairs(configInfo.treeIDs or {}) do
-        output = output .. treeID .. (i < #configInfo.treeIDs and ", " or "")
-    end
-    output = output .. "\n"
-
-    local treeID = configInfo.treeIDs and configInfo.treeIDs[1]
-    output = output .. "Main TreeID: " .. (treeID or "nil") .. "\n"
+    local treeID = configInfo and configInfo.treeIDs and configInfo.treeIDs[1]
 
     if treeID then
         local treeInfo = C_Traits.GetTreeInfo(configID, treeID)
         local treeName = treeInfo.name or specName or ("Tree ID " .. treeID)
-        talentOutput = talentOutput .. "Talent Tree: " .. treeName .. "\n"
 
         -- Iterate through nodes in the talent tree
         local nodes = C_Traits.GetTreeNodes(treeID)
-        output = output .. "Found " .. #nodes .. " nodes in tree " .. treeID .. "\n"
         for _, nodeID in ipairs(nodes) do
             local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
             if nodeInfo and nodeInfo.activeRank > 0 then
-                output = output .. "NodeID: " .. nodeID .. " ActiveRank: " .. nodeInfo.activeRank .. " Name: " .. (nodeInfo.name or "nil")
                 local talentName = nodeInfo.name
+                local spellID
                 local entryID = nodeInfo.activeEntry and nodeInfo.activeEntry.entryID
                 if entryID then
                     local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
                     if entryInfo and entryInfo.definitionID then
                         local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
-                        output = output .. " EntryID: " .. entryID .. " DefinitionID: " .. entryInfo.definitionID
                         if defInfo and defInfo.spellID then
-                            output = output .. " SpellID: " .. defInfo.spellID
+                            spellID = defInfo.spellID
                             local spellInfo = C_Spell.GetSpellInfo(defInfo.spellID)
                             talentName = spellInfo and spellInfo.name or "Unknown (SpellID: " .. defInfo.spellID .. ")"
-                        else
-                            output = output .. " (no defInfo)"
                         end
-                    else
-                        output = output .. " EntryID: " .. entryID .. " (no entryInfo)"
                     end
-                else
-                    output = output .. " (no activeEntry)"
                 end
-                output = output .. "\n"
-
                 talentName = talentName or "Unknown Talent"
                 local ranks = nodeInfo.activeRank .. "/" .. nodeInfo.maxRanks
-                talentOutput = talentOutput .. "  " .. talentName .. ": " .. ranks .. "\n"
-            end
-        end
-    else
-        talentOutput = talentOutput .. "No Talent Tree Found\n"
-    end
-
-    -- Hero Talents (Workaround with known Pack Leader node IDs)
-    local heroSpecID = C_ClassTalents.GetActiveHeroTalentSpec()
-    output = output .. "HeroSpecID: " .. (heroSpecID or "nil") .. "\n"
-    if heroSpecID then
-        local heroTreeID = 801 -- Pack Leader
-        output = output .. "HeroTreeID: " .. heroTreeID .. "\n"
-        local nodes = C_Traits.GetTreeNodes(heroTreeID)
-        output = output .. "Found " .. #nodes .. " nodes in hero tree " .. heroTreeID .. "\n"
-        -- If no nodes, try known Pack Leader node IDs
-        if #nodes == 0 then
-            local packLeaderNodes = {103200, 103201, 103202, 103203, 103204, 103205, 103206, 103207, 103208, 103209, 103210, 103211} -- From Wowhead/community data
-            output = output .. "Trying known Pack Leader nodes: " .. #packLeaderNodes .. "\n"
-            for _, nodeID in ipairs(packLeaderNodes) do
-                local nodeInfo = C_Traits.GetNodeInfo(configID, nodeID)
-                if nodeInfo then
-                    output = output .. "Hero NodeID: " .. nodeID .. " ActiveRank: " .. (nodeInfo.activeRank or "nil") .. " Name: " .. (nodeInfo.name or "nil")
-                    local talentName = nodeInfo.name
-                    local entryID = nodeInfo.activeEntry and nodeInfo.activeEntry.entryID
-                    if entryID then
-                        local entryInfo = C_Traits.GetEntryInfo(configID, entryID)
-                        if entryInfo and entryInfo.definitionID then
-                            local defInfo = C_Traits.GetDefinitionInfo(entryInfo.definitionID)
-                            output = output .. " EntryID: " .. entryID .. " DefinitionID: " .. entryInfo.definitionID
-                            if defInfo and defInfo.spellID then
-                                output = output .. " SpellID: " .. defInfo.spellID
-                                local spellInfo = C_Spell.GetSpellInfo(defInfo.spellID)
-                                talentName = spellInfo and spellInfo.name or "Unknown (SpellID: " .. defInfo.spellID .. ")"
-                            else
-                                output = output .. " (no defInfo)"
-                            end
-                        else
-                            output = output .. " EntryID: " .. entryID .. " (no entryInfo)"
-                        end
-                    else
-                        output = output .. " (no activeEntry)"
-                    end
-                    output = output .. "\n"
-
-                    if nodeInfo.activeRank > 0 then
-                        talentName = talentName or "Unknown Hero Talent"
-                        local ranks = nodeInfo.activeRank .. "/" .. nodeInfo.maxRanks
-                        heroOutput = heroOutput .. "  " .. talentName .. ": " .. ranks .. "\n"
-                    end
+                local talentEntry = {name = talentName, ranks = ranks}
+                if spellID and heroTalentSpellIDs[spellID] then
+                    table.insert(heroTalents, talentEntry)
+                else
+                    table.insert(talents, talentEntry)
                 end
             end
         end
     else
-        heroOutput = heroOutput .. "No Hero Talents Selected\n"
+        talents = {{name = "No Talent Tree Found", ranks = "0/0"}}
     end
 
-    ShowOutputInWindow(output .. talentOutput .. heroOutput)
+    -- Build JSON output
+    local jsonOutput = '{\n  "talents": [\n'
+    for i, talent in ipairs(talents) do
+        jsonOutput = jsonOutput .. '    {"name": "' .. talent.name .. '", "ranks": "' .. talent.ranks .. '"}'
+        if i < #talents then
+            jsonOutput = jsonOutput .. ','
+        end
+        jsonOutput = jsonOutput .. '\n'
+    end
+    jsonOutput = jsonOutput .. '  ],\n  "heroTalents": [\n'
+    for i, heroTalent in ipairs(heroTalents) do
+        jsonOutput = jsonOutput .. '    {"name": "' .. heroTalent.name .. '", "ranks": "' .. heroTalent.ranks .. '"}'
+        if i < #heroTalents then
+            jsonOutput = jsonOutput .. ','
+        end
+        jsonOutput = jsonOutput .. '\n'
+    end
+    jsonOutput = jsonOutput .. '  ]\n}'
+
+    ShowOutputInWindow(jsonOutput)
 end
 
 -- Slash command handler
