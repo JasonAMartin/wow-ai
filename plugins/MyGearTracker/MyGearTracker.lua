@@ -98,40 +98,65 @@ local exportData = {}
 local function GetGearInfo()
     local gearText = "--- Equipped Gear ---\n"
     exportData.gear = {}
+
     for slot = 1, 17 do
         local itemLink = GetInventoryItemLink("player", slot)
         if itemLink then
-            local itemName = GetItemInfo(itemLink) or "Loading..."
+            local itemName, _, _, _, _, itemType = GetItemInfo(itemLink)
+            if not itemName then
+                print("Error: Could not get item info for slot", slot)
+                itemName = "Unknown Item"
+            end
             local itemLevel = GetDetailedItemLevelInfo(itemLink) or "N/A"
             local upgradeInfo = "N/A"
-            
+            local enchantName = nil
+
             tooltipScanner:ClearLines()
             tooltipScanner:SetHyperlink(itemLink)
+
+            -- Print the item link and slot for debugging
+            print("Scanning tooltip for:", itemLink, "(Slot", slot, ")")
+
             for i = 1, tooltipScanner:NumLines() do
-                local line = _G["GearTrackerTooltipTextLeft" .. i]
+                local line = _G["GearTrackerTooltipTextLeft".. i]
                 if line then
                     local text = line:GetText()
                     if text then
+                        -- Print the tooltip line for debugging
+                        print("Tooltip line:", text)
+
+                        -- Check for upgrade info
                         local tier, current, max = text:match("(%a+)%s+(%d+)/(%d+)")
                         if tier and current and max then
-                            upgradeInfo = tier .. " " .. current .. "/" .. max
-                            break
+                            upgradeInfo = tier.. " ".. current.. "/".. max
                         elseif text:match("Upgrade Level:%s+(%a+)%s+(%d+)/(%d+)") then
                             tier, current, max = text:match("Upgrade Level:%s+(%a+)%s+(%d+)/(%d+)")
-                            upgradeInfo = tier .. " " .. current .. "/" .. max
-                            break
+                            upgradeInfo = tier.. " ".. current.. "/".. max
+                        end
+
+                        -- Check for enchant info (new generic pattern)
+                        if text:match("^Enchanted:") then -- Match lines starting with "Enchanted:"
+                            enchantName = text:gsub("^Enchanted: ", "") -- Remove the "Enchanted: " prefix
+                            print("Enchant found:", enchantName)
                         end
                     end
                 end
             end
-            
-            gearText = gearText .. string.format("Slot %d: %s (iLvl: %s, Upgrade: %s)\n", slot, itemName, itemLevel, upgradeInfo)
-            exportData.gear[slot] = { name = itemName, itemLevel = itemLevel, upgrade = upgradeInfo }
+
+            -- Add gear info to gearText
+            gearText = gearText.. string.format("Slot %d: %s (iLvl: %s, Upgrade: %s, Enchant: %s)\n", slot, itemName, itemLevel, upgradeInfo, enchantName or "None")
+
+            -- Add gear info to exportData.gear
+            exportData.gear[slot] = {
+                name = itemName,
+                itemLevel = itemLevel,
+                upgrade = upgradeInfo,
+                enchant = enchantName -- Allow blank enchant values
+            }
         end
     end
     return gearText
 end
-
 -- Currency Info
 local function GetCurrencyInfo()
     local currencyText = "--- Currency ---\n"
