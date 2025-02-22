@@ -202,6 +202,59 @@ local function GetInventoryItems()
     return inventoryText
 end
 
+-- Get character stats (Attributes and Enhancements)
+local function GetCharacterStats()
+    local statsText = "--- Character Stats ---\n"
+    exportData.stats = {}
+    local class = select(2, UnitClass("player"))
+    local specID = GetSpecialization() and select(2, GetSpecializationInfo(GetSpecialization())) or 0
+
+    -- Attributes Section
+    if class == "HUNTER" or class == "ROGUE" or class == "SHAMAN" or class == "MONK" or class == "DEMONHUNTER" then
+        exportData.stats.agility = UnitStat("player", 2) -- STAT_AGILITY
+    elseif class == "WARRIOR" or class == "PALADIN" or class == "DEATHKNIGHT" then
+        exportData.stats.strength = UnitStat("player", 1) -- STAT_STRENGTH
+    elseif class == "MAGE" or class == "PRIEST" or class == "WARLOCK" or class == "DRUID" or class == "EVOKER" then
+        exportData.stats.intellect = UnitStat("player", 4) -- STAT_INTELLECT
+    end
+    exportData.stats.stamina = UnitStat("player", 3) -- STAT_STAMINA
+    exportData.stats.armor = select(2, UnitArmor("player")) -- Base Armor value
+
+    -- Enhancements Section (all specs get these, as percentages)
+    exportData.stats.criticalStrike = GetCritChance() -- Percentage
+    exportData.stats.haste = GetHaste() -- Percentage
+    exportData.stats.mastery = GetMasteryEffect() -- Percentage (already correct)
+    exportData.stats.versatility = GetCombatRatingBonus(29) -- CR_VERSATILITY_DAMAGE_DONE, Percentage
+
+    -- Spec-specific Enhancements (tank stats)
+    if class == "WARRIOR" and specID == 73 or  -- Protection Warrior
+       class == "PALADIN" and specID == 66 or  -- Protection Paladin
+       class == "DEATHKNIGHT" and specID == 250 or  -- Blood Death Knight
+       class == "MONK" and specID == 268 or  -- Brewmaster Monk
+       class == "DRUID" and specID == 104 or  -- Guardian Druid
+       class == "DEMONHUNTER" and specID == 581 then  -- Vengeance Demon Hunter
+        exportData.stats.dodge = GetDodgeChance() -- Percentage
+        exportData.stats.parry = GetParryChance() -- Percentage
+        exportData.stats.block = GetBlockChance() -- Percentage
+    end
+
+    -- Format for text display (not used in JSON, just for consistency)
+    if exportData.stats.strength then statsText = statsText .. string.format("Strength: %d\n", exportData.stats.strength) end
+    if exportData.stats.agility then statsText = statsText .. string.format("Agility: %d\n", exportData.stats.agility) end
+    if exportData.stats.intellect then statsText = statsText .. string.format("Intellect: %d\n", exportData.stats.intellect) end
+    statsText = statsText .. string.format("Stamina: %d\n", exportData.stats.stamina)
+    statsText = statsText .. string.format("Armor: %d\n", exportData.stats.armor)
+    statsText = statsText .. string.format("Critical Strike: %.2f%%\n", exportData.stats.criticalStrike)
+    statsText = statsText .. string.format("Haste: %.2f%%\n", exportData.stats.haste)
+    statsText = statsText .. string.format("Mastery: %.2f%%\n", exportData.stats.mastery)
+    statsText = statsText .. string.format("Versatility: %.2f%%\n", exportData.stats.versatility)
+    if exportData.stats.dodge then statsText = statsText .. string.format("Dodge: %.2f%%\n", exportData.stats.dodge) end
+    if exportData.stats.parry then statsText = statsText .. string.format("Parry: %.2f%%\n", exportData.stats.parry) end
+    if exportData.stats.block then statsText = statsText .. string.format("Block: %.2f%%\n", exportData.stats.block) end
+
+    return statsText
+end
+
 -- Get spec name by ID (placeholder for future use)
 function GetSpecNameByID(specID)
     print("Calling spec list with")
@@ -266,6 +319,7 @@ local function UpdateExportUI(retryCount)
     retryCount = retryCount or 0
     UpdateUI()
     GetInventoryItems() -- Populate inventory data
+    GetCharacterStats() -- Populate stats data
     local overallILvl, equippedILvl = GetAverageItemLevel()
     local hasUnknown = false
     for _, item in pairs(exportData.inventory) do
@@ -283,7 +337,8 @@ local function UpdateExportUI(retryCount)
             overallItemLevel = math.floor(equippedILvl),
             gear = {},
             currencies = exportData.currencies,
-            inventory = exportData.inventory
+            inventory = exportData.inventory,
+            stats = exportData.stats
         }
     }
     for k, v in pairs(exportData.gear) do
