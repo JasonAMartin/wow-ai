@@ -1,0 +1,4 @@
+## Interface: 110000
+## Title: DumpText
+## Notes: Dumps Lua values to a scrollable window
+DumpText.lua
