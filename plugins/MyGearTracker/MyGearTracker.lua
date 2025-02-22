@@ -115,6 +115,29 @@ tooltipScanner:SetOwner(UIParent, "ANCHOR_NONE")
 -- Data storage
 local exportData = {}
 
+-- Function to get tooltip rank for a specific frame
+local function GetTooltipRank(frame)
+    GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
+    GameTooltip:ClearLines()
+    frame:GetScript("OnEnter")(frame) -- Trigger OnEnter
+    local tooltipRank
+    for i = 1, GameTooltip:NumLines() do
+        local right = _G["GameTooltipTextRight" .. i]
+        if right then
+            local rightText = right:GetText()
+            if rightText then
+                local rankMatch = rightText:match("Rank (%d+)/%d+")
+                if rankMatch then
+                    tooltipRank = tonumber(rankMatch)
+                    break
+                end
+            end
+        end
+    end
+    GameTooltip:Hide()
+    return tooltipRank or 1
+end
+
 -- Function to sync equipped and available curios
 local function SetCurio(slot)
     if slot ~= "combat" and slot ~= "utility" then
@@ -124,7 +147,7 @@ local function SetCurio(slot)
     local companionFrame = DelvesCompanionConfigurationFrame
     if companionFrame and companionFrame:IsShown() then
         print("Delve UI open, syncing all curio data...")
-        C_Timer.After(3, function()
+        C_Timer.After(1, function()
             local combatSlot = companionFrame.CompanionCombatTrinketSlot
             local utilitySlot = companionFrame.CompanionUtilityTrinketSlot
             local slots = { combat = combatSlot, utility = utilitySlot }
@@ -135,65 +158,31 @@ local function SetCurio(slot)
                     local entryID = slot.selectionNodeInfo.activeEntry.entryID
                     local options = slot.selectionNodeOptions
                     if options and options[entryID] and options[entryID].name then
-                        GameTooltip:SetOwner(slot, "ANCHOR_RIGHT")
-                        GameTooltip:ClearLines()
-                        slot:OnEnter()
-                        local tooltipRank
-                        for i = 1, GameTooltip:NumLines() do
-                            local right = _G["GameTooltipTextRight" .. i]
-                            if right then
-                                local rightText = right:GetText()
-                                if rightText then
-                                    local rankMatch = rightText:match("Rank (%d+)/%d+")
-                                    if rankMatch then
-                                        tooltipRank = tonumber(rankMatch)
-                                        break
-                                    end
-                                end
-                            end
-                        end
-                        GameTooltip:Hide()
-                        local rank = tooltipRank or 1
+                        local rank = GetTooltipRank(slot)
                         MyGearTrackerDB.equippedCurios[slotType] = options[entryID].name .. " (Rank " .. rank .. "/4)"
                         print(slotType .. " curio synced: " .. MyGearTrackerDB.equippedCurios[slotType])
                     end
                 end
             end
 
-            -- Sync available curios
+            -- Sync available curios from OptionsList.ScrollBox
             local curios = {}
-            for slotType, slot in pairs(slots) do
-                if slot and slot.selectionNodeOptions then
-                    for entryID, option in pairs(slot.selectionNodeOptions) do
-                        GameTooltip:SetOwner(slot, "ANCHOR_RIGHT")
-                        GameTooltip:ClearLines()
-                        slot:OnEnter()
-                        local tooltipRank
-                        for i = 1, GameTooltip:NumLines() do
-                            local right = _G["GameTooltipTextRight" .. i]
-                            if right then
-                                local rightText = right:GetText()
-                                if rightText then
-                                    local rankMatch = rightText:match("Rank (%d+)/%d+")
-                                    if rankMatch then
-                                        tooltipRank = tonumber(rankMatch)
-                                        break
-                                    end
+            for _, slot in pairs(slots) do
+                if slot and slot.OptionsList and slot.OptionsList.ScrollBox then
+                    local scrollBox = slot.OptionsList.ScrollBox
+                    for _, frame in ipairs(scrollBox:GetFrames()) do
+                        if frame.data and frame.data.name then
+                            local rank = GetTooltipRank(frame)
+                            local exists = false
+                            for _, curio in ipairs(curios) do
+                                if curio.name == frame.data.name then
+                                    exists = true
+                                    break
                                 end
                             end
-                        end
-                        GameTooltip:Hide()
-                        local rank = tooltipRank or 1
-                        -- Avoid duplicates by checking existing names
-                        local exists = false
-                        for _, curio in ipairs(curios) do
-                            if curio.name == option.name then
-                                exists = true
-                                break
+                            if not exists then
+                                table.insert(curios, { name = frame.data.name, rank = rank })
                             end
-                        end
-                        if not exists then
-                            table.insert(curios, { name = option.name, rank = rank })
                         end
                     end
                 end
@@ -202,7 +191,7 @@ local function SetCurio(slot)
                 MyGearTrackerDB.availableCurios = curios
                 print("Available curios synced: " .. #curios .. " items found.")
             else
-                print("No available curios found in UI.")
+                print("No available curios found in UI scrollbox.")
             end
         end)
     else
@@ -249,6 +238,7 @@ function GetBrannInfo()
 
     return brannInfo
 end
+
 -- Print function
 local function PrintBrannInfo()
     local info = GetBrannInfo()
