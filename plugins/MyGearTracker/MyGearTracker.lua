@@ -42,7 +42,7 @@ textArea:SetMaxLetters(0)
 scrollFrame:SetScrollChild(textArea)
 
 textArea:SetScript("OnTextChanged", function(self)
-    local height = self:GetText():len() > 0 and self:GetStringHeight() or 600
+    local height = self:GetRegions():GetHeight() or 600 -- Fallback to font height or fixed value
     self:SetHeight(height)
     scrollFrame:UpdateScrollChildRect()
 end)
@@ -82,7 +82,7 @@ exportTextArea:SetMaxLetters(0)
 exportScrollFrame:SetScrollChild(exportTextArea)
 
 exportTextArea:SetScript("OnTextChanged", function(self)
-    local height = self:GetText():len() > 0 and self:GetStringHeight() or 600
+    local height = self:GetRegions():GetHeight() or 600 -- Fallback to font height or fixed value
     self:SetHeight(height)
     exportScrollFrame:UpdateScrollChildRect()
 end)
@@ -150,7 +150,7 @@ end
 local function GetInventoryItems()
     local inventoryText = "--- Inventory Items ---\n"
     exportData.inventory = {}
-    for bagID = 0, 4 do -- Bags 0-4
+    for bagID = 0, 4 do
         local numSlots = C_Container.GetContainerNumSlots(bagID)
         for slot = 1, numSlots do
             local itemLink = C_Container.GetContainerItemLink(bagID, slot)
@@ -160,7 +160,7 @@ local function GetInventoryItems()
                 local quantity = itemInfo and itemInfo.stackCount or 1
                 local itemType = select(6, GetItemInfo(itemLink)) or "Unknown"
                 local isGear = itemType == "Weapon" or itemType == "Armor"
-                local slotKey = tostring(bagID) .. "-" .. tostring(slot) -- Unique key for JSON
+                local slotKey = tostring(bagID) .. "-" .. tostring(slot)
                 if isGear then
                     local itemLevel = GetDetailedItemLevelInfo(itemLink) or "N/A"
                     local upgradeInfo = "N/A"
@@ -195,7 +195,7 @@ local function GetInventoryItems()
                         quantity = quantity
                     }
                 end
-                inventoryText = inventoryText .. string.format("Bag %d Slot %d: %s (Qty: %d)\n", bagID, slot, itemName or "Unknown", quantity)
+                inventoryText = inventoryText .. string.format("Bag %d Slot %d: %s (Qty: %d)\n", bagID, slot, itemName, quantity)
             end
         end
     end
@@ -262,11 +262,18 @@ SlashCmdList["MYGEARTRACKER"] = function(msg)
     end
 end
 
-SLASH_MYGEAREXPORT1 = "/mgtexport"
-SlashCmdList["MYGEAREXPORT"] = function()
+local function UpdateExportUI(retryCount)
+    retryCount = retryCount or 0
     UpdateUI()
     GetInventoryItems() -- Populate inventory data
     local overallILvl, equippedILvl = GetAverageItemLevel()
+    local hasUnknown = false
+    for _, item in pairs(exportData.inventory) do
+        if item.name == "Unknown Item" then
+            hasUnknown = true
+            break
+        end
+    end
     local jsonData = {
         character = {
             name = UnitName("player"),
@@ -284,5 +291,14 @@ SlashCmdList["MYGEAREXPORT"] = function()
     end
     local exportString = to_json(jsonData)
     exportTextArea:SetText(exportString)
-    exportFrame:Show()
+    exportScrollFrame:UpdateScrollChildRect() -- Force scroll update
+    exportFrame:Show() -- Ensure frame redraws
+    if hasUnknown and retryCount < 5 then -- Max 5 retries
+        C_Timer.After(1, function() UpdateExportUI(retryCount + 1) end)
+    end
+end
+
+SLASH_MYGEAREXPORT1 = "/mgtexport"
+SlashCmdList["MYGEAREXPORT"] = function()
+    UpdateExportUI()
 end
