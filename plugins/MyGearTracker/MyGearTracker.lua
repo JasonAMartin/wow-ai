@@ -1,5 +1,8 @@
 -- Saved variable to store equipped curios
-local addonName = "MyGearTracker" -- Replace with your addon name
+local addonName = "MyGearTracker"
+
+print("MyGearTracker loaded, checking ExportTalents:", ExportTalents and "found" or "not found")
+
 local defaults = {
     equippedCurios = {
         combat = "Unknown Combat Curio (Rank 1/4)",
@@ -18,13 +21,16 @@ local function InitializeDB()
     end
 end
 
--- Event handler
--- Event frame to update curios when changed in UI
+-- Event handler frame
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("ADDON_LOADED")
+eventFrame:RegisterEvent("PLAYER_LOGIN") -- Added to ensure talents load after full login
 eventFrame:SetScript("OnEvent", function(self, event, arg1)
     if event == "ADDON_LOADED" and arg1 == addonName then
         InitializeDB()
+    elseif event == "PLAYER_LOGIN" then
+        -- Check ExportTalents availability after login
+        print("PLAYER_LOGIN: ExportTalents now", ExportTalents and "found" or "not found")
     end
 end)
 
@@ -63,7 +69,7 @@ textArea:SetMaxLetters(0)
 scrollFrame:SetScrollChild(textArea)
 
 textArea:SetScript("OnTextChanged", function(self)
-    local height = self:GetRegions():GetHeight() or 600 -- Fallback to font height or fixed value
+    local height = self:GetRegions():GetHeight() or 600
     self:SetHeight(height)
     scrollFrame:UpdateScrollChildRect()
 end)
@@ -103,7 +109,7 @@ exportTextArea:SetMaxLetters(0)
 exportScrollFrame:SetScrollChild(exportTextArea)
 
 exportTextArea:SetScript("OnTextChanged", function(self)
-    local height = self:GetRegions():GetHeight() or 600 -- Fallback to font height or fixed value
+    local height = self:GetRegions():GetHeight() or 600
     self:SetHeight(height)
     exportScrollFrame:UpdateScrollChildRect()
 end)
@@ -119,7 +125,7 @@ local exportData = {}
 local function GetTooltipRank(frame)
     GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
     GameTooltip:ClearLines()
-    frame:GetScript("OnEnter")(frame) -- Trigger OnEnter
+    frame:GetScript("OnEnter")(frame)
     local tooltipRank
     for i = 1, GameTooltip:NumLines() do
         local right = _G["GameTooltipTextRight" .. i]
@@ -216,10 +222,10 @@ function GetBrannInfo()
     -- Level: Map from reputation (Faction ID 2615)
     local repInfo = C_Reputation.GetFactionDataByID(2615)
     if repInfo and repInfo.currentReactionThreshold then
-        local totalXP = repInfo.currentReactionThreshold -- e.g., 32500
-        local xpPerLevel = 42000 / 25 -- 1680
+        local totalXP = repInfo.currentReactionThreshold
+        local xpPerLevel = 42000 / 25
         local baseLevel = math.floor(totalXP / xpPerLevel) + 1
-        brannInfo.level = math.min(baseLevel + 1, 25) -- Offset to match 21
+        brannInfo.level = math.min(baseLevel + 1, 25)
     else
         brannInfo.level = 21
     end
@@ -257,7 +263,6 @@ local function PrintBrannInfo()
     end
 end
 
-
 -- Gear Info with Upgrade Status and Enchant Info
 local function GetGearInfo()
     local gearText = "--- Equipped Gear ---\n"
@@ -293,27 +298,22 @@ local function GetGearInfo()
                             upgradeInfo = tier.. " ".. current.. "/".. max
                         end
 
-                        -- Check for enchant info (new generic pattern)
-                        if text:match("^Enchanted:") then -- Match lines starting with "Enchanted:"
-                            enchantName = text:gsub("^Enchanted: ", "") -- Remove the "Enchanted: " prefix
+                        -- Check for enchant info
+                        if text:match("^Enchanted:") then
+                            enchantName = text:gsub("^Enchanted: ", "")
                             print("Enchant found:", enchantName)
-
-                            -- Remove extra characters from enchantName
                             enchantName = enchantName:gsub("|A.*|a", "")
                         end
                     end
                 end
             end
 
-            -- Add gear info to gearText
             gearText = gearText.. string.format("Slot %d: %s (iLvl: %s, Upgrade: %s, Enchant: %s)\n", slot, itemName, itemLevel, upgradeInfo, enchantName or "None")
-
-            -- Add gear info to exportData.gear
             exportData.gear[slot] = {
                 name = itemName,
                 itemLevel = itemLevel,
                 upgrade = upgradeInfo,
-                enchant = enchantName -- Allow blank enchant values
+                enchant = enchantName
             }
         end
     end
@@ -399,34 +399,34 @@ local function GetCharacterStats()
 
     -- Attributes Section
     if class == "HUNTER" or class == "ROGUE" or class == "SHAMAN" or class == "MONK" or class == "DEMONHUNTER" then
-        exportData.stats.agility = UnitStat("player", 2) -- STAT_AGILITY
+        exportData.stats.agility = UnitStat("player", 2)
     elseif class == "WARRIOR" or class == "PALADIN" or class == "DEATHKNIGHT" then
-        exportData.stats.strength = UnitStat("player", 1) -- STAT_STRENGTH
+        exportData.stats.strength = UnitStat("player", 1)
     elseif class == "MAGE" or class == "PRIEST" or class == "WARLOCK" or class == "DRUID" or class == "EVOKER" then
-        exportData.stats.intellect = UnitStat("player", 4) -- STAT_INTELLECT
+        exportData.stats.intellect = UnitStat("player", 4)
     end
-    exportData.stats.stamina = UnitStat("player", 3) -- STAT_STAMINA
-    exportData.stats.armor = select(2, UnitArmor("player")) -- Base Armor value
+    exportData.stats.stamina = UnitStat("player", 3)
+    exportData.stats.armor = select(2, UnitArmor("player"))
 
     -- Enhancements Section (all specs get these, as percentages)
-    exportData.stats.criticalStrike = GetCritChance() -- Percentage
-    exportData.stats.haste = GetHaste() -- Percentage
-    exportData.stats.mastery = GetMasteryEffect() -- Percentage (already correct)
-    exportData.stats.versatility = GetCombatRatingBonus(29) -- CR_VERSATILITY_DAMAGE_DONE, Percentage
+    exportData.stats.criticalStrike = GetCritChance()
+    exportData.stats.haste = GetHaste()
+    exportData.stats.mastery = GetMasteryEffect()
+    exportData.stats.versatility = GetCombatRatingBonus(29)
 
     -- Spec-specific Enhancements (tank stats)
-    if class == "WARRIOR" and specID == 73 or  -- Protection Warrior
-       class == "PALADIN" and specID == 66 or  -- Protection Paladin
-       class == "DEATHKNIGHT" and specID == 250 or  -- Blood Death Knight
-       class == "MONK" and specID == 268 or  -- Brewmaster Monk
-       class == "DRUID" and specID == 104 or  -- Guardian Druid
-       class == "DEMONHUNTER" and specID == 581 then  -- Vengeance Demon Hunter
-        exportData.stats.dodge = GetDodgeChance() -- Percentage
-        exportData.stats.parry = GetParryChance() -- Percentage
-        exportData.stats.block = GetBlockChance() -- Percentage
+    if class == "WARRIOR" and specID == 73 or
+       class == "PALADIN" and specID == 66 or
+       class == "DEATHKNIGHT" and specID == 250 or
+       class == "MONK" and specID == 268 or
+       class == "DRUID" and specID == 104 or
+       class == "DEMONHUNTER" and specID == 581 then
+        exportData.stats.dodge = GetDodgeChance()
+        exportData.stats.parry = GetParryChance()
+        exportData.stats.block = GetBlockChance()
     end
 
-    -- Format for text display (not used in JSON, just for consistency)
+    -- Format for text display (not used in JSON)
     if exportData.stats.strength then statsText = statsText.. string.format("Strength: %d\n", exportData.stats.strength) end
     if exportData.stats.agility then statsText = statsText.. string.format("Agility: %d\n", exportData.stats.agility) end
     if exportData.stats.intellect then statsText = statsText.. string.format("Intellect: %d\n", exportData.stats.intellect) end
@@ -443,10 +443,8 @@ local function GetCharacterStats()
     return statsText
 end
 
--- Get spec name by ID (placeholder for future use)
+-- Get spec name by ID
 function GetSpecNameByID(specID)
-    print("Calling spec list with")
-    print(specID)
     local specList = {
         [250] = "Blood", [251] = "Frost", [252] = "Unholy",
         [577] = "Havoc", [581] = "Vengeance",
@@ -462,7 +460,7 @@ function GetSpecNameByID(specID)
         [71] = "Arms", [72] = "Fury", [73] = "Protection",
         [1467] = "Devastation", [1468] = "Preservation", [1473] = "Augmentation"
     }
-    return specID -- Pass-through for now
+    return specList[specID] or "Unknown Spec" -- Fixed to return name
 end
 
 -- Update UI
@@ -492,22 +490,12 @@ local function to_json(tbl, indent)
     return str
 end
 
--- Slash commands
-SLASH_MYGEARTRACKER1 = "/mgt"
-SlashCmdList["MYGEARTRACKER"] = function(msg)
-    if uiFrame:IsShown() then
-        uiFrame:Hide()
-    else
-        UpdateUI()
-        uiFrame:Show()
-    end
-end
-
+-- Update Export UI with talents from ExportTalents
 local function UpdateExportUI(retryCount)
     retryCount = retryCount or 0
     UpdateUI()
-    GetInventoryItems() -- Populate inventory data
-    GetCharacterStats() -- Populate stats data
+    GetInventoryItems()
+    GetCharacterStats()
     local overallILvl, equippedILvl = GetAverageItemLevel()
     local hasUnknown = false
     for _, item in pairs(exportData.inventory) do
@@ -516,6 +504,50 @@ local function UpdateExportUI(retryCount)
             break
         end
     end
+
+    -- Get talent data from ExportTalents, delayed until PLAYER_LOGIN
+    local talentData = {}
+    if ExportTalents and ExportTalents.GetTalentData then
+        talentData = ExportTalents.GetTalentData()
+    else
+        talentData = {
+            heroSpec = "Unknown",
+            talents = {{name = "ExportTalents addon not loaded yet", ranks = "0/0"}},
+            heroTalents = {}
+        }
+        -- Wait for PLAYER_LOGIN to retry
+        eventFrame:RegisterEvent("PLAYER_LOGIN")
+        eventFrame:SetScript("OnEvent", function(self, event, ...)
+            if event == "PLAYER_LOGIN" then
+                if ExportTalents and ExportTalents.GetTalentData then
+                    talentData = ExportTalents.GetTalentData()
+                    local jsonData = {
+                        character = {
+                            name = UnitName("player"),
+                            class = select(2, UnitClass("player")),
+                            spec = GetSpecNameByID(select(2, GetSpecializationInfo(GetSpecialization())) or 0),
+                            level = UnitLevel("player"),
+                            overallItemLevel = math.floor(equippedILvl),
+                            gear = exportData.gear,
+                            talents = talentData,
+                            currencies = exportData.currencies,
+                            inventory = exportData.inventory,
+                            stats = exportData.stats,
+                            brann = GetBrannInfo()
+                        }
+                    }
+                    local exportString = to_json(jsonData)
+                    exportTextArea:SetText(exportString)
+                    exportScrollFrame:UpdateScrollChildRect()
+                    exportFrame:Show()
+                end
+                eventFrame:UnregisterEvent("PLAYER_LOGIN") -- Clean up
+            elseif event == "ADDON_LOADED" and arg1 == addonName then
+                InitializeDB()
+            end
+        end)
+    end
+
     local jsonData = {
         character = {
             name = UnitName("player"),
@@ -523,22 +555,31 @@ local function UpdateExportUI(retryCount)
             spec = GetSpecNameByID(select(2, GetSpecializationInfo(GetSpecialization())) or 0),
             level = UnitLevel("player"),
             overallItemLevel = math.floor(equippedILvl),
-            gear = {},
+            gear = exportData.gear,
+            talents = talentData,
             currencies = exportData.currencies,
             inventory = exportData.inventory,
             stats = exportData.stats,
-            brann = GetBrannInfo() -- Add Brann info to the JSON output
-        },
+            brann = GetBrannInfo()
+        }
     }
-    for k, v in pairs(exportData.gear) do
-        jsonData.character.gear["slot".. k] = v
-    end
     local exportString = to_json(jsonData)
     exportTextArea:SetText(exportString)
-    exportScrollFrame:UpdateScrollChildRect() -- Force scroll update
-    exportFrame:Show() -- Ensure frame redraws
-    if hasUnknown and retryCount < 5 then -- Max 5 retries
+    exportScrollFrame:UpdateScrollChildRect()
+    exportFrame:Show()
+    if hasUnknown and retryCount < 5 then
         C_Timer.After(1, function() UpdateExportUI(retryCount + 1) end)
+    end
+end
+
+-- Slash commands
+SLASH_MYGEARTRACKER1 = "/mgt"
+SlashCmdList["MYGEARTRACKER"] = function(msg)
+    if uiFrame:IsShown() then
+        uiFrame:Hide()
+    else
+        UpdateUI()
+        uiFrame:Show()
     end
 end
 

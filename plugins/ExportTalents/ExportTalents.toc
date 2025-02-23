@@ -3,5 +3,4 @@
 ## Notes: Exports talent and hero talent choices.
 ## Version: 1.0
 ## Author: Kbyte
-
 ExportTalents.lua

@@ -21,6 +21,9 @@ frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
 frame.title:SetPoint("TOP", 0, -5)
 frame.title:SetText("Export Talents")
 
+-- Namespace for the addon
+ExportTalents = ExportTalents or {}
+
 local function ShowOutputInWindow(text)
     editBox:SetText(text)
     frame:Show()
@@ -28,7 +31,8 @@ local function ShowOutputInWindow(text)
     editBox:HighlightText()
 end
 
-local function ExportTalents()
+-- Fixed GetTalentData function (removed extra parentheses)
+function ExportTalents.GetTalentData()
     -- Known Hero Talent Spell IDs for Paladin, Druid, and Hunter specs
     local heroTalentSpellIDs = {
         -- Lightsmith (803) - Prot/Holy Paladin
@@ -64,15 +68,15 @@ local function ExportTalents()
 
     -- Hero Spec ID to Name Mapping
     local heroSpecNames = {
-        [41] = "Lightsmith",          -- Protection/Holy Paladin
-        [42] = "Herald of the Sun",   -- Holy/Retribution Paladin
-        [45] = "Templar",             -- Retribution/Protection Paladin
-        [46] = "Druid of the Claw",   -- Guardian/Feral Druid
-        [47] = "Wildstalker",         -- Guardian/Restoration/Feral Druid
-        [48] = "Keeper of the Grove", -- Restoration/Balance Druid
-        [44] = "Elune’s Chosen",      -- Balance/Guardian Druid
-        [43] = "Pack Leader",         -- Beast Mastery/Survival Hunter
-        [49] = "Dark Ranger",         -- Beast Mastery/Marksmanship Hunter
+        [41] = "Lightsmith",
+        [42] = "Herald of the Sun",
+        [45] = "Templar",
+        [46] = "Druid of the Claw",
+        [47] = "Wildstalker",
+        [48] = "Keeper of the Grove",
+        [44] = "Elune’s Chosen",
+        [43] = "Pack Leader",
+        [49] = "Dark Ranger",
     }
 
     -- Collect talents and hero talents
@@ -82,15 +86,13 @@ local function ExportTalents()
     -- Get active talent tree information
     local specID = PlayerUtil.GetCurrentSpecID()
     if not specID then
-        ShowOutputInWindow('{"error": "Could not retrieve current spec ID"}')
-        return
+        return { heroSpec = "Unknown Hero Spec", talents = {{name = "Error: Could not retrieve spec ID", ranks = "0/0"}}, heroTalents = {} }
     end
     local specName = GetSpecializationNameForSpecID(specID)
 
     local configID = C_ClassTalents.GetActiveConfigID()
     if not configID then
-        ShowOutputInWindow('{"error": "No active config ID found"}')
-        return
+        return { heroSpec = "Unknown Hero Spec", talents = {{name = "Error: No active config ID", ranks = "0/0"}}, heroTalents = {} }
     end
 
     local heroSpecID = C_ClassTalents.GetActiveHeroTalentSpec()
@@ -136,30 +138,33 @@ local function ExportTalents()
         talents = {{name = "No Talent Tree Found", ranks = "0/0"}}
     end
 
-    -- Build JSON output with heroSpec
-    local jsonOutput = '{\n  "heroSpec": "' .. heroSpecName .. '",\n  "talents": [\n'
-    for i, talent in ipairs(talents) do
-        jsonOutput = jsonOutput .. '    {"name": "' .. talent.name .. '", "ranks": "' .. talent.ranks .. '"}'
-        if i < #talents then
-            jsonOutput = jsonOutput .. ','
-        end
-        jsonOutput = jsonOutput .. '\n'
-    end
-    jsonOutput = jsonOutput .. '  ],\n  "heroTalents": [\n'
-    for i, heroTalent in ipairs(heroTalents) do
-        jsonOutput = jsonOutput .. '    {"name": "' .. heroTalent.name .. '", "ranks": "' .. heroTalent.ranks .. '"}'
-        if i < #heroTalents then
-            jsonOutput = jsonOutput .. ','
-        end
-        jsonOutput = jsonOutput .. '\n'
-    end
-    jsonOutput = jsonOutput .. '  ]\n}'
-
-    ShowOutputInWindow(jsonOutput)
+    return {
+        heroSpec = heroSpecName,
+        talents = talents,
+        heroTalents = heroTalents
+    }
 end
 
 -- Slash command handler
 SLASH_EXPORTTALENTS1 = "/exporttalents"
 SlashCmdList["EXPORTTALENTS"] = function(msg)
-    ExportTalents()
+    local data = ExportTalents.GetTalentData()
+    local jsonOutput = '{\n  "heroSpec": "' .. data.heroSpec .. '",\n  "talents": [\n'
+    for i, talent in ipairs(data.talents) do
+        jsonOutput = jsonOutput .. '    {"name": "' .. talent.name .. '", "ranks": "' .. talent.ranks .. '"}'
+        if i < #data.talents then
+            jsonOutput = jsonOutput .. ','
+        end
+        jsonOutput = jsonOutput .. '\n'
+    end
+    jsonOutput = jsonOutput .. '  ],\n  "heroTalents": [\n'
+    for i, heroTalent in ipairs(data.heroTalents) do
+        jsonOutput = jsonOutput .. '    {"name": "' .. heroTalent.name .. '", "ranks": "' .. heroTalent.ranks .. '"}'
+        if i < #data.heroTalents then
+            jsonOutput = jsonOutput .. ','
+        end
+        jsonOutput = jsonOutput .. '\n'
+    end
+    jsonOutput = jsonOutput .. '  ]\n}'
+    ShowOutputInWindow(jsonOutput)
 end
