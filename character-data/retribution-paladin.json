@@ -1,0 +1,499 @@
+{
+    "character": {
+      "talents": {
+        "heroSpec": "Templar",
+        "talents": {
+          "1": {
+            "name": "Faith's Armor",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Divine Toll",
+            "ranks": "1/1"
+          },
+          "3": {
+            "name": "Hammer of Wrath",
+            "ranks": "1/1"
+          },
+          "4": {
+            "name": "Rush of Light",
+            "ranks": "1/1"
+          },
+          "5": {
+            "name": "Light of Justice",
+            "ranks": "1/1"
+          },
+          "6": {
+            "name": "Righteous Cause",
+            "ranks": "1/1"
+          },
+          "7": {
+            "name": "Wake of Ashes",
+            "ranks": "1/1"
+          },
+          "8": {
+            "name": "Blade of Justice",
+            "ranks": "1/1"
+          },
+          "9": {
+            "name": "Divine Storm",
+            "ranks": "1/1"
+          },
+          "10": {
+            "name": "Light's Celerity",
+            "ranks": "1/1"
+          },
+          "11": {
+            "name": "Justicar's Vengeance",
+            "ranks": "1/1"
+          },
+          "12": {
+            "name": "Improved Judgment",
+            "ranks": "1/1"
+          },
+          "13": {
+            "name": "Highlord's Wrath",
+            "ranks": "1/1"
+          },
+          "14": {
+            "name": "Adjudication",
+            "ranks": "1/1"
+          },
+          "15": {
+            "name": "Divine Auxiliary",
+            "ranks": "1/1"
+          },
+          "16": {
+            "name": "Execution Sentence",
+            "ranks": "1/1"
+          },
+          "17": {
+            "name": "Divine Arbiter",
+            "ranks": "1/1"
+          },
+          "18": {
+            "name": "Blessed Champion",
+            "ranks": "1/1"
+          },
+          "19": {
+            "name": "Avenging Wrath",
+            "ranks": "1/1"
+          },
+          "20": {
+            "name": "Blade of Vengeance",
+            "ranks": "1/1"
+          },
+          "21": {
+            "name": "Executioner's Will",
+            "ranks": "1/1"
+          },
+          "22": {
+            "name": "Radiant Glory",
+            "ranks": "1/1"
+          },
+          "23": {
+            "name": "Shield of Vengeance",
+            "ranks": "1/1"
+          },
+          "24": {
+            "name": "Lay on Hands",
+            "ranks": "1/1"
+          },
+          "25": {
+            "name": "Auras of the Resolute",
+            "ranks": "1/1"
+          },
+          "26": {
+            "name": "Fist of Justice",
+            "ranks": "1/1"
+          },
+          "27": {
+            "name": "Greater Judgment",
+            "ranks": "1/1"
+          },
+          "28": {
+            "name": "Rebuke",
+            "ranks": "1/1"
+          },
+          "29": {
+            "name": "Cavalier",
+            "ranks": "1/1"
+          },
+          "30": {
+            "name": "Judgment of Light",
+            "ranks": "1/1"
+          },
+          "31": {
+            "name": "Holy Aegis",
+            "ranks": "1/1"
+          },
+          "32": {
+            "name": "Unbreakable Spirit",
+            "ranks": "1/1"
+          },
+          "33": {
+            "name": "Seal of Might",
+            "ranks": "2/2"
+          },
+          "34": {
+            "name": "Of Dusk and Dawn",
+            "ranks": "1/1"
+          },
+          "35": {
+            "name": "Obduracy",
+            "ranks": "1/1"
+          },
+          "36": {
+            "name": "Blessing of Freedom",
+            "ranks": "1/1"
+          },
+          "37": {
+            "name": "Divine Steed",
+            "ranks": "1/1"
+          },
+          "38": {
+            "name": "Burn to Ash",
+            "ranks": "1/1"
+          },
+          "39": {
+            "name": "Sanctify",
+            "ranks": "1/1"
+          },
+          "40": {
+            "name": "Expurgation",
+            "ranks": "1/1"
+          },
+          "41": {
+            "name": "Improved Blade of Justice",
+            "ranks": "1/1"
+          },
+          "42": {
+            "name": "Seething Flames",
+            "ranks": "1/1"
+          },
+          "43": {
+            "name": "Judge, Jury and Executioner",
+            "ranks": "1/1"
+          },
+          "44": {
+            "name": "Lightforged Blessing",
+            "ranks": "1/1"
+          },
+          "45": {
+            "name": "Sanctified Plates",
+            "ranks": "2/2"
+          },
+          "46": {
+            "name": "Divine Wrath",
+            "ranks": "1/1"
+          },
+          "47": {
+            "name": "Blades of Light",
+            "ranks": "1/1"
+          },
+          "48": {
+            "name": "Punishment",
+            "ranks": "1/1"
+          },
+          "49": {
+            "name": "Divine Reach",
+            "ranks": "1/1"
+          },
+          "50": {
+            "name": "Empyrean Legacy",
+            "ranks": "1/1"
+          },
+          "51": {
+            "name": "Unbound Freedom",
+            "ranks": "1/1"
+          },
+          "52": {
+            "name": "Divine Resonance",
+            "ranks": "1/1"
+          },
+          "53": {
+            "name": "Templar Strikes",
+            "ranks": "1/1"
+          },
+          "54": {
+            "name": "Healing Hands",
+            "ranks": "1/1"
+          },
+          "55": {
+            "name": "Dawnlight",
+            "ranks": "1/1"
+          },
+          "56": {
+            "name": "Higher Calling",
+            "ranks": "1/1"
+          },
+          "57": {
+            "name": "Light's Guidance",
+            "ranks": "1/1"
+          },
+          "58": {
+            "name": "Unrelenting Charger",
+            "ranks": "1/1"
+          },
+          "59": {
+            "name": "Sanctification",
+            "ranks": "1/1"
+          },
+          "60": {
+            "name": "Unknown Talent",
+            "ranks": "1/1"
+          },
+          "61": {
+            "name": "Vengeful Wrath",
+            "ranks": "2/2"
+          },
+          "62": {
+            "name": "Divine Spurs",
+            "ranks": "1/1"
+          },
+          "63": {
+            "name": "Empyreal Ward",
+            "ranks": "1/1"
+          },
+          "64": {
+            "name": "Holy Reprieve",
+            "ranks": "1/1"
+          },
+          "65": {
+            "name": "Lightbearer",
+            "ranks": "1/1"
+          },
+          "66": {
+            "name": "Inspired Guard",
+            "ranks": "1/1"
+          },
+          "67": {
+            "name": "Lead the Charge",
+            "ranks": "1/1"
+          }
+        },
+        "heroTalents": {
+          "1": {
+            "name": "Wrathful Descent",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Sacrosanct Crusade",
+            "ranks": "1/1"
+          },
+          "3": {
+            "name": "Light's Deliverance",
+            "ranks": "1/1"
+          },
+          "4": {
+            "name": "Zealous Vindication",
+            "ranks": "1/1"
+          },
+          "5": {
+            "name": "Hammerfall",
+            "ranks": "1/1"
+          },
+          "6": {
+            "name": "Undisputed Ruling",
+            "ranks": "1/1"
+          },
+          "7": {
+            "name": "Shake the Heavens",
+            "ranks": "1/1"
+          }
+        }
+      },
+      "currencies": {
+        "Trader's Tender": {
+          "maxQuantity": 0,
+          "quantity": 4670
+        },
+        "Emerald Dewdrop": {
+          "maxQuantity": 0,
+          "quantity": 2630
+        },
+        "Weathered Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 7
+        },
+        "Conquest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Flightstones": {
+          "maxQuantity": 2000,
+          "quantity": 0
+        },
+        "Undercoin": {
+          "maxQuantity": 0,
+          "quantity": 2059
+        },
+        "Carved Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 129
+        },
+        "Elemental Overflow": {
+          "maxQuantity": 0,
+          "quantity": 30
+        },
+        "Flame-Blessed Iron": {
+          "maxQuantity": 0,
+          "quantity": 180
+        },
+        "Honor": {
+          "maxQuantity": 15000,
+          "quantity": 0
+        },
+        "Kej": {
+          "maxQuantity": 0,
+          "quantity": 3074
+        },
+        "Resonance Crystals": {
+          "maxQuantity": 0,
+          "quantity": 7054
+        },
+        "Whelpling's Awakened Crest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Restored Coffer Key": {
+          "maxQuantity": 0,
+          "quantity": 3
+        },
+        "Paracausal Flakes": {
+          "maxQuantity": 0,
+          "quantity": 3158
+        },
+        "Valorstones": {
+          "maxQuantity": 2000,
+          "quantity": 107
+        },
+        "Dream Infusion": {
+          "maxQuantity": 0,
+          "quantity": 2
+        },
+        "Dragon Isles Supplies": {
+          "maxQuantity": 0,
+          "quantity": 12143
+        },
+        "Drake's Awakened Crest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Bloody Tokens": {
+          "maxQuantity": 200000,
+          "quantity": 0
+        },
+        "Residual Memories": {
+          "maxQuantity": 0,
+          "quantity": 3263
+        },
+        "Timewarped Badge": {
+          "maxQuantity": 0,
+          "quantity": 200
+        }
+      },
+      "class": "PALADIN",
+      "spec": "Retribution",
+      "name": "Alandalian",
+      "stats": {
+        "criticalStrike": 14.675714492798,
+        "versatility": 6.9666666984558,
+        "mastery": 24.647144317627,
+        "armor": 82883,
+        "haste": 16.206062316895,
+        "strength": 47506,
+        "stamina": 248525
+      },
+      "overallItemLevel": 593,
+      "level": 80,
+      "gear": {
+        "1": {
+          "itemLevel": 590,
+          "name": "Sedimentary Helm of the Feverflare",
+          "upgrade": "Veteran 3/8"
+        },
+        "2": {
+          "itemLevel": 584,
+          "name": "Conch Collector's Locket",
+          "upgrade": "Veteran 1/8"
+        },
+        "3": {
+          "itemLevel": 590,
+          "name": "Earthen Landlubber's Mantle",
+          "upgrade": "Veteran 3/8"
+        },
+        "5": {
+          "enchant": "Crystalline Radiance ",
+          "itemLevel": 590,
+          "name": "Earthen Landlubber's Breastplate",
+          "upgrade": "Veteran 3/8"
+        },
+        "6": {
+          "itemLevel": 590,
+          "name": "Sedimentary Girdle of the Feverflare",
+          "upgrade": "Veteran 3/8"
+        },
+        "7": {
+          "enchant": "+930 Agility/Strength & +895 Stamina ",
+          "itemLevel": 593,
+          "name": "Earthen Landlubber's Legguards",
+          "upgrade": "Veteran 4/8"
+        },
+        "8": {
+          "itemLevel": 593,
+          "name": "Secret-Dredger's Sabatons",
+          "upgrade": "Veteran 4/8"
+        },
+        "9": {
+          "enchant": "+850 Speed ",
+          "itemLevel": 584,
+          "name": "Earthen Landlubber's Armplates",
+          "upgrade": "Veteran 1/8"
+        },
+        "10": {
+          "itemLevel": 587,
+          "name": "Sedimentary Gauntlets of the Aurora",
+          "upgrade": "Veteran 2/8"
+        },
+        "11": {
+          "enchant": "+190 Haste ",
+          "itemLevel": 655,
+          "name": "Cyrce's Circlet",
+          "upgrade": "N/A"
+        },
+        "12": {
+          "enchant": "+190 Haste ",
+          "itemLevel": 584,
+          "name": "Scurvy Sailor's Ring",
+          "upgrade": "Veteran 1/8"
+        },
+        "13": {
+          "itemLevel": 584,
+          "name": "Concoction: Kiss of Death",
+          "upgrade": "Veteran 1/8"
+        },
+        "14": {
+          "itemLevel": 584,
+          "name": "Silken Chain Weaver",
+          "upgrade": "Veteran 1/8"
+        },
+        "15": {
+          "enchant": "Chant of Burrowing Rapidity ",
+          "itemLevel": 584,
+          "name": "Earthen Scallywag's Cloak",
+          "upgrade": "Veteran 1/8"
+        },
+        "16": {
+          "itemLevel": 593,
+          "name": "Earthen Landlubber's Sword",
+          "upgrade": "Veteran 4/8"
+        },
+        "17": {
+          "itemLevel": 606,
+          "name": "Earthen Landlubber's Shield",
+          "upgrade": "Veteran 8/8"
+        }
+      }
+    }
+  }

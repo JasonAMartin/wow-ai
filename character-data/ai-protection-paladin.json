@@ -1,0 +1,207 @@
+{
+    "character": {
+      "class": "PALADIN",
+      "name": "Protection Paladin",
+      "overallItemLevel": 589-595,
+      "level": 80,
+      "spec": "Protection",
+      "gear": {
+        "slot1": {
+          "itemLevel": 606,
+          "name": "Earthen Islander's Coif",
+          "upgrade": "Veteran 8/8"
+        },
+        "slot2": {
+          "itemLevel": 584,
+          "name": "Moneyed Mariner's Pendant",
+          "upgrade": "Veteran 1/8"
+        },
+        "slot3": {
+          "itemLevel": 597,
+          "name": "Earthen Islander's Shoulderguards",
+          "upgrade": "Champion 1/8"
+        },
+        "slot5": {
+          "itemLevel": 587,
+          "name": "Earthen Islander's Chainmail",
+          "upgrade": "Veteran 2/8",
+          "enchant": "Crystalline Radiance (quality 2/3)"
+        },
+        "slot6": {
+          "itemLevel": 584,
+          "name": "Chitinoid Belt of the Feverflare",
+          "upgrade": "Veteran 1/8"
+        },
+        "slot7": {
+          "itemLevel": 584,
+          "name": "Earthen Islander's Greaves",
+          "upgrade": "Veteran 1/8",
+          "enchant": "+650 Agility/Strength & +625 Stamina (quality 1/3)"
+        },
+        "slot8": {
+          "itemLevel": 584,
+          "name": "Earthen Islander's Striders",
+          "upgrade": "Veteran 1/8",
+          "enchant": "Plainsrunner's Breeze (quality 2/3)"
+        },
+        "slot9": {
+          "itemLevel": 584,
+          "name": "Earthen Islander's Bracers",
+          "upgrade": "Veteran 1/8",
+          "enchant": "+925 Avoidance (quality 2/3)"
+        },
+        "slot10": {
+          "itemLevel": 584,
+          "name": "Chitinoid Grips of the Fireflash",
+          "upgrade": "Veteran 1/8"
+        },
+        "slot11": {
+          "itemLevel": 584,
+          "name": "Scurvy Sailor's Ring",
+          "upgrade": "Veteran 1/8",
+          "enchant": "+315 Haste (quality 3/3)",
+          "gems": ["Elusive Blasphemite", "Masterful Emerald"]
+        },
+        "slot12": {
+          "itemLevel": 658,
+          "name": "Cyrce's Circlet",
+          "upgrade": "N/A",
+          "enchant": "+315 Haste (quality 3/3)",
+          "gems": ["Thunderlord's Crackling Citrine", "Seabed Leviathan's Citrine", "Windsinger's Runed Citrine"]
+        },
+        "slot13": {
+          "itemLevel": 593,
+          "name": "Concoction: Kiss of Death",
+          "upgrade": "Veteran 4/8"
+        },
+        "slot14": {
+          "itemLevel": 551,
+          "name": "Arathi Demolition Charge",
+          "upgrade": "N/A"
+        },
+        "slot15": {
+          "itemLevel": 584,
+          "name": "Earthen Islander's Shawl",
+          "upgrade": "Veteran 1/8",
+          "enchant": "Chant of Winged Grace (quality 2/3)"
+        },
+        "slot16": {
+          "itemLevel": 606,
+          "name": "Earthen Deckhand's Blunderbuss",
+          "upgrade": "Veteran 8/8",
+          "enchant": "Authority of the Depths (quality 3/3)"
+        }
+      },
+      "stats": {
+        "criticalStrike": 15%,
+        "haste": 16-18%,
+        "mastery": 17-20%,  # Mastery: Divine Bulwark
+        "versatility": 8-11%,
+        "speed": 8%,
+        "dodge": 3%,
+        "parry": 14%,
+        "block": 45-50%
+      },
+      "currencies": {
+        "Carved Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 109
+        },
+        "Flame-Blessed Iron": {
+          "maxQuantity": 0,
+          "quantity": 180
+        },
+        "Kej": {
+          "maxQuantity": 0,
+          "quantity": 3074
+        },
+        "Resonance Crystals": {
+          "maxQuantity": 0,
+          "quantity": 3992-4492
+        },
+        "Restored Coffer Key": {
+          "maxQuantity": 0,
+          "quantity": 1
+        },
+        "Valorstones": {
+          "maxQuantity": 2000,
+          "quantity": 34
+        },
+        "Weathered Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 21
+        }
+      },
+      "inventory": {
+        // Add inventory data if available from your addon export, similar to BM Hunter's JSON
+        // Example: "0-1": {"name": "Hearthstone", "quantity": 1}
+      }
+    },
+    "talents": {
+      "spec": [
+        "Avenger’s Shield",
+        "Judgment",
+        "Redoubt (1)",
+        "Blessed Hammer (2)",
+        "Bastion of Light (2)",
+        "Holy Shield (2)",
+        "Seraphim (2)",
+        "Sanctuary (2)",
+        "Ardent Defender (2)",
+        "Crusader’s Judgment (1)",
+        "Consecrated Ground (1)",
+        "Judgment of Light (1)",
+        "Bulwark of Order (1)",
+        "Guardian of Ancient Kings (2)",
+        "Last Defender (2)",
+        "Uther’s Guard (1)",
+        "Righteous Protector (1)"
+      ],
+      "class": [
+        "Lay on Hands",
+        "Blessing of Freedom",
+        "Cavalier (2)",
+        "Fist of Justice (1)",
+        "Divine Purpose (2)",
+        "Shield of Vengeance (2)",
+        "Blessing of Sacrifice (2)",
+        "Afterimage (1)"
+      ],
+      "hero": [
+        "Templar’s Verdict (2)",
+        "Templar’s Judgment (1)",
+        "Holy Avenger (1)",
+        "Zealous Vindication (2)",
+        "Bonds of Fellowship (2)",
+        "Endless Wrath (2)"
+      ]
+    },
+    "brann": {
+      "level": 21,
+      "combat_curio": "Light-Touched Idol (rank 1/4)",
+      "utility_curio": "Olden Seeker Relic (rank 3/4)"
+    },
+    "recent_delves": [
+      {
+        "name": "Mycomancer Cavern, Tier 4",
+        "boss": "Bogpiper",
+        "fight_time": "48 seconds",
+        "deaths": "None",
+        "brann_health": "Healthy"
+      },
+      {
+        "name": "Mycomancer Cavern, Tier 5",
+        "boss": "Bogpiper",
+        "fight_time": "98 seconds",
+        "deaths": "None",
+        "brann_health": "15% remaining"
+      },
+      {
+        "name": "Kriegval’s Rest, Tier 5",
+        "boss": "Kobold Guardian",
+        "fight_time": "101 seconds",
+        "deaths": "None",
+        "brann_health": "Healthy"
+      }
+    ]
+  }

@@ -1,0 +1,1187 @@
+{
+    "character": {
+      "inventory": {
+        "0-11": {
+          "name": "Empty Polyformic Acid Vial",
+          "quantity": 1
+        },
+        "3-23": {
+          "name": "Silk Doll",
+          "quantity": 1
+        },
+        "1-23": {
+          "name": "Earth-Encrusted Gem",
+          "quantity": 1
+        },
+        "2-23": {
+          "name": "Shadow Curfew Guidelines",
+          "quantity": 1
+        },
+        "1-21": {
+          "name": "Interdimensional Companion Repository",
+          "quantity": 5
+        },
+        "2-21": {
+          "name": "Care and Feeding of the Imperial Lynx",
+          "quantity": 1
+        },
+        "0-2": {
+          "name": "Dalaran Hearthstone",
+          "quantity": 1
+        },
+        "1-2": {
+          "name": "Animated Candle",
+          "quantity": 1
+        },
+        "2-2": {
+          "name": "Gyrating Gear",
+          "quantity": 6
+        },
+        "3-2": {
+          "name": "Ragefin Necrostaff",
+          "quantity": 1
+        },
+        "4-2": {
+          "itemLevel": 577,
+          "quantity": 1,
+          "name": "Torchbearer's Greaves",
+          "upgrade": "Adventurer 3/8"
+        },
+        "1-29": {
+          "name": "Ambivalent Amber",
+          "quantity": 5
+        },
+        "2-1": {
+          "name": "Safety Switch",
+          "quantity": 20
+        },
+        "1-1": {
+          "name": "Chipped Mandible",
+          "quantity": 8
+        },
+        "0-1": {
+          "name": "Hearthstone",
+          "quantity": 1
+        },
+        "2-27": {
+          "name": "Coffer Key Shard",
+          "quantity": 72
+        },
+        "0-5": {
+          "name": "Flask of Alchemical Chaos",
+          "quantity": 9
+        },
+        "1-5": {
+          "name": "Goblin Glider Kit",
+          "quantity": 10
+        },
+        "2-5": {
+          "name": "Legendary Skipper's Citrine",
+          "quantity": 1
+        },
+        "0-19": {
+          "name": "Deviously Deviled Eggs",
+          "quantity": 99
+        },
+        "1-19": {
+          "name": "Algari Repair Bot 11O",
+          "quantity": 3
+        },
+        "1-9": {
+          "name": "Radiant Echo",
+          "quantity": 3
+        },
+        "0-9": {
+          "name": "Earth-Encrusted Gem",
+          "quantity": 1
+        },
+        "0-4": {
+          "name": "Garrison Hearthstone",
+          "quantity": 1
+        },
+        "2-9": {
+          "name": "Fathomdweller's Runed Citrine",
+          "quantity": 1
+        },
+        "2-4": {
+          "name": "Felsteel Stabilizer",
+          "quantity": 2
+        },
+        "1-4": {
+          "name": "Janky's Finest",
+          "quantity": 1
+        },
+        "3-9": {
+          "name": "Plush Lynx",
+          "quantity": 1
+        },
+        "4-9": {
+          "itemLevel": 1,
+          "quantity": 1,
+          "name": "Slightly Singed Arathi Tabard",
+          "upgrade": "N/A"
+        },
+        "3-17": {
+          "name": "Bismuth Bitterling",
+          "quantity": 16
+        },
+        "4-7": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Scroll of Momentum",
+          "upgrade": "N/A"
+        },
+        "4-6": {
+          "itemLevel": 561,
+          "quantity": 1,
+          "name": "Quickwick Candlestick",
+          "upgrade": "Explorer 2/8"
+        },
+        "4-5": {
+          "itemLevel": 571,
+          "quantity": 1,
+          "name": "Shadowed Essence",
+          "upgrade": "Adventurer 1/8"
+        },
+        "4-4": {
+          "itemLevel": 400,
+          "quantity": 1,
+          "name": "Hollow Ring",
+          "upgrade": "N/A"
+        },
+        "4-3": {
+          "itemLevel": 577,
+          "quantity": 1,
+          "name": "Myconic Wrap",
+          "upgrade": "Adventurer 3/8"
+        },
+        "4-1": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Torchbearer's Cinch",
+          "upgrade": "N/A"
+        },
+        "2-15": {
+          "name": "Stonehide Leather Sample",
+          "quantity": 1
+        },
+        "3-31": {
+          "name": "Pungent Mushroom",
+          "quantity": 1
+        },
+        "3-30": {
+          "name": "Mound of Night Soil",
+          "quantity": 3
+        },
+        "3-16": {
+          "name": "Nibbling Minnow",
+          "quantity": 3
+        },
+        "3-29": {
+          "name": "Adventures of Libarbie and Lichen",
+          "quantity": 1
+        },
+        "1-16": {
+          "name": "Potion of the Hushed Zephyr",
+          "quantity": 2
+        },
+        "2-16": {
+          "name": "Reconstructed Ledger",
+          "quantity": 1
+        },
+        "1-14": {
+          "name": "Phial of Charged Isolation",
+          "quantity": 11
+        },
+        "0-16": {
+          "name": "Glittering Glass",
+          "quantity": 13
+        },
+        "3-14": {
+          "name": "Gyromatic Micro-Adjustor",
+          "quantity": 1
+        },
+        "3-22": {
+          "name": "Jaw with Barbed Teeth",
+          "quantity": 1
+        },
+        "2-22": {
+          "name": "Shadow Curfew Journal",
+          "quantity": 1
+        },
+        "1-22": {
+          "name": "Spare Toolbox",
+          "quantity": 1
+        },
+        "1-30": {
+          "name": "Pile of Rusted Scrap",
+          "quantity": 60
+        },
+        "0-14": {
+          "name": "Splintered Stone",
+          "quantity": 1
+        },
+        "3-21": {
+          "name": "Carapace Fragment",
+          "quantity": 3
+        },
+        "3-20": {
+          "name": "Strong Fishing Pole",
+          "quantity": 1
+        },
+        "3-12": {
+          "name": "Odd Glob of Wax",
+          "quantity": 99
+        },
+        "3-19": {
+          "name": "Shadowblind Grouper",
+          "quantity": 4
+        },
+        "1-12": {
+          "name": "Grub Grub",
+          "quantity": 2
+        },
+        "2-12": {
+          "name": "Stormbound Armor Kit",
+          "quantity": 1
+        },
+        "0-17": {
+          "name": "Vial of Fel Cleansing",
+          "quantity": 1
+        },
+        "0-12": {
+          "name": "Charged Phial of Alacrity",
+          "quantity": 50
+        },
+        "1-3": {
+          "name": "Sparkspitter Candle",
+          "quantity": 1
+        },
+        "0-3": {
+          "name": "Flight Master's Whistle",
+          "quantity": 1
+        },
+        "3-3": {
+          "name": "Sizzling Cinderpollen",
+          "quantity": 2
+        },
+        "2-3": {
+          "name": "Whimsical Wiring",
+          "quantity": 6
+        },
+        "1-7": {
+          "name": "Squirming Swarm Sac",
+          "quantity": 1
+        },
+        "2-7": {
+          "name": "Storm Sewer's Citrine",
+          "quantity": 1
+        },
+        "1-31": {
+          "name": "Entropy Enhancer",
+          "quantity": 14
+        },
+        "0-7": {
+          "name": "Rough Deepruby Shard",
+          "quantity": 1
+        },
+        "0-20": {
+          "name": "Bloody Perch",
+          "quantity": 18
+        },
+        "1-15": {
+          "name": "Cavedweller's Delight",
+          "quantity": 47
+        },
+        "0-15": {
+          "name": "Lucky Tortollan Charm",
+          "quantity": 1
+        },
+        "1-20": {
+          "name": "Interdimensional Companion Repository",
+          "quantity": 20
+        },
+        "2-6": {
+          "name": "Mariner's Hallowed Citrine",
+          "quantity": 1
+        },
+        "1-6": {
+          "name": "Elemental Fusion Bomb",
+          "quantity": 1
+        },
+        "0-6": {
+          "name": "Atomized Salien Slime",
+          "quantity": 3
+        },
+        "1-13": {
+          "name": "Twilight-Spiced Grouper",
+          "quantity": 2
+        },
+        "3-18": {
+          "name": "Crystalline Sturgeon",
+          "quantity": 4
+        },
+        "0-10": {
+          "name": "Enchant Chest - Accelerated Agility",
+          "quantity": 2
+        },
+        "1-10": {
+          "name": "Treasure Map: Weave-Rat Cache",
+          "quantity": 1
+        },
+        "1-8": {
+          "name": "Jar of Pickles",
+          "quantity": 1
+        },
+        "2-8": {
+          "name": "Windsinger's Runed Citrine",
+          "quantity": 1
+        },
+        "3-8": {
+          "name": "Broken Bracelet",
+          "quantity": 1
+        },
+        "4-8": {
+          "itemLevel": 551,
+          "quantity": 1,
+          "name": "Nizrek's Holographic Manipulator",
+          "upgrade": "N/A"
+        },
+        "3-15": {
+          "name": "Draenic Water Breathing Elixir",
+          "quantity": 30
+        },
+        "3-13": {
+          "name": "Harvest Seed Supply",
+          "quantity": 1
+        },
+        "3-24": {
+          "name": "Chipped Molars",
+          "quantity": 1
+        },
+        "2-24": {
+          "name": "Chrono Crystal",
+          "quantity": 1
+        },
+        "1-24": {
+          "name": "Gloom Chitin",
+          "quantity": 15
+        },
+        "3-10": {
+          "name": "Tarnished Compass",
+          "quantity": 1
+        },
+        "4-10": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Earthen Islander's Grips",
+          "upgrade": "Veteran 1/8"
+        },
+        "3-7": {
+          "name": "Offering of Pure Water",
+          "quantity": 1
+        },
+        "3-6": {
+          "name": "Rough Deepamethyst Shard",
+          "quantity": 1
+        },
+        "1-18": {
+          "name": "Portable Profession Possibility Projector",
+          "quantity": 2
+        },
+        "0-18": {
+          "name": "Radiant Remnant",
+          "quantity": 100
+        },
+        "1-25": {
+          "name": "Stormcharged Leather",
+          "quantity": 18
+        },
+        "2-18": {
+          "name": "500 Dishes Using Cave Fish and Mushrooms",
+          "quantity": 1
+        },
+        "3-5": {
+          "name": "Rough Deepemerald Shard",
+          "quantity": 1
+        },
+        "3-4": {
+          "name": "Sunless Lure",
+          "quantity": 1
+        },
+        "3-1": {
+          "name": "Hreka's Pot-Making Kit",
+          "quantity": 2
+        },
+        "2-29": {
+          "name": "Slim",
+          "quantity": 1
+        },
+        "2-31": {
+          "name": "Unrecognizable Prototype",
+          "quantity": 6
+        },
+        "1-28": {
+          "name": "Spool of Weaverthread",
+          "quantity": 15
+        },
+        "2-28": {
+          "name": "Rak-Ush Battleshell",
+          "quantity": 1
+        },
+        "2-30": {
+          "name": "Plump Dreamseed",
+          "quantity": 11
+        },
+        "2-32": {
+          "name": "Rattling Bag o' Gold",
+          "quantity": 1
+        },
+        "1-32": {
+          "name": "Chaos Circuit",
+          "quantity": 1
+        },
+        "4-32": {
+          "itemLevel": 603,
+          "quantity": 1,
+          "name": "Seal of the Silent Vigil",
+          "upgrade": "Champion 3/8"
+        },
+        "3-32": {
+          "itemLevel": 362,
+          "quantity": 1,
+          "name": "Begrimed Gauntlets",
+          "upgrade": "N/A"
+        },
+        "2-25": {
+          "name": "Lightspark Grade Book",
+          "quantity": 1
+        },
+        "2-20": {
+          "name": "The Big Book of Arathi Idioms",
+          "quantity": 1
+        },
+        "2-19": {
+          "name": "Palawltar's Codex of Dimensional Structure",
+          "quantity": 1
+        },
+        "2-17": {
+          "name": "Titan Emitter",
+          "quantity": 1
+        },
+        "2-26": {
+          "name": "Gigantic Dreamseed",
+          "quantity": 7
+        },
+        "1-26": {
+          "name": "Weavercloth",
+          "quantity": 1
+        },
+        "1-27": {
+          "name": "Weavercloth Bolt",
+          "quantity": 2
+        },
+        "2-14": {
+          "name": "Cluckbox",
+          "quantity": 1
+        },
+        "2-13": {
+          "name": "Cypher of Relocation",
+          "quantity": 1
+        },
+        "0-13": {
+          "name": "Earth-Encrusted Gem",
+          "quantity": 1
+        },
+        "0-8": {
+          "name": "Completely Safe Rockets",
+          "quantity": 114
+        },
+        "1-17": {
+          "name": "Pausing Pylon",
+          "quantity": 6
+        },
+        "2-10": {
+          "name": "Stormbringer's Runed Citrine",
+          "quantity": 1
+        },
+        "3-11": {
+          "name": "The Vizier's Invitation",
+          "quantity": 1
+        },
+        "2-11": {
+          "name": "Hastily Scrawled Notes",
+          "quantity": 1
+        },
+        "1-11": {
+          "name": "Strong Sniffin' Soup for Niffen",
+          "quantity": 3
+        }
+      },
+      "talents": {
+        "heroSpec": "Pack Leader",
+        "talents": {
+          "1": {
+            "name": "Unknown Talent",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Counter Shot",
+            "ranks": "1/1"
+          },
+          "3": {
+            "name": "Wild Call",
+            "ranks": "1/1"
+          },
+          "4": {
+            "name": "Bestial Wrath",
+            "ranks": "1/1"
+          },
+          "5": {
+            "name": "War Orders",
+            "ranks": "1/1"
+          },
+          "6": {
+            "name": "Snakeskin Quiver",
+            "ranks": "1/1"
+          },
+          "7": {
+            "name": "Thrill of the Hunt",
+            "ranks": "1/1"
+          },
+          "8": {
+            "name": "Kill Command",
+            "ranks": "1/1"
+          },
+          "9": {
+            "name": "Stomp",
+            "ranks": "1/1"
+          },
+          "10": {
+            "name": "Training Expert",
+            "ranks": "1/1"
+          },
+          "11": {
+            "name": "Brutal Companion",
+            "ranks": "1/1"
+          },
+          "12": {
+            "name": "Aspect of the Beast",
+            "ranks": "1/1"
+          },
+          "13": {
+            "name": "Savagery",
+            "ranks": "1/1"
+          },
+          "14": {
+            "name": "Cobra Shot",
+            "ranks": "1/1"
+          },
+          "15": {
+            "name": "Barbed Scales",
+            "ranks": "1/1"
+          },
+          "16": {
+            "name": "Go for the Throat",
+            "ranks": "1/1"
+          },
+          "17": {
+            "name": "Venom's Bite",
+            "ranks": "1/1"
+          },
+          "18": {
+            "name": "Serpentine Rhythm",
+            "ranks": "1/1"
+          },
+          "19": {
+            "name": "Hunter's Prey",
+            "ranks": "1/1"
+          },
+          "20": {
+            "name": "Animal Companion",
+            "ranks": "1/1"
+          },
+          "21": {
+            "name": "Multi-Shot",
+            "ranks": "1/1"
+          },
+          "22": {
+            "name": "Killer Instinct",
+            "ranks": "2/2"
+          },
+          "23": {
+            "name": "Dire Command",
+            "ranks": "1/1"
+          },
+          "24": {
+            "name": "Alpha Predator",
+            "ranks": "1/1"
+          },
+          "25": {
+            "name": "Laceration",
+            "ranks": "1/1"
+          },
+          "26": {
+            "name": "Piercing Fangs",
+            "ranks": "1/1"
+          },
+          "27": {
+            "name": "Master Handler",
+            "ranks": "1/1"
+          },
+          "28": {
+            "name": "Barbed Wrath",
+            "ranks": "1/1"
+          },
+          "29": {
+            "name": "Pack Tactics",
+            "ranks": "1/1"
+          },
+          "30": {
+            "name": "Killer Cobra",
+            "ranks": "1/1"
+          },
+          "31": {
+            "name": "Barbed Shot",
+            "ranks": "1/1"
+          },
+          "32": {
+            "name": "Kill Shot",
+            "ranks": "1/1"
+          },
+          "33": {
+            "name": "Tranquilizing Shot",
+            "ranks": "1/1"
+          },
+          "34": {
+            "name": "Rejuvenating Wind",
+            "ranks": "1/1"
+          },
+          "35": {
+            "name": "Wilderness Medicine",
+            "ranks": "1/1"
+          },
+          "36": {
+            "name": "Serrated Tips",
+            "ranks": "1/1"
+          },
+          "37": {
+            "name": "Binding Shot",
+            "ranks": "1/1"
+          },
+          "38": {
+            "name": "Unnatural Causes",
+            "ranks": "1/1"
+          },
+          "39": {
+            "name": "Emergency Salve",
+            "ranks": "1/1"
+          },
+          "40": {
+            "name": "Specialized Arsenal",
+            "ranks": "1/1"
+          },
+          "41": {
+            "name": "Lone Survivor",
+            "ranks": "1/1"
+          },
+          "42": {
+            "name": "Territorial Instincts",
+            "ranks": "1/1"
+          },
+          "43": {
+            "name": "Disruptive Rounds",
+            "ranks": "1/1"
+          },
+          "44": {
+            "name": "Trigger Finger",
+            "ranks": "2/2"
+          },
+          "45": {
+            "name": "Intimidation",
+            "ranks": "1/1"
+          },
+          "46": {
+            "name": "Trailblazer",
+            "ranks": "1/1"
+          },
+          "47": {
+            "name": "Natural Mending",
+            "ranks": "1/1"
+          },
+          "48": {
+            "name": "Pathfinding",
+            "ranks": "1/1"
+          },
+          "49": {
+            "name": "Padded Armor",
+            "ranks": "1/1"
+          },
+          "50": {
+            "name": "Concussive Shot",
+            "ranks": "1/1"
+          },
+          "51": {
+            "name": "Scrappy",
+            "ranks": "1/1"
+          },
+          "52": {
+            "name": "Keen Eyesight",
+            "ranks": "2/2"
+          },
+          "53": {
+            "name": "Deathblow",
+            "ranks": "1/1"
+          },
+          "54": {
+            "name": "No Hard Feelings",
+            "ranks": "1/1"
+          },
+          "55": {
+            "name": "Camouflage",
+            "ranks": "1/1"
+          },
+          "56": {
+            "name": "Born To Be Wild",
+            "ranks": "1/1"
+          },
+          "57": {
+            "name": "Tar-Coated Bindings",
+            "ranks": "1/1"
+          },
+          "58": {
+            "name": "Misdirection",
+            "ranks": "1/1"
+          },
+          "59": {
+            "name": "Survival of the Fittest",
+            "ranks": "1/1"
+          },
+          "60": {
+            "name": "Scout's Instincts",
+            "ranks": "1/1"
+          }
+        },
+        "heroTalents": {
+          "1": {
+            "name": "Wild Attacks",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Pack Assault",
+            "ranks": "1/1"
+          },
+          "3": {
+            "name": "Cull the Herd",
+            "ranks": "1/1"
+          },
+          "4": {
+            "name": "Covering Fire",
+            "ranks": "1/1"
+          },
+          "5": {
+            "name": "Den Recovery",
+            "ranks": "1/1"
+          },
+          "6": {
+            "name": "Sentinel",
+            "ranks": "1/1"
+          },
+          "7": {
+            "name": "Beast of Opportunity",
+            "ranks": "1/1"
+          },
+          "8": {
+            "name": "Cornered Prey",
+            "ranks": "1/1"
+          },
+          "9": {
+            "name": "Pack Coordination",
+            "ranks": "1/1"
+          },
+          "10": {
+            "name": "Black Arrow",
+            "ranks": "1/1"
+          },
+          "11": {
+            "name": "Frenzied Tear",
+            "ranks": "1/1"
+          },
+          "12": {
+            "name": "Vicious Hunt",
+            "ranks": "1/1"
+          },
+          "13": {
+            "name": "Howl of the Pack",
+            "ranks": "1/1"
+          }
+        }
+      },
+      "currencies": {
+        "Stygia": {
+          "maxQuantity": 0,
+          "quantity": 2477
+        },
+        "Cyphers of the First Ones": {
+          "maxQuantity": 0,
+          "quantity": 539
+        },
+        "Sinstone Fragments": {
+          "maxQuantity": 0,
+          "quantity": 712
+        },
+        "Weathered Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 108
+        },
+        "Paracausal Flakes": {
+          "maxQuantity": 0,
+          "quantity": 1250
+        },
+        "Order Resources": {
+          "maxQuantity": 0,
+          "quantity": 29851
+        },
+        "Spirit Shard": {
+          "maxQuantity": 200,
+          "quantity": 3
+        },
+        "Cataloged Research": {
+          "maxQuantity": 0,
+          "quantity": 4933
+        },
+        "Cosmic Flux": {
+          "maxQuantity": 0,
+          "quantity": 11808
+        },
+        "Elemental Overflow": {
+          "maxQuantity": 0,
+          "quantity": 8719
+        },
+        "Flame-Blessed Iron": {
+          "maxQuantity": 0,
+          "quantity": 1826
+        },
+        "Whelpling's Awakened Crest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Resonance Crystals": {
+          "maxQuantity": 0,
+          "quantity": 13412
+        },
+        "Restored Coffer Key": {
+          "maxQuantity": 0,
+          "quantity": 1
+        },
+        "Grateful Offering": {
+          "maxQuantity": 0,
+          "quantity": 15
+        },
+        "Dragon Isles Supplies": {
+          "maxQuantity": 0,
+          "quantity": 10345
+        },
+        "Reservoir Anima": {
+          "maxQuantity": 200000,
+          "quantity": 16524
+        },
+        "Timeless Coin": {
+          "maxQuantity": 0,
+          "quantity": 9010
+        },
+        "Apexis Crystal": {
+          "maxQuantity": 0,
+          "quantity": 1284
+        },
+        "Oil": {
+          "maxQuantity": 100000,
+          "quantity": 100
+        },
+        "Drake's Awakened Crest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Garrison Resources": {
+          "maxQuantity": 10000,
+          "quantity": 926
+        },
+        "Bloody Tokens": {
+          "maxQuantity": 200000,
+          "quantity": 0
+        },
+        "Conquest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Nethershard": {
+          "maxQuantity": 0,
+          "quantity": 13227
+        },
+        "Lesser Charm of Good Fortune": {
+          "maxQuantity": 0,
+          "quantity": 259
+        },
+        "Infused Ruby": {
+          "maxQuantity": 100,
+          "quantity": 24
+        },
+        "Wakening Essence": {
+          "maxQuantity": 0,
+          "quantity": 439
+        },
+        "Artifact Fragment": {
+          "maxQuantity": 1000,
+          "quantity": 0
+        },
+        "Undercoin": {
+          "maxQuantity": 0,
+          "quantity": 365
+        },
+        "Legionfall War Supplies": {
+          "maxQuantity": 1000,
+          "quantity": 268
+        },
+        "Carved Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 59
+        },
+        "Curious Coin": {
+          "maxQuantity": 0,
+          "quantity": 3
+        },
+        "Timewarped Badge": {
+          "maxQuantity": 0,
+          "quantity": 3070
+        },
+        "Ancient Mana": {
+          "maxQuantity": 1500,
+          "quantity": 710
+        },
+        "War Resources": {
+          "maxQuantity": 0,
+          "quantity": 286
+        },
+        "Seafarer's Dubloon": {
+          "maxQuantity": 0,
+          "quantity": 79
+        },
+        "Honor": {
+          "maxQuantity": 15000,
+          "quantity": 0
+        },
+        "7th Legion Service Medal": {
+          "maxQuantity": 0,
+          "quantity": 5
+        },
+        "Tower Knowledge": {
+          "maxQuantity": 3510,
+          "quantity": 64
+        },
+        "Kej": {
+          "maxQuantity": 0,
+          "quantity": 7630
+        },
+        "Dream Infusion": {
+          "maxQuantity": 0,
+          "quantity": 5
+        },
+        "Soul Cinders": {
+          "maxQuantity": 0,
+          "quantity": 1290
+        },
+        "Valorstones": {
+          "maxQuantity": 2000,
+          "quantity": 93
+        },
+        "Trader's Tender": {
+          "maxQuantity": 0,
+          "quantity": 4670
+        },
+        "Emerald Dewdrop": {
+          "maxQuantity": 0,
+          "quantity": 2104
+        },
+        "Soul Ash": {
+          "maxQuantity": 0,
+          "quantity": 6970
+        },
+        "Flightstones": {
+          "maxQuantity": 2000,
+          "quantity": 0
+        },
+        "Residual Memories": {
+          "maxQuantity": 0,
+          "quantity": 4458
+        },
+        "Stygian Ember": {
+          "maxQuantity": 0,
+          "quantity": 30
+        }
+      },
+      "class": "HUNTER",
+      "spec": "Beast Mastery",
+      "name": "Kbyte",
+      "stats": {
+        "criticalStrike": 24.271427154541,
+        "versatility": 4.9871792793274,
+        "mastery": 30.275140762329,
+        "armor": 28726,
+        "haste": 8.3409118652344,
+        "stamina": 216630,
+        "agility": 44976
+      },
+      "overallItemLevel": 592,
+      "level": 80,
+      "gear": {
+        "1": {
+          "itemLevel": 606,
+          "name": "Earthen Islander's Coif",
+          "upgrade": "Veteran 8/8"
+        },
+        "2": {
+          "itemLevel": 584,
+          "name": "Moneyed Mariner's Pendant",
+          "upgrade": "Veteran 1/8"
+        },
+        "3": {
+          "itemLevel": 597,
+          "name": "Earthen Islander's Shoulderguards",
+          "upgrade": "Champion 1/8"
+        },
+        "5": {
+          "enchant": "Crystalline Radiance ",
+          "itemLevel": 587,
+          "name": "Earthen Islander's Chainmail",
+          "upgrade": "Veteran 2/8"
+        },
+        "6": {
+          "itemLevel": 584,
+          "name": "Chitinoid Belt of the Feverflare",
+          "upgrade": "Veteran 1/8"
+        },
+        "7": {
+          "enchant": "+650 Agility/Strength & +625 Stamina ",
+          "itemLevel": 584,
+          "name": "Earthen Islander's Greaves",
+          "upgrade": "Veteran 1/8"
+        },
+        "8": {
+          "enchant": "Plainsrunner's Breeze ",
+          "itemLevel": 584,
+          "name": "Earthen Islander's Striders",
+          "upgrade": "Veteran 1/8"
+        },
+        "9": {
+          "enchant": "+925 Avoidance ",
+          "itemLevel": 584,
+          "name": "Earthen Islander's Bracers",
+          "upgrade": "Veteran 1/8"
+        },
+        "10": {
+          "itemLevel": 584,
+          "name": "Chitinoid Grips of the Fireflash",
+          "upgrade": "Veteran 1/8"
+        },
+        "11": {
+          "enchant": "+315 Haste ",
+          "itemLevel": 584,
+          "name": "Scurvy Sailor's Ring",
+          "upgrade": "Veteran 1/8"
+        },
+        "12": {
+          "enchant": "+315 Haste ",
+          "itemLevel": 658,
+          "name": "Cyrce's Circlet",
+          "upgrade": "N/A"
+        },
+        "13": {
+          "itemLevel": 593,
+          "name": "Concoction: Kiss of Death",
+          "upgrade": "Veteran 4/8"
+        },
+        "14": {
+          "itemLevel": 551,
+          "name": "Arathi Demolition Charge",
+          "upgrade": "N/A"
+        },
+        "15": {
+          "enchant": "Chant of Winged Grace ",
+          "itemLevel": 584,
+          "name": "Earthen Islander's Shawl",
+          "upgrade": "Veteran 1/8"
+        },
+        "16": {
+          "enchant": "Authority of the Depths ",
+          "itemLevel": 606,
+          "name": "Earthen Deckhand's Blunderbuss",
+          "upgrade": "Veteran 8/8"
+        }
+      },
+      "brann": {
+        "role": "Healer",
+        "name": "Brann Bronzebeard",
+        "availableCurios": {
+          "1": {
+            "name": "Idol of Final Will",
+            "rank": 1
+          },
+          "2": {
+            "name": "Porcelain Arrowhead Idol",
+            "rank": 1
+          },
+          "3": {
+            "name": "Unbreakable Iron Idol",
+            "rank": 1
+          },
+          "4": {
+            "name": "Rage-Filled Idol",
+            "rank": 2
+          },
+          "5": {
+            "name": "Idol of the Earthmother",
+            "rank": 1
+          },
+          "6": {
+            "name": "Light-Touched Idol",
+            "rank": 1
+          },
+          "7": {
+            "name": "Brute Force Idol",
+            "rank": 1
+          },
+          "8": {
+            "name": "Time Lost Relic",
+            "rank": 3
+          },
+          "9": {
+            "name": "Relic of Sentience",
+            "rank": 1
+          },
+          "10": {
+            "name": "Lifeless Necrotic Relic",
+            "rank": 2
+          },
+          "11": {
+            "name": "Amorphous Relic",
+            "rank": 3
+          },
+          "12": {
+            "name": "Streamlined Relic",
+            "rank": 2
+          },
+          "13": {
+            "name": "Olden Seeker Relic",
+            "rank": 3
+          }
+        },
+        "equippedCurios": {
+          "combat": "Rage-Filled Idol (Rank 2/4)",
+          "utility": "Olden Seeker Relic (Rank 3/4)"
+        },
+        "level": 21,
+        "isDelveCompanion": "true",
+        "npcID": 206977
+      }
+    }
+  }

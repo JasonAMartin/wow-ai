@@ -1,0 +1,6 @@
+## Interface: 110007
+## Title: Warcraft API Data
+## Notes: Extracts and displays WoW API information.
+## Author: YourName (with AI assistance)
+## Version: 1.0
+WarcraftApiData.lua
