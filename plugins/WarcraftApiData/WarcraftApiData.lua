@@ -1,9 +1,10 @@
 local addonName = "WarcraftApiData"
 
--- Whitelist of API namespaces to explore.
+-- Whitelist of API namespaces to explore.  Add to this list!
 local API_WHITELIST = {
     "C_",  -- Catch most C_... namespaces
     "Enum",
+    "GameTooltip",
 }
 
 -- Function to recursively explore the API
@@ -12,7 +13,7 @@ local function ExploreAPI(namespace, path, resultTable, depth)
     path = path or ""
     resultTable = resultTable or {}
 
-    if depth > 10 then  -- Maximum recursion depth
+    if depth > 10 then
         print("Debug: Max depth reached at path:", path)
         return
     end
@@ -31,28 +32,16 @@ local function ExploreAPI(namespace, path, resultTable, depth)
 
         if shouldExplore then
             if type(value) == "function" then
-                -- Only call xpcall on functions starting with Get, Set, Is, Can
-                local functionName = key:lower()
-                if functionName:sub(1, 3) == "get" or
-                   functionName:sub(1, 3) == "set" or
-                   functionName:sub(1, 2) == "is" or
-                   functionName:sub(1, 3) == "can" then
-
-                    print("Debug: Calling xpcall on:", fullPath) -- Log the function
-                    local success, errorMessage = xpcall(value, function(err) return err end, 1, 2, 3, 4, 5)
-                    local usageString = "Unknown"
-                    if not success then
-                        usageString = errorMessage:match("Usage: (.-)\n") or errorMessage -- Extract usage
-                    end
-                    table.insert(resultTable, fullPath .. " (" .. usageString .. ")")
-                    print("Debug: xpcall result:", success, usageString)  -- Log the result
-                else
-                    table.insert(resultTable, fullPath .. " (Skipped - No xpcall)")
-                end
+                table.insert(resultTable, fullPath)  -- Store just the function name
 
             elseif type(value) == "table" then
-                table.insert(resultTable, fullPath .. " (Table)")
-                ExploreAPI(value, fullPath, resultTable, depth + 1) -- Recurse into tables
+                -- Prevent recursing into UI elements
+                if not string.find(fullPath, "UIParent") and not string.find(fullPath, "GameTooltip") then
+                     table.insert(resultTable, fullPath .. " (Table)")  -- Indicate tables
+                    ExploreAPI(value, fullPath, resultTable, depth + 1) -- Recurse into tables
+                else
+                    table.insert(resultTable, fullPath .. " (Table - Skipped)")
+                end
             else
                 table.insert(resultTable, fullPath .. " (" .. type(value) .. ")")
             end
@@ -64,8 +53,15 @@ end
 -- Slash command handler
 SLASH_WARCRAFTAPIDATA1 = "/warcraftapidata"
 SlashCmdList["WARCRAFTAPIDATA"] = function(msg)
-    local apiData = ExploreAPI(_G)  -- Get the API data
-    table.sort(apiData) -- Sort alphabetically
-    local outputText = table.concat(apiData, "\n")  -- Join into a single string
-    print("API Scan Complete! Results:\n", outputText) -- Print to chat for now
+    print("Scanning API... This may take a while.")
+    local apiData = ExploreAPI(_G)
+    table.sort(apiData)  -- Sort alphabetically
+
+    -- Store the results in the SavedVariables table
+    if not WarcraftApiDataDB then
+      WarcraftApiDataDB = {}
+    end
+
+    WarcraftApiDataDB.apiOutput = apiData -- Store as a TABLE
+    print("API Scan complete! Data saved to WTF\\Account\\<YourAccountName>\\SavedVariables\\WarcraftApiData.lua")
 end

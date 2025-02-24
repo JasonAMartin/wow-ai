@@ -1,6 +1,7 @@
 ## Interface: 110007
 ## Title: Warcraft API Data
-## Notes: Extracts and displays WoW API information.
+## Notes: Extracts and saves WoW API information to Saved Variables.
 ## Author: YourName (with AI assistance)
 ## Version: 1.0
+## SavedVariables: WarcraftApiDataDB
 WarcraftApiData.lua
