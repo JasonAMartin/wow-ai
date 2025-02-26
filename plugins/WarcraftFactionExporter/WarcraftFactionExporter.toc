@@ -1,0 +1,6 @@
+## Interface: 110007
+## Title: WarcraftFactionExporter
+## Notes: Exports all faction standings to a UI text edit window.
+## Author: Kbyte
+## Version: 1.0
+WarcraftFactionExporter.lua

@@ -1,0 +1,70 @@
+-- convert_to_json.lua
+-- Run this script *outside* of WoW, using a standard Lua interpreter.
+
+local json = require("json") -- You might need to install a JSON library:  `luarocks install json`
+
+-- Get the file path from command-line arguments.
+local filePath = arg[1]
+
+if not filePath then
+    print("Error: Please provide the path to the WarcraftApiData.lua file as a command-line argument.")
+    print("Usage: lua convert_to_json.lua -file \"path/to/WarcraftApiData.lua\"")
+    return
+end
+
+--Remove the -file text, leaving only file path.
+filePath = filePath:gsub("^-file%s*", "")
+--Remove quotes.
+filePath = filePath:gsub("^\"", ""):gsub("\"$", "")
+
+local file = io.open(filePath, "r")
+if not file then
+    print("Error: Could not open file at path: " .. filePath)
+    return
+end
+
+local content = file:read("*all") -- Read entire file
+file:close()
+
+-- Use string patterns to extract the Lua table data.
+local apiDataString = content:match("WarcraftApiDataDB.-{(.-)}")
+
+if not apiDataString then
+    print("Error, could not find the data")
+    return
+end
+
+-- Add brackets to be valid, since we removed it.
+apiDataString = "{"..apiDataString
+
+-- Convert API data string to Lua table.
+local apiDataTable = assert(load("return " .. apiDataString))
+
+if not apiDataTable then
+  print("Error loading data.")
+end
+
+-- Remove entries with "(Table)"
+local filteredData = {}
+for _, entry in ipairs(apiDataTable.apiOutput) do
+    if not string.match(entry, "%%(Table%%)$") then
+        table.insert(filteredData, entry)
+    end
+end
+
+local jsonData = json.encode(filteredData) -- Use the json library
+
+if jsonData then
+    local outputFilePath = "wow_api.json" -- Output to current directory
+
+    local outputFile = io.open(outputFilePath, "w")
+    if outputFile then
+        outputFile:write(jsonData)
+        outputFile:close()
+        print("API data extracted to " .. outputFilePath)
+    else
+        print("Error: Could not create output file at " .. outputFilePath)
+    end
+else
+    print("Error: Could not convert to json.")
+end
