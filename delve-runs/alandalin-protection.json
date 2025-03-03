@@ -1,0 +1,114 @@
+{
+    "delve_runs": {
+      "protection_paladin": {
+        "name": "Alandalian",
+        "level": 80,
+        "overallItemLevel": 599,
+        "runs": [
+          {
+            "delve": "Kriegval’s Rest",
+            "tier": 5,
+            "boss": "Unknown",
+            "fight_time": "52 seconds",
+            "deaths": "None",
+            "overallItemLevel": 599,
+            "brann_health": "Full health",
+            "notes": "Fastest clear so far. No danger at all, ready for Tier 6 push.",
+            "brann_level": 27,
+            "brann_spec": "healer",
+            "run_date": "03-02-2025",
+            "curios": [
+              "Light-Touched Idol (Rank 1/4)",
+              "Olden Seeker Relic (Rank 3/4)"
+            ]
+          },
+          {
+            "delve": "Nightfall Sanctum",
+            "tier": 5,
+            "boss": "Skittering Broodmother",
+            "fight_time": "1 minute 13 seconds",
+            "deaths": "None",
+            "overallItemLevel": 599,
+            "brann_health": "Full health",
+            "notes": "No trouble at all. Ready for Tier 6 push.",
+            "brann_level": 27,
+            "brann_spec": "healer",
+            "run_date": "03-02-2025",
+            "curios": [
+              "Light-Touched Idol (Rank 1/4)",
+              "Olden Seeker Relic (Rank 3/4)"
+            ]
+          },
+          {
+            "delve": "Excavation Site 9",
+            "tier": 5,
+            "boss": "Unknown",
+            "fight_time": "1 minute 29 seconds",
+            "deaths": "None",
+            "overallItemLevel": 599,
+            "brann_health": "Full health",
+            "notes": "Did not know mechanics but still no issues. Should push Tier 6.",
+            "brann_level": 27,
+            "brann_spec": "healer",
+            "run_date": "03-02-2025",
+            "curios": [
+              "Light-Touched Idol (Rank 1/4)",
+              "Olden Seeker Relic (Rank 3/4)"
+            ]
+          },
+          {
+            "delve": "Sidestreet Sluice",
+            "tier": 5,
+            "boss": "Unknown",
+            "fight_time": "1 minute 20 seconds",
+            "deaths": "None",
+            "overallItemLevel": 599,
+            "brann_health": "Full health",
+            "notes": "Very easy, no trouble.",
+            "brann_level": 27,
+            "brann_spec": "healer",
+            "run_date": "03-02-2025",
+            "curios": [
+              "Light-Touched Idol (Rank 1/4)",
+              "Olden Seeker Relic (Rank 3/4)"
+            ]
+          },
+          {
+            "delve": "The Spiral Weave",
+            "tier": 5,
+            "boss": "Unknown",
+            "fight_time": "1 minute 27 seconds",
+            "deaths": "None",
+            "overallItemLevel": 599,
+            "brann_health": "Full health",
+            "notes": "Chill run, no real danger.",
+            "brann_level": 27,
+            "brann_spec": "healer",
+            "run_date": "03-02-2025",
+            "curios": [
+              "Light-Touched Idol (Rank 1/4)",
+              "Olden Seeker Relic (Rank 3/4)"
+            ]
+          },
+          {
+            "delve": "The Dread Pit",
+            "tier": 5,
+            "boss": "Unknown",
+            "fight_time": "1 minute 23 seconds",
+            "deaths": "None",
+            "overallItemLevel": 599,
+            "brann_health": "Full health",
+            "notes": "Very easy, no issues.",
+            "brann_level": 27,
+            "brann_spec": "healer",
+            "run_date": "03-02-2025",
+            "curios": [
+              "Light-Touched Idol (Rank 1/4)",
+              "Olden Seeker Relic (Rank 3/4)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+  

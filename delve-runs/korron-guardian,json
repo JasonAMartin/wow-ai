@@ -1,0 +1,28 @@
+{
+  "delve_runs": {
+    "guardian_druid": {
+      "name": "Korron",
+      "level": 80,
+      "overallItemLevel": 593,
+      "runs": [
+        {
+          "delve": "The Dread Pit",
+          "tier": 5,
+          "boss": "Unknown",
+          "fight_time": "1 minute 37 seconds",
+          "deaths": "None",
+          "overallItemLevel": 593,
+          "brann_health": "Died on trash, died on boss at 40% but not needed",
+          "notes": "Easy overall. Brann was strained and died but I did not need his healing.",
+          "brann_level": 25,
+          "brann_spec": "healer",
+          "run_date": "03-02-2025",
+          "curios": [
+            "Light-Touched Idol (Rank 1/4)",
+            "Olden Seeker Relic (Rank 3/4)"
+          ]
+        }
+      ]
+    }
+  }
+}
