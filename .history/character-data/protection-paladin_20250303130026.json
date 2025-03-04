@@ -673,7 +673,7 @@
       }
     },
     "talents": {
-      "heroSpec": "Templar",
+      "heroSpec": "Keeper of the Grove",
       "talents": {
         "1": {
           "name": "Blessed Hammer",
@@ -1070,7 +1070,7 @@
       }
     },
     "class": "PALADIN",
-    "spec": "Protection",
+    "spec": "Unknown Spec",
     "name": "Alandalian",
     "stats": {
       "criticalStrike": 13.958571434021,
@@ -1166,6 +1166,71 @@
         "name": "Ancient Forged Shield of the Quickblade",
         "upgrade": "Explorer 4/8"
       }
+    },
+    "brann": {
+      "role": "Healer",
+      "name": "Brann Bronzebeard",
+      "availableCurios": {
+        "1": {
+          "name": "Brute Force Idol",
+          "rank": 1
+        },
+        "2": {
+          "name": "Idol of Final Will",
+          "rank": 3
+        },
+        "3": {
+          "name": "Idol of the Earthmother",
+          "rank": 1
+        },
+        "4": {
+          "name": "Light-Touched Idol",
+          "rank": 1
+        },
+        "5": {
+          "name": "Porcelain Arrowhead Idol",
+          "rank": 3
+        },
+        "6": {
+          "name": "Rage-Filled Idol",
+          "rank": 2
+        },
+        "7": {
+          "name": "Unbreakable Iron Idol",
+          "rank": 3
+        },
+        "8": {
+          "name": "Amorphous Relic",
+          "rank": 3
+        },
+        "9": {
+          "name": "Lifeless Necrotic Relic",
+          "rank": 2
+        },
+        "10": {
+          "name": "Olden Seeker Relic",
+          "rank": 3
+        },
+        "11": {
+          "name": "Relic of Sentience",
+          "rank": 3
+        },
+        "12": {
+          "name": "Streamlined Relic",
+          "rank": 2
+        },
+        "13": {
+          "name": "Time Lost Relic",
+          "rank": 3
+        }
+      },
+      "equippedCurios": {
+        "combat": "Light-Touched Idol (Rank 1/4)",
+        "utility": "Relic of Sentience (Rank 3/4)"
+      },
+      "level": 21,
+      "isDelveCompanion": "true",
+      "npcID": 206977
     }
   }
 }

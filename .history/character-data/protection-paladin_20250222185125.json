@@ -1,0 +1,1121 @@
+{
+    "character": {
+      "inventory": {
+        "0-11": {
+          "itemLevel": 571,
+          "quantity": 1,
+          "name": "Detachable Fang",
+          "upgrade": "Adventurer 1/8"
+        },
+        "3-23": {
+          "itemLevel": 538,
+          "quantity": 1,
+          "name": "Nizrek's Holographic Manipulator",
+          "upgrade": "N/A"
+        },
+        "4-23": {
+          "name": "Algari Mana Potion",
+          "quantity": 1
+        },
+        "3-21": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Wildfire Wick",
+          "upgrade": "N/A"
+        },
+        "2-23": {
+          "name": "Transcribed Kul Tiran Journal",
+          "quantity": 1
+        },
+        "2-21": {
+          "name": "Seedbloom",
+          "quantity": 2
+        },
+        "0-2": {
+          "itemLevel": 590,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Sabatons",
+          "upgrade": "Veteran 3/8"
+        },
+        "1-2": {
+          "name": "Tuft of Whiskers",
+          "quantity": 3
+        },
+        "2-2": {
+          "name": "Fathomdweller's Runed Citrine",
+          "quantity": 1
+        },
+        "3-2": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Helm",
+          "upgrade": "Veteran 1/8"
+        },
+        "3-5": {
+          "itemLevel": 577,
+          "quantity": 1,
+          "name": "Secret-Dredger's Breastplate",
+          "upgrade": "Adventurer 3/8"
+        },
+        "2-1": {
+          "name": "Storm Sewer's Citrine",
+          "quantity": 1
+        },
+        "1-1": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Secret-Dredger's Girdle",
+          "upgrade": "Veteran 1/8"
+        },
+        "0-1": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Sedimentary Sabatons of the Fireflash",
+          "upgrade": "Veteran 1/8"
+        },
+        "0-5": {
+          "itemLevel": 450,
+          "quantity": 1,
+          "name": "Kobold Mastermind's "Pivel"",
+          "upgrade": "N/A"
+        },
+        "1-5": {
+          "name": "Amateur Actor's Chest",
+          "quantity": 1
+        },
+        "2-5": {
+          "name": "Formula: Illusory Adornment: Crystal",
+          "quantity": 1
+        },
+        "0-19": {
+          "name": "Gob of Mucus",
+          "quantity": 1
+        },
+        "3-4": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Chiseled Boulder Pauldrons",
+          "upgrade": "Veteran 1/8"
+        },
+        "0-9": {
+          "name": "Wax-Covered Helmet",
+          "quantity": 2
+        },
+        "0-4": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Viper's Stone Handguards",
+          "upgrade": "N/A"
+        },
+        "2-9": {
+          "name": "Enchant Chest - Accelerated Agility",
+          "quantity": 1
+        },
+        "2-19": {
+          "name": "Plump Dreamseed",
+          "quantity": 13
+        },
+        "1-4": {
+          "name": "Theater Troupe's Trove",
+          "quantity": 1
+        },
+        "3-29": {
+          "name": "Roaring War-Queen's Citrine",
+          "quantity": 1
+        },
+        "4-31": {
+          "name": "Earth-Encrusted Gem",
+          "quantity": 1
+        },
+        "4-30": {
+          "name": "Refreshing Healing Potion",
+          "quantity": 40
+        },
+        "4-29": {
+          "name": "Potion of the Hushed Zephyr",
+          "quantity": 4
+        },
+        "4-28": {
+          "name": "Potion of Gusts",
+          "quantity": 5
+        },
+        "4-27": {
+          "name": "Potion of the Hushed Zephyr",
+          "quantity": 19
+        },
+        "0-20": {
+          "name": "Sizzling Cinderpollen",
+          "quantity": 17
+        },
+        "3-16": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Moneyed Mariner's Pendant",
+          "upgrade": "Veteran 1/8"
+        },
+        "4-16": {
+          "name": "Twilight-Spiced Grouper",
+          "quantity": 2
+        },
+        "3-30": {
+          "name": "Legendary Skipper's Citrine",
+          "quantity": 1
+        },
+        "2-16": {
+          "name": "Antique Bronze Bullion",
+          "quantity": 2
+        },
+        "2-17": {
+          "name": "Gigantic Dreamseed",
+          "quantity": 10
+        },
+        "2-14": {
+          "name": "Patrol Torch",
+          "quantity": 1
+        },
+        "3-14": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Footguards of the Nerubian Twins",
+          "upgrade": "N/A"
+        },
+        "3-22": {
+          "itemLevel": 545,
+          "quantity": 1,
+          "name": "Imperfect Ascendancy Serum",
+          "upgrade": "N/A"
+        },
+        "2-22": {
+          "name": "Small Dreamseed",
+          "quantity": 24
+        },
+        "3-20": {
+          "itemLevel": 558,
+          "quantity": 1,
+          "name": "Abyssal Trap",
+          "upgrade": "Explorer 1/8"
+        },
+        "4-15": {
+          "name": "Chippy Tea",
+          "quantity": 98
+        },
+        "0-14": {
+          "name": "Worm-Eaten Burlap Robe",
+          "quantity": 1
+        },
+        "2-18": {
+          "name": "Coffer Key Shard",
+          "quantity": 50
+        },
+        "4-22": {
+          "name": "Potion of the Reborn Cheetah",
+          "quantity": 5
+        },
+        "3-12": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Legplates of Dark Hunger",
+          "upgrade": "N/A"
+        },
+        "4-12": {
+          "name": "Handful of Humming Shinies",
+          "quantity": 1
+        },
+        "4-21": {
+          "name": "Cavedweller's Delight",
+          "quantity": 15
+        },
+        "2-12": {
+          "name": "Orren's Message",
+          "quantity": 1
+        },
+        "0-17": {
+          "name": "Combustible Gland",
+          "quantity": 20
+        },
+        "0-12": {
+          "name": "Spare Toolbox",
+          "quantity": 1
+        },
+        "1-3": {
+          "name": "Jaw with Barbed Teeth",
+          "quantity": 5
+        },
+        "0-3": {
+          "name": "Handful of Smooth Pebbles",
+          "quantity": 7
+        },
+        "3-7": {
+          "itemLevel": 577,
+          "quantity": 1,
+          "name": "Secret-Dredger's Gauntlets",
+          "upgrade": "Adventurer 3/8"
+        },
+        "2-3": {
+          "name": "Stormbringer's Runed Citrine",
+          "quantity": 1
+        },
+        "4-20": {
+          "name": "Phial of Tepid Versatility",
+          "quantity": 10
+        },
+        "2-7": {
+          "name": "Enchant Bracer - Writ of Speed",
+          "quantity": 2
+        },
+        "4-19": {
+          "name": "Aerated Phial of Deftness",
+          "quantity": 3
+        },
+        "0-7": {
+          "name": "Stretched Wing",
+          "quantity": 3
+        },
+        "2-15": {
+          "name": "Chrono Crystal",
+          "quantity": 1
+        },
+        "3-13": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Sabatons",
+          "upgrade": "Veteran 1/8"
+        },
+        "0-15": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Cave Topographer's Drape",
+          "upgrade": "N/A"
+        },
+        "3-6": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Gauntlets",
+          "upgrade": "Veteran 1/8"
+        },
+        "2-6": {
+          "name": "Enchant Cloak - Writ of Speed",
+          "quantity": 1
+        },
+        "4-3": {
+          "name": "Howling Rune",
+          "quantity": 20
+        },
+        "2-13": {
+          "name": "Dirt-Cracker Pick",
+          "quantity": 1
+        },
+        "4-17": {
+          "name": "Charged Phial of Alacrity",
+          "quantity": 27
+        },
+        "4-14": {
+          "name": "Deviously Deviled Eggs",
+          "quantity": 173
+        },
+        "0-10": {
+          "name": "Deployable Battle Supplies",
+          "quantity": 1
+        },
+        "0-8": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Secret-Dredger's Helm",
+          "upgrade": "N/A"
+        },
+        "2-10": {
+          "name": "Rock Reviver",
+          "quantity": 1
+        },
+        "2-8": {
+          "name": "Enchant Bracer - Devotion of Speed",
+          "quantity": 1
+        },
+        "3-8": {
+          "itemLevel": 567,
+          "quantity": 1,
+          "name": "Sedimentary Gauntlets of the Peerless",
+          "upgrade": "Explorer 4/8"
+        },
+        "4-8": {
+          "name": "Radiant Echo",
+          "quantity": 5
+        },
+        "4-13": {
+          "name": "Emergency Healthstone",
+          "quantity": 1
+        },
+        "4-24": {
+          "name": "Algari Mana Potion",
+          "quantity": 13
+        },
+        "3-24": {
+          "itemLevel": 518,
+          "quantity": 1,
+          "name": "Arathi Demolition Charge",
+          "upgrade": "N/A"
+        },
+        "2-24": {
+          "name": "Strange Lump of Wax",
+          "quantity": 1
+        },
+        "4-9": {
+          "name": "Whirling Runekey",
+          "quantity": 1
+        },
+        "3-10": {
+          "itemLevel": 558,
+          "quantity": 1,
+          "name": "Sedimentary Girdle of the Fireflash",
+          "upgrade": "Explorer 1/8"
+        },
+        "4-10": {
+          "name": "Memory of Kalimdor",
+          "quantity": 21
+        },
+        "4-7": {
+          "name": "Verdant Seed",
+          "quantity": 5
+        },
+        "4-6": {
+          "name": "Battle Pet Bandage",
+          "quantity": 5
+        },
+        "4-5": {
+          "name": "Squirming Swarm Sac",
+          "quantity": 2
+        },
+        "0-18": {
+          "name": "Venomous Stinger",
+          "quantity": 8
+        },
+        "3-18": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Seafarer's Wandering Signet",
+          "upgrade": "Veteran 1/8"
+        },
+        "2-25": {
+          "name": "Ragefin Necrostaff",
+          "quantity": 1
+        },
+        "4-4": {
+          "name": "Howling Rune",
+          "quantity": 9
+        },
+        "4-18": {
+          "name": "Phial of Tepid Versatility",
+          "quantity": 19
+        },
+        "4-1": {
+          "name": "Hearthstone",
+          "quantity": 1
+        },
+        "0-13": {
+          "name": "Deepgrove Petal",
+          "quantity": 1
+        },
+        "3-27": {
+          "itemLevel": 424,
+          "quantity": 1,
+          "name": "Sunsoul Defender Stone",
+          "upgrade": "N/A"
+        },
+        "2-27": {
+          "name": "Odd Glob of Wax",
+          "quantity": 57
+        },
+        "3-31": {
+          "name": "Mariner's Hallowed Citrine",
+          "quantity": 1
+        },
+        "3-28": {
+          "itemLevel": 424,
+          "quantity": 1,
+          "name": "Sunsoul Defender Idol",
+          "upgrade": "N/A"
+        },
+        "3-25": {
+          "itemLevel": 515,
+          "quantity": 1,
+          "name": "Esteemed Earthen Emblem",
+          "upgrade": "N/A"
+        },
+        "4-25": {
+          "name": "Algari Healing Potion",
+          "quantity": 1
+        },
+        "4-32": {
+          "itemLevel": 606,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Polearm",
+          "upgrade": "Champion 4/8"
+        },
+        "3-32": {
+          "name": "Old Salt's Bardic Citrine",
+          "quantity": 1
+        },
+        "3-19": {
+          "itemLevel": 558,
+          "quantity": 1,
+          "name": "Stormrider Flight Badge",
+          "upgrade": "Explorer 1/8"
+        },
+        "3-17": {
+          "itemLevel": 577,
+          "quantity": 1,
+          "name": "Long-Lost Choker",
+          "upgrade": "Adventurer 3/8"
+        },
+        "3-15": {
+          "itemLevel": 548,
+          "quantity": 1,
+          "name": "Secret-Dredger's Sabatons",
+          "upgrade": "N/A"
+        },
+        "3-3": {
+          "itemLevel": 554,
+          "quantity": 1,
+          "name": "Wolf Packleader's Visor",
+          "upgrade": "N/A"
+        },
+        "2-26": {
+          "name": "The Vizier's Invitation",
+          "quantity": 1
+        },
+        "2-20": {
+          "name": "Radiant Remnant",
+          "quantity": 47
+        },
+        "4-26": {
+          "name": "Algari Healing Potion",
+          "quantity": 34
+        },
+        "3-26": {
+          "itemLevel": 489,
+          "quantity": 1,
+          "name": "Magma Serpent Lure",
+          "upgrade": "Veteran 4/8"
+        },
+        "0-6": {
+          "name": "Enlarged Ear",
+          "quantity": 11
+        },
+        "3-9": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Girdle",
+          "upgrade": "Veteran 1/8"
+        },
+        "3-1": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Polearm",
+          "upgrade": "Veteran 1/8"
+        },
+        "2-4": {
+          "name": "Straddling Viridium",
+          "quantity": 1
+        },
+        "4-11": {
+          "name": "Essence of Kalimdor",
+          "quantity": 1
+        },
+        "3-11": {
+          "itemLevel": 584,
+          "quantity": 1,
+          "name": "Earthen Landlubber's Legguards",
+          "upgrade": "Veteran 1/8"
+        },
+        "2-11": {
+          "name": "Palawltar's Codex of Dimensional Structure",
+          "quantity": 1
+        },
+        "0-16": {
+          "itemLevel": 558,
+          "quantity": 1,
+          "name": "Expeditionary Belt of the Quickblade",
+          "upgrade": "Explorer 1/8"
+        }
+      },
+      "talents": {
+        "heroSpec": "Keeper of the Grove",
+        "talents": {
+          "1": {
+            "name": "Blessed Hammer",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Consecration in Flame",
+            "ranks": "1/1"
+          },
+          "3": {
+            "name": "Focused Enmity",
+            "ranks": "1/1"
+          },
+          "4": {
+            "name": "Crusader's Judgment",
+            "ranks": "1/1"
+          },
+          "5": {
+            "name": "Tyr's Enforcer",
+            "ranks": "2/2"
+          },
+          "6": {
+            "name": "Inspiring Vanguard",
+            "ranks": "1/1"
+          },
+          "7": {
+            "name": "Divine Resonance",
+            "ranks": "1/1"
+          },
+          "8": {
+            "name": "Ardent Defender",
+            "ranks": "1/1"
+          },
+          "9": {
+            "name": "Avenging Wrath",
+            "ranks": "1/1"
+          },
+          "10": {
+            "name": "Gift of the Golden Val'kyr",
+            "ranks": "1/1"
+          },
+          "11": {
+            "name": "Improved Holy Shield",
+            "ranks": "1/1"
+          },
+          "12": {
+            "name": "Grand Crusader",
+            "ranks": "1/1"
+          },
+          "13": {
+            "name": "Holy Shield",
+            "ranks": "1/1"
+          },
+          "14": {
+            "name": "Guardian of Ancient Kings",
+            "ranks": "1/1"
+          },
+          "15": {
+            "name": "Bulwark of Righteous Fury",
+            "ranks": "1/1"
+          },
+          "16": {
+            "name": "Refining Fire",
+            "ranks": "1/1"
+          },
+          "17": {
+            "name": "Crusader's Resolve",
+            "ranks": "1/1"
+          },
+          "18": {
+            "name": "Redoubt",
+            "ranks": "1/1"
+          },
+          "19": {
+            "name": "Faith's Armor",
+            "ranks": "1/1"
+          },
+          "20": {
+            "name": "Divine Toll",
+            "ranks": "1/1"
+          },
+          "21": {
+            "name": "Eye of Tyr",
+            "ranks": "1/1"
+          },
+          "22": {
+            "name": "Shining Light",
+            "ranks": "1/1"
+          },
+          "23": {
+            "name": "Bulwark of Order",
+            "ranks": "1/1"
+          },
+          "24": {
+            "name": "Uther's Counsel",
+            "ranks": "1/1"
+          },
+          "25": {
+            "name": "Barricade of Faith",
+            "ranks": "1/1"
+          },
+          "26": {
+            "name": "Avenger's Shield",
+            "ranks": "1/1"
+          },
+          "27": {
+            "name": "Final Stand",
+            "ranks": "1/1"
+          },
+          "28": {
+            "name": "Relentless Inquisitor",
+            "ranks": "1/1"
+          },
+          "29": {
+            "name": "Hammer of Wrath",
+            "ranks": "1/1"
+          },
+          "30": {
+            "name": "Consecrated Ground",
+            "ranks": "1/1"
+          },
+          "31": {
+            "name": "Lay on Hands",
+            "ranks": "1/1"
+          },
+          "32": {
+            "name": "Auras of the Resolute",
+            "ranks": "1/1"
+          },
+          "33": {
+            "name": "Fist of Justice",
+            "ranks": "1/1"
+          },
+          "34": {
+            "name": "Greater Judgment",
+            "ranks": "1/1"
+          },
+          "35": {
+            "name": "Rebuke",
+            "ranks": "1/1"
+          },
+          "36": {
+            "name": "Cavalier",
+            "ranks": "1/1"
+          },
+          "37": {
+            "name": "Judgment of Light",
+            "ranks": "1/1"
+          },
+          "38": {
+            "name": "Holy Aegis",
+            "ranks": "1/1"
+          },
+          "39": {
+            "name": "Unbreakable Spirit",
+            "ranks": "1/1"
+          },
+          "40": {
+            "name": "Blessing of Protection",
+            "ranks": "1/1"
+          },
+          "41": {
+            "name": "Improved Blessing of Protection",
+            "ranks": "1/1"
+          },
+          "42": {
+            "name": "Seal of Might",
+            "ranks": "2/2"
+          },
+          "43": {
+            "name": "Seal of Reprisal",
+            "ranks": "1/1"
+          },
+          "44": {
+            "name": "Obduracy",
+            "ranks": "1/1"
+          },
+          "45": {
+            "name": "Steed of Liberty",
+            "ranks": "1/1"
+          },
+          "46": {
+            "name": "Divine Steed",
+            "ranks": "1/1"
+          },
+          "47": {
+            "name": "Inmost Light",
+            "ranks": "1/1"
+          },
+          "48": {
+            "name": "Sanctified Plates",
+            "ranks": "2/2"
+          },
+          "49": {
+            "name": "Punishment",
+            "ranks": "1/1"
+          },
+          "50": {
+            "name": "Divine Reach",
+            "ranks": "1/1"
+          },
+          "51": {
+            "name": "Unbound Freedom",
+            "ranks": "1/1"
+          },
+          "52": {
+            "name": "Afterimage",
+            "ranks": "1/1"
+          },
+          "53": {
+            "name": "Of Dusk and Dawn",
+            "ranks": "1/1"
+          },
+          "54": {
+            "name": "Higher Calling",
+            "ranks": "1/1"
+          },
+          "55": {
+            "name": "Light's Guidance",
+            "ranks": "1/1"
+          },
+          "56": {
+            "name": "Unrelenting Charger",
+            "ranks": "1/1"
+          },
+          "57": {
+            "name": "Unknown Talent",
+            "ranks": "1/1"
+          },
+          "58": {
+            "name": "Sanctuary",
+            "ranks": "1/1"
+          },
+          "59": {
+            "name": "Soaring Shield",
+            "ranks": "1/1"
+          },
+          "60": {
+            "name": "Lightforged Blessing",
+            "ranks": "1/1"
+          },
+          "61": {
+            "name": "Golden Path",
+            "ranks": "1/1"
+          },
+          "62": {
+            "name": "Divine Spurs",
+            "ranks": "1/1"
+          },
+          "63": {
+            "name": "Empyreal Ward",
+            "ranks": "1/1"
+          },
+          "64": {
+            "name": "Light's Revocation",
+            "ranks": "1/1"
+          },
+          "65": {
+            "name": "Lead the Charge",
+            "ranks": "1/1"
+          }
+        },
+        "heroTalents": {
+          "1": {
+            "name": "Wrathful Descent",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Sacrosanct Crusade",
+            "ranks": "1/1"
+          },
+          "3": {
+            "name": "Light's Deliverance",
+            "ranks": "1/1"
+          },
+          "4": {
+            "name": "Zealous Vindication",
+            "ranks": "1/1"
+          },
+          "5": {
+            "name": "Hammerfall",
+            "ranks": "1/1"
+          },
+          "6": {
+            "name": "Endless Wrath",
+            "ranks": "1/1"
+          },
+          "7": {
+            "name": "Undisputed Ruling",
+            "ranks": "1/1"
+          },
+          "8": {
+            "name": "Shake the Heavens",
+            "ranks": "1/1"
+          },
+          "9": {
+            "name": "Holy Bulwark",
+            "ranks": "1/1"
+          }
+        }
+      },
+      "currencies": {
+        "Drake's Awakened Crest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Emerald Dewdrop": {
+          "maxQuantity": 0,
+          "quantity": 2630
+        },
+        "Weathered Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 35
+        },
+        "Conquest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Flightstones": {
+          "maxQuantity": 2000,
+          "quantity": 0
+        },
+        "Undercoin": {
+          "maxQuantity": 0,
+          "quantity": 2059
+        },
+        "Carved Harbinger Crest": {
+          "maxQuantity": 0,
+          "quantity": 124
+        },
+        "Elemental Overflow": {
+          "maxQuantity": 0,
+          "quantity": 30
+        },
+        "Flame-Blessed Iron": {
+          "maxQuantity": 0,
+          "quantity": 180
+        },
+        "Honor": {
+          "maxQuantity": 15000,
+          "quantity": 0
+        },
+        "Kej": {
+          "maxQuantity": 0,
+          "quantity": 3074
+        },
+        "Resonance Crystals": {
+          "maxQuantity": 0,
+          "quantity": 7035
+        },
+        "Restored Coffer Key": {
+          "maxQuantity": 0,
+          "quantity": 2
+        },
+        "Whelpling's Awakened Crest": {
+          "maxQuantity": 0,
+          "quantity": 0
+        },
+        "Valorstones": {
+          "maxQuantity": 2000,
+          "quantity": 219
+        },
+        "Paracausal Flakes": {
+          "maxQuantity": 0,
+          "quantity": 3158
+        },
+        "Dragon Isles Supplies": {
+          "maxQuantity": 0,
+          "quantity": 12143
+        },
+        "Dream Infusion": {
+          "maxQuantity": 0,
+          "quantity": 2
+        },
+        "Bloody Tokens": {
+          "maxQuantity": 200000,
+          "quantity": 0
+        },
+        "Residual Memories": {
+          "maxQuantity": 0,
+          "quantity": 3263
+        },
+        "Timewarped Badge": {
+          "maxQuantity": 0,
+          "quantity": 200
+        }
+      },
+      "class": "PALADIN",
+      "spec": "Protection",
+      "name": "Alandalian",
+      "stats": {
+        "criticalStrike": 14.675714492798,
+        "versatility": 6.95641040802,
+        "mastery": 18.231428146362,
+        "armor": 90947,
+        "haste": 16.172729492188,
+        "strength": 45123,
+        "stamina": 337778
+      },
+      "overallItemLevel": 592,
+      "level": 80,
+      "gear": {
+        "1": {
+          "itemLevel": 590,
+          "name": "Sedimentary Helm of the Feverflare",
+          "upgrade": "Veteran 3/8"
+        },
+        "2": {
+          "itemLevel": 584,
+          "name": "Conch Collector's Locket",
+          "upgrade": "Veteran 1/8"
+        },
+        "3": {
+          "itemLevel": 590,
+          "name": "Earthen Landlubber's Mantle",
+          "upgrade": "Veteran 3/8"
+        },
+        "5": {
+          "enchant": "Crystalline Radiance ",
+          "itemLevel": 590,
+          "name": "Earthen Landlubber's Breastplate",
+          "upgrade": "Veteran 3/8"
+        },
+        "6": {
+          "itemLevel": 590,
+          "name": "Sedimentary Girdle of the Feverflare",
+          "upgrade": "Veteran 3/8"
+        },
+        "7": {
+          "enchant": "+930 Agility/Strength & +895 Stamina ",
+          "itemLevel": 590,
+          "name": "Earthen Landlubber's Legguards",
+          "upgrade": "Veteran 3/8"
+        },
+        "8": {
+          "itemLevel": 593,
+          "name": "Secret-Dredger's Sabatons",
+          "upgrade": "Veteran 4/8"
+        },
+        "9": {
+          "enchant": "+850 Speed ",
+          "itemLevel": 584,
+          "name": "Earthen Landlubber's Armplates",
+          "upgrade": "Veteran 1/8"
+        },
+        "10": {
+          "itemLevel": 584,
+          "name": "Sedimentary Gauntlets of the Aurora",
+          "upgrade": "Veteran 1/8"
+        },
+        "11": {
+          "enchant": "+190 Haste ",
+          "itemLevel": 655,
+          "name": "Cyrce's Circlet",
+          "upgrade": "N/A"
+        },
+        "12": {
+          "enchant": "+190 Haste ",
+          "itemLevel": 584,
+          "name": "Scurvy Sailor's Ring",
+          "upgrade": "Veteran 1/8"
+        },
+        "13": {
+          "itemLevel": 584,
+          "name": "Concoction: Kiss of Death",
+          "upgrade": "Veteran 1/8"
+        },
+        "14": {
+          "itemLevel": 584,
+          "name": "Silken Chain Weaver",
+          "upgrade": "Veteran 1/8"
+        },
+        "15": {
+          "enchant": "Chant of Burrowing Rapidity ",
+          "itemLevel": 584,
+          "name": "Earthen Scallywag's Cloak",
+          "upgrade": "Veteran 1/8"
+        },
+        "16": {
+          "itemLevel": 593,
+          "name": "Earthen Landlubber's Sword",
+          "upgrade": "Veteran 4/8"
+        },
+        "17": {
+          "itemLevel": 606,
+          "name": "Earthen Landlubber's Shield",
+          "upgrade": "Veteran 8/8"
+        }
+      },
+      "brann": {
+        "role": "Healer",
+        "name": "Brann Bronzebeard",
+        "availableCurios": {
+          "1": {
+            "name": "Idol of Final Will",
+            "rank": 1
+          },
+          "2": {
+            "name": "Porcelain Arrowhead Idol",
+            "rank": 1
+          },
+          "3": {
+            "name": "Unbreakable Iron Idol",
+            "rank": 1
+          },
+          "4": {
+            "name": "Rage-Filled Idol",
+            "rank": 2
+          },
+          "5": {
+            "name": "Idol of the Earthmother",
+            "rank": 1
+          },
+          "6": {
+            "name": "Light-Touched Idol",
+            "rank": 1
+          },
+          "7": {
+            "name": "Brute Force Idol",
+            "rank": 1
+          },
+          "8": {
+            "name": "Time Lost Relic",
+            "rank": 3
+          },
+          "9": {
+            "name": "Relic of Sentience",
+            "rank": 1
+          },
+          "10": {
+            "name": "Lifeless Necrotic Relic",
+            "rank": 2
+          },
+          "11": {
+            "name": "Amorphous Relic",
+            "rank": 3
+          },
+          "12": {
+            "name": "Streamlined Relic",
+            "rank": 2
+          },
+          "13": {
+            "name": "Olden Seeker Relic",
+            "rank": 3
+          }
+        },
+        "equippedCurios": {
+          "combat": "Rage-Filled Idol (Rank 2/4)",
+          "utility": "Olden Seeker Relic (Rank 3/4)"
+        },
+        "level": 21,
+        "isDelveCompanion": "true",
+        "npcID": 206977
+      },
+      "recent_delves": [
+        {
+          "name": "Mycomancer Cavern, Tier 4",
+          "boss": "Bogpiper",
+          "fight_time": "48 seconds",
+          "deaths": "None",
+          "brann_health": "Healthy"
+        },
+        {
+          "name": "Mycomancer Cavern, Tier 5",
+          "boss": "Bogpiper",
+          "fight_time": "98 seconds",
+          "deaths": "None",
+          "brann_health": "15% remaining"
+        },
+        {
+          "name": "Kriegval’s Rest, Tier 5",
+          "boss": "Kobold Guardian",
+          "fight_time": "101 seconds",
+          "deaths": "None",
+          "brann_health": "Healthy"
+        }
+      ]
+    }
+  }
