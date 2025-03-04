@@ -1,0 +1,11 @@
+New Delve Run!
+
+Character: BM Hunter
+Tier: 5
+Delve: Mycomancer Cavern
+Brann Level: 28
+Brann Spec: healer
+Curios: Porcelain Arrowhead Idol Rank 3/4 and Amorphous Relic rank 3/4
+My Item Level: 596
+Boss Kill Time: 51 seconds
+Notes: Run was easy. No health issues.
