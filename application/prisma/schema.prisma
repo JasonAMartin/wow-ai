@@ -1,0 +1,26 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./data/warcraftData.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model DelveRun {
+  id            Int      @id @default(autoincrement())
+  delveName     String
+  tier          Int
+  character     String
+  brannLevel    Int
+  brannSpec     String
+  combatCurios  String?  // e.g. "Porcelain Arrowhead Idol Rank 3/4"
+  utilityCurios String?  // e.g. "Amorphous Relic Rank 3/4"
+  myItemLevel   String
+  bossKillTime  String
+  notes         String
+  dateRun       String
+  createdAt     DateTime @default(now())
+}

@@ -1,0 +1,35 @@
+my-wow-assistant/
+├── docker-compose.yml
+├── Dockerfile
+├── package.json
+├── prisma/
+│   └── schema.prisma
+├── pages/
+│   ├── index.js
+│   ├── add-delve-run.js
+│   ├── get-delve-runs.js
+│   ├── update-inventory.js
+│   ├── update-talents.js
+│   ├── update-currency.js
+│   ├── update-curios.js
+│   ├── update-stats.js
+│   ├── update-gear.js
+│   ├── get-inventory.js
+│   ├── get-talents.js
+│   ├── get-currency.js
+│   ├── get-curios.js
+│   ├── get-stats.js
+│   ├── get-gear.js
+│   ├── store-ai-context.js
+│   └── get-latest-ai-context.js
+└── pages/api/
+    └── delve-run/
+         ├── add.js
+         └── get.js
+
+
+After installing npm install, I need to initialize tailwind css: npx tailwindcss init
+
+and configure it
+
+After creating the schema, run npx prisma generate and npx prisma migrate dev --name init to set up your database.

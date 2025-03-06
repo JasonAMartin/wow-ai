@@ -1,0 +1,176 @@
+I want to create an application to keep track of my activity in the World of Warcraft. Baiscally I am using AI to be my WoW assistant but I need to keep data for memory, analysis, etc.
+
+This application will be NEXTJS and will interface with a database (or more if needed).
+
+I want a docker compose file with required components. This is on my main machine.
+
+Here are some tasks along with how I envision them:
+
+1. /add-delve-run -> I want a form to enter a delve run. When I hit the "ADD DELVE RUN" button it needs to add the run to the database. Also I want it to output text that I can copy/paste to AI.
+
+The form will have: delve name (this will be dropdown. Please look up delve names in WoW and add them), tier level (drop down 1-11), character (drop down: protection paladin, bm hunter, guardian druid), brann level (drop down 28-80), bran spec (drop down: healer, dps, tank), Curios (drop down: look up Curios and add 1 dropdown per rank too. Example: Porcelain Arrowhead Rank 1/4, Porcelain Arrowhead Rank 2/4, etc). My item level (text box), boss kill time (text box), notes (text area). Also there will be a piece of data "date run" that is the current date like:  March 03, 2025 that should be added to the record.
+
+After adding to the database the text area below should populate with something like this:
+
+New Delve Run!
+
+Character: BM Hunter
+Tier: 5
+Delve: Mycomancer Cavern
+Brann Level: 28
+Brann Spec: healer
+Curios: Porcelain Arrowhead Idol Rank 3/4 and Amorphous Relic rank 3/4
+My Item Level: 596
+Boss Kill Time: 51 seconds
+Notes: Run was easy. No health issues.
+Date Run: March 03, 2025
+
+2. /get-delve-runs -> On this page I want to get all delve run data and it should be in text area so I can copy/paste. I want it formated in JSON like this:
+
+{
+    runs: [
+        {record 1},
+        {record 2},
+        etc.
+    ]
+}
+
+3. /home -> whatever the default homepage is. Should have links to all the possible action pages.
+
+4. /update-inventory -> This is going to be a page that I paste in a JSON object and have the database update. We will work on the code for this in next steps.
+
+5. /update-talents -> Just make placeholder
+
+6. /update-currency -> just make placeholder
+
+7. /update-curios -> just make placeholder
+
+8. /update-stats -> just make placeholder
+
+9. /update-gear -> just make placeholder
+
+10. /get-inventory -> Just make placeholder
+
+11. /get-talents -> just make placeholder 
+
+12. /get-currency -> Just make placeholder
+
+13. /get curios -> Just make placeholder
+
+14. /get-stats -> Just make placeholder
+
+15. /get-gear -> Just make placeholder
+
+16. /store-ai-context -> just make placeholder but I'm going to paste in a data dump from AI so I can pick up conversations later. This will be AI context paste. I will want the date on these too.
+
+17. /get-latest-ai-context -> I will want to select the most recent context. but you can placeholder this page too. We will work on it later.
+
+
+For the database or databases not sure what one to use or if I need multiples. Please recommend.
+
+For the inventory, talents, currency, curios, stats, brann and gear I will be pasting in JSON. Each of these items will be tied to a specific character and I have many characters. So each character has inventory, talents, currency, etc.
+
+Here is an example of each data item:
+
+
+INVENTORY (NOTE: the key like "0-11" is not important, Just a key my addon makes.):
+
+      "inventory": {
+            "0-11": {
+            "name": "Empty Polyformic Acid Vial",
+            "quantity": 1
+            },
+            "3-23": {
+            "name": "Silk Doll",
+            "quantity": 1
+            },
+        }
+
+TALENTS:
+
+ "talents": {
+        "heroSpec": "Pack Leader",
+        "talents": {
+          "1": {
+            "name": "Unknown Talent",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Counter Shot",
+            "ranks": "1/1"
+          },
+        },
+        "heroTalents": {
+          "1": {
+            "name": "Wild Attacks",
+            "ranks": "1/1"
+          },
+          "2": {
+            "name": "Pack Assault",
+            "ranks": "1/1"
+          }
+        }
+      },
+
+CURRENCY:
+
+      "currencies": {
+        "Stygia": {
+          "maxQuantity": 0,
+          "quantity": 2477
+        },
+        "Cyphers of the First Ones": {
+          "maxQuantity": 0,
+          "quantity": 539
+        },
+        "Sinstone Fragments": {
+          "maxQuantity": 0,
+          "quantity": 712
+        }
+      }
+
+CURIOS:
+
+ "availableCurios": {
+          "1": {
+            "name": "Idol of Final Will",
+            "rank": 1
+          },
+          "2": {
+            "name": "Porcelain Arrowhead Idol",
+            "rank": 1
+          }
+        }
+
+STATS:
+
+ "stats": {
+        "criticalStrike": 24.271427154541,
+        "versatility": 4.9871792793274,
+        "mastery": 30.275140762329,
+        "armor": 28726,
+        "haste": 8.3409118652344,
+        "stamina": 216630,
+        "agility": 44976
+      }
+
+
+GEAR:
+
+      "gear": {
+        "1": {
+          "itemLevel": 606,
+          "name": "Earthen Islander's Coif",
+          "upgrade": "Veteran 8/8"
+        },
+        "2": {
+          "itemLevel": 584,
+          "name": "Moneyed Mariner's Pendant",
+          "upgrade": "Veteran 1/8"
+        }
+      },
+
+And the Characters data will be a table with ID (something to pin other data to), class, spec, overallItemLevel
+
+
+Please ask any questions you have or what you need to know before we start the code generation.
