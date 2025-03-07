@@ -7,5 +7,3 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    environment:
-      - DATABASE_URL=file:./data/warcraftData.db

@@ -1,5 +1,9 @@
 {
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/_error": "pages/_error.js"
+  "/update-inventory": "pages/update-inventory.js",
+  "/get-delve-runs": "pages/get-delve-runs.js",
+  "/": "pages/index.js",
+  "/update-curios": "pages/update-curios.js"
 }

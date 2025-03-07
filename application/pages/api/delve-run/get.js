@@ -1,22 +1,15 @@
-import { PrismaClient } from '@prisma/client';
+import db from '../../../lib/db';
 
-const prisma = new PrismaClient();
-
-export default async function handler(req, res) {
+export default function handler(req, res) {
   if (req.method === 'GET') {
-    try {
-      // Retrieve all delve runs from the database
-      const runs = await prisma.delveRun.findMany({
-        orderBy: {
-          createdAt: 'desc'
-        }
-      });
-
-      res.status(200).json({ runs });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Error fetching delve runs.' });
-    }
+    db.all(`SELECT * FROM DelveRun ORDER BY createdAt DESC`, [], (err, rows) => {
+      if (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error fetching records' });
+      } else {
+        res.status(200).json({ runs: rows });
+      }
+    });
   } else {
     res.status(405).json({ error: 'Method not allowed' });
   }

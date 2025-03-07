@@ -1,0 +1,16 @@
+INSERT INTO Delves (name, zone, min_item_level, unlock_condition, notes) VALUES
+    ('Fungal Folly', 'The Ringing Deeps', NULL, 'Available at launch', 'Mushroom-themed, early leveling Delve'),
+    ('Earthcrawl Mines', 'Isle of Dorn', NULL, 'Available at launch', 'First Delve in campaign, mining theme'),
+    ('The Dread Pit', 'Hallowfall', 530, 'Level 80 + campaign', 'Dark and ominous, spider enemies'),
+    ('Mycomancer Cavern', 'The Ringing Deeps', 530, 'Level 80 + campaign', 'Fungarian enemies, spore hazards'),
+    ('Skittering Breach', 'Azj-Kahet', 530, 'Level 80 + campaign', 'Nerubian-themed, web traps'),
+    ('Tak-Rethan Abyss', 'Hallowfall', 530, 'Level 80 + campaign', 'Kobyss underwater elements'),
+    ('Kriegval''s Rest', 'Isle of Dorn', 530, 'Level 80 + campaign', 'Orcish burial ground vibes'),
+    ('The Waterworks', 'The Ringing Deeps', 530, 'Level 80 + campaign', 'Water channels, mechanical foes'),
+    ('Nightfall Sanctum', 'Hallowfall', 530, 'Level 80 + campaign', 'Order of Night, artillery hazards'),
+    ('The Sinkhole', 'Isle of Dorn', 530, 'Level 80 + campaign', 'Simple layout, bandit theme'),
+    ('The Underkeep', 'Azj-Kahet', 530, 'Level 80 + campaign', 'Nerubian palace interior'),
+    ('The Spiral Weave', 'Azj-Kahet', 530, 'Level 80 + campaign', 'Complex web-filled paths'),
+    ('Zekvir''s Lair', 'Unknown', 548, 'Season 1 unlock, Tier 7+ clear', 'Secret Delve, nemesis boss'),
+    ('Sidestreet Sluice', 'Azj-Kahet', 548, 'Season 2 unlock, Patch 11.1', 'Sewers of Undermine, goblin theme'),
+    ('Excavation Site 9', 'Azj-Kahet', 548, 'Season 2 unlock, Patch 11.1', 'Mining site, black blood focus');

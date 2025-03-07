@@ -1,0 +1,7 @@
+.history
+.idea
+.code
+.next
+application/.next
+application/node_modules
+application/data
