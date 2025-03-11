@@ -30,20 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/get-delve-runs": [
+    "/add-delve-run": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/get-delve-runs.js"
+      "static/chunks/pages/add-delve-run.js"
     ],
     "/update-curios": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/update-curios.js"
-    ],
-    "/update-inventory": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/update-inventory.js"
     ]
   },
   "ampFirstPages": []

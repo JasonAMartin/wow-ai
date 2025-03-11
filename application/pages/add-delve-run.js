@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
 export default function AddDelveRun() {
-  // Prepopulate the date field with the current date in YYYY-MM-DD format
+  // Prepopulate the date field with today's date in YYYY-MM-DD format
   const getCurrentFormattedDate = () => {
     return new Date().toISOString().split('T')[0];
   };
 
-  // Set up form state matching the DelveRun table columns
+  // Form state matching the DelveRun table columns (using IDs for lookups)
   const [formData, setFormData] = useState({
     delves_id: '',
     tier: '1',
@@ -29,33 +29,29 @@ export default function AddDelveRun() {
 
   const [outputText, setOutputText] = useState('');
 
-  // State for dynamic dropdown options
+  // Dynamic lookup arrays
   const [availableDelves, setAvailableDelves] = useState([]);
   const [availableCharacters, setAvailableCharacters] = useState([]);
   const [availableCombatCurios, setAvailableCombatCurios] = useState([]);
   const [availableUtilityCurios, setAvailableUtilityCurios] = useState([]);
 
-  // Fetch available options when the component mounts
+  // Fetch dynamic options when component mounts
   useEffect(() => {
-    // Fetch Delves
     fetch('/api/delves')
       .then((res) => res.json())
       .then((data) => setAvailableDelves(data.delves || []))
       .catch(console.error);
 
-    // Fetch Characters
     fetch('/api/characters')
       .then((res) => res.json())
       .then((data) => setAvailableCharacters(data.characters || []))
       .catch(console.error);
 
-    // Fetch owned Combat Curios
     fetch('/api/curios?type=Combat')
       .then((res) => res.json())
       .then((data) => setAvailableCombatCurios(data.curios || []))
       .catch(console.error);
 
-    // Fetch owned Utility Curios
     fetch('/api/curios?type=Utility')
       .then((res) => res.json())
       .then((data) => setAvailableUtilityCurios(data.curios || []))
@@ -73,6 +69,7 @@ export default function AddDelveRun() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Post the formData to the API endpoint
     const res = await fetch('/api/delve-run/add', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -80,7 +77,47 @@ export default function AddDelveRun() {
     });
     const data = await res.json();
     if (res.ok) {
-      setOutputText(data.message);
+      // Build a JSON object for AI output that uses display names
+      const selectedDelve = availableDelves.find(
+        (d) => d.id.toString() === formData.delves_id
+      );
+      const selectedCharacter = availableCharacters.find(
+        (c) => c.id.toString() === formData.characters_id
+      );
+      const selectedCombatCurio = availableCombatCurios.find(
+        (c) => c.id.toString() === formData.combat_curio_id
+      );
+      const selectedUtilityCurio = availableUtilityCurios.find(
+        (c) => c.id.toString() === formData.utility_curio_id
+      );
+
+      const aiOutput = {
+        Delve: selectedDelve ? selectedDelve.name : '',
+        Tier: formData.tier,
+        Character: selectedCharacter
+          ? `${selectedCharacter.name} - ${selectedCharacter.class} - ${selectedCharacter.spec}`
+          : '',
+        BrannLevel: formData.brannLevel,
+        BrannSpec: formData.brannSpec,
+        CombatCurio: selectedCombatCurio
+          ? `${selectedCombatCurio.name} (Rank ${selectedCombatCurio.rank}/4)`
+          : '',
+        UtilityCurio: selectedUtilityCurio
+          ? `${selectedUtilityCurio.name} (Rank ${selectedUtilityCurio.rank}/4)`
+          : '',
+        MyItemLevel: formData.myItemLevel,
+        BossKillTime: formData.bossKillTime,
+        TotalTime: formData.totalTime,
+        Completed: formData.completed,
+        Rewards: formData.rewards,
+        Notes: formData.notes,
+        DateRun: formData.dateRun,
+        Season: formData.season,
+        PartySize: formData.partySize,
+        DifficultyModifiers: formData.difficultyModifiers
+      };
+
+      setOutputText(JSON.stringify(aiOutput, null, 2));
     } else {
       setOutputText('Error adding delve run.');
     }
@@ -93,12 +130,13 @@ export default function AddDelveRun() {
   const partySizes = [1, 2, 3, 4, 5];
 
   return (
-    <div className="container">
+    <div style={{ padding: '2rem' }}>
       <h1>Add Delve Run</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{ marginBottom: '2rem' }}>
         {/* Delve Dropdown */}
         <div>
           <label>Delve</label>
+          <br />
           <select name="delves_id" value={formData.delves_id} onChange={handleChange}>
             <option value="">Select a Delve</option>
             {availableDelves.map((delve) => (
@@ -112,6 +150,7 @@ export default function AddDelveRun() {
         {/* Tier */}
         <div>
           <label>Tier Level</label>
+          <br />
           <select name="tier" value={formData.tier} onChange={handleChange}>
             {tiers.map((tier) => (
               <option key={tier} value={tier}>
@@ -124,6 +163,7 @@ export default function AddDelveRun() {
         {/* Character Dropdown */}
         <div>
           <label>Character</label>
+          <br />
           <select name="characters_id" value={formData.characters_id} onChange={handleChange}>
             <option value="">Select Character</option>
             {availableCharacters.map((char) => (
@@ -137,6 +177,7 @@ export default function AddDelveRun() {
         {/* Brann Level */}
         <div>
           <label>Brann Level</label>
+          <br />
           <select name="brannLevel" value={formData.brannLevel} onChange={handleChange}>
             {brannLevels.map((level) => (
               <option key={level} value={level}>
@@ -149,6 +190,7 @@ export default function AddDelveRun() {
         {/* Brann Spec */}
         <div>
           <label>Brann Spec</label>
+          <br />
           <select name="brannSpec" value={formData.brannSpec} onChange={handleChange}>
             <option value="">Select Spec</option>
             {brannSpecs.map((spec) => (
@@ -162,6 +204,7 @@ export default function AddDelveRun() {
         {/* Combat Curio Dropdown */}
         <div>
           <label>Combat Curio</label>
+          <br />
           <select name="combat_curio_id" value={formData.combat_curio_id} onChange={handleChange}>
             <option value="">Select Combat Curio</option>
             {availableCombatCurios.map((curio) => (
@@ -175,6 +218,7 @@ export default function AddDelveRun() {
         {/* Utility Curio Dropdown */}
         <div>
           <label>Utility Curio</label>
+          <br />
           <select name="utility_curio_id" value={formData.utility_curio_id} onChange={handleChange}>
             <option value="">Select Utility Curio</option>
             {availableUtilityCurios.map((curio) => (
@@ -184,57 +228,72 @@ export default function AddDelveRun() {
             ))}
           </select>
         </div>
+
         {/* My Item Level */}
         <div>
           <label>My Item Level</label>
+          <br />
           <input type="text" name="myItemLevel" value={formData.myItemLevel} onChange={handleChange} />
         </div>
 
         {/* Boss Kill Time */}
         <div>
           <label>Boss Kill Time (seconds)</label>
+          <br />
           <input type="text" name="bossKillTime" value={formData.bossKillTime} onChange={handleChange} />
         </div>
 
         {/* Total Time */}
         <div>
           <label>Total Time (seconds)</label>
+          <br />
           <input type="text" name="totalTime" value={formData.totalTime} onChange={handleChange} />
         </div>
 
         {/* Completed */}
         <div>
           <label>Completed</label>
-          <input type="checkbox" name="completed" checked={formData.completed} onChange={handleChange} />
+          <br />
+          <input
+            type="checkbox"
+            name="completed"
+            checked={formData.completed}
+            onChange={handleChange}
+          />
         </div>
 
         {/* Rewards */}
         <div>
           <label>Rewards</label>
+          <br />
           <textarea name="rewards" value={formData.rewards} onChange={handleChange}></textarea>
         </div>
 
         {/* Notes */}
         <div>
           <label>Notes</label>
+          <br />
           <textarea name="notes" value={formData.notes} onChange={handleChange}></textarea>
         </div>
 
         {/* Date Run */}
         <div>
           <label>Date Run</label>
+          <br />
           <input type="date" name="dateRun" value={formData.dateRun} onChange={handleChange} />
         </div>
 
         {/* Season */}
         <div>
           <label>Season</label>
+          <br />
           <input type="number" name="season" value={formData.season} onChange={handleChange} />
         </div>
 
         {/* Party Size */}
         <div>
           <label>Party Size</label>
+          <br />
           <select name="partySize" value={formData.partySize} onChange={handleChange}>
             {partySizes.map((size) => (
               <option key={size} value={size}>
@@ -247,18 +306,24 @@ export default function AddDelveRun() {
         {/* Difficulty Modifiers */}
         <div>
           <label>Difficulty Modifiers</label>
+          <br />
           <textarea name="difficultyModifiers" value={formData.difficultyModifiers} onChange={handleChange}></textarea>
         </div>
 
-        <button type="submit">ADD DELVE RUN</button>
+        <button type="submit" style={{ marginTop: '1rem' }}>
+          ADD DELVE RUN
+        </button>
       </form>
 
-      {outputText && (
-        <div>
-          <label>Output (copy/paste to AI):</label>
-          <textarea readOnly value={outputText}></textarea>
-        </div>
-      )}
+      {/* JSON FOR AI output */}
+      <div style={{ marginTop: '2rem' }}>
+        <h2>JSON FOR AI</h2>
+        <textarea
+          readOnly
+          value={outputText}
+          style={{ width: '100%', height: '300px' }}
+        ></textarea>
+      </div>
     </div>
   );
 }

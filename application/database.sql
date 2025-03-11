@@ -74,3 +74,11 @@ CREATE TABLE IF NOT EXISTS DelveRun (
     FOREIGN KEY (combat_curio_id) REFERENCES Curios(id),
     FOREIGN KEY (utility_curio_id) REFERENCES Curios(id)
 );
+
+CREATE TABLE IF NOT EXISTS AIContext (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic TEXT NOT NULL,
+    context TEXT NOT NULL CHECK (json_valid(context)), -- JSON format, validated
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    notes TEXT
+);
