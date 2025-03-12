@@ -52,12 +52,19 @@ export default function ViewDelveRuns() {
         
         delveGroups[delveId].characters[charId].runs.push(run);
         
-        if (run.bossKillTime) {
-          delveGroups[delveId].characters[charId].bossKillTimes.push(run.bossKillTime);
+        // Ensure we're working with numbers for time values
+        if (run.bossKillTime !== null && run.bossKillTime !== undefined) {
+          const bossKillTime = Number(run.bossKillTime);
+          if (!isNaN(bossKillTime)) {
+            delveGroups[delveId].characters[charId].bossKillTimes.push(bossKillTime);
+          }
         }
         
-        if (run.totalTime) {
-          delveGroups[delveId].characters[charId].totalTimes.push(run.totalTime);
+        if (run.totalTime !== null && run.totalTime !== undefined) {
+          const totalTime = Number(run.totalTime);
+          if (!isNaN(totalTime)) {
+            delveGroups[delveId].characters[charId].totalTimes.push(totalTime);
+          }
         }
       }
       
@@ -75,12 +82,19 @@ export default function ViewDelveRuns() {
       
       delveGroups[delveId].tiers[tier].runs.push(run);
       
-      if (run.bossKillTime) {
-        delveGroups[delveId].tiers[tier].bossKillTimes.push(run.bossKillTime);
+      // Ensure we're working with numbers for time values
+      if (run.bossKillTime !== null && run.bossKillTime !== undefined) {
+        const bossKillTime = Number(run.bossKillTime);
+        if (!isNaN(bossKillTime)) {
+          delveGroups[delveId].tiers[tier].bossKillTimes.push(bossKillTime);
+        }
       }
       
-      if (run.totalTime) {
-        delveGroups[delveId].tiers[tier].totalTimes.push(run.totalTime);
+      if (run.totalTime !== null && run.totalTime !== undefined) {
+        const totalTime = Number(run.totalTime);
+        if (!isNaN(totalTime)) {
+          delveGroups[delveId].tiers[tier].totalTimes.push(totalTime);
+        }
       }
     });
     
@@ -143,6 +157,9 @@ export default function ViewDelveRuns() {
       });
     });
     
+    // Add debug logging
+    console.log('Processed Delve Data:', Object.values(delveGroups));
+    
     return Object.values(delveGroups);
   };
 
@@ -158,6 +175,10 @@ export default function ViewDelveRuns() {
         }
         
         const data = await res.json();
+        
+        // Log the raw data
+        console.log('Raw Delve Run Data:', data.runs);
+        
         setRunsData(data.runs || []);
         
         // Process the data for stats display
@@ -197,7 +218,7 @@ export default function ViewDelveRuns() {
             </div>
           )}
           
-          {/* JSON Data Display */}
+          {/* JSON Data Display (helpful for debugging) */}
           {!loading && runsData.length > 0 && (
             <div className={styles.jsonSection}>
               <h2 className={styles.jsonTitle}>Raw Delve Run Data (JSON)</h2>

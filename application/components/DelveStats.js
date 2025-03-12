@@ -60,8 +60,11 @@ const DelveStats = ({ delve }) => {
   const getBestRun = (charId, tierLevel, timeType) => {
     if (!characters[charId] || !tiers[tierLevel]) return null;
     
+    // Convert tierLevel to number for consistent comparison
+    const tierNum = Number(tierLevel);
+    
     // Find all runs for this character and tier
-    const characterRuns = characters[charId].runs.filter(run => run.tier == tierLevel);
+    const characterRuns = characters[charId].runs.filter(run => Number(run.tier) === tierNum);
     
     if (characterRuns.length === 0) return null;
     
@@ -82,6 +85,14 @@ const DelveStats = ({ delve }) => {
     return bestRun;
   };
   
+  // Debug: Log the data structure
+  console.log('Delve Data:', {
+    name,
+    characters: Object.keys(characters).length,
+    tiers: Object.keys(tiers).length,
+    activeTab
+  });
+  
   return (
     <div className={styles.delveCard}>
       <div className={styles.delveHeader}>
@@ -95,12 +106,14 @@ const DelveStats = ({ delve }) => {
         <div 
           className={`${styles.tab} ${activeTab === 'bossKill' ? styles.tabActive : ''}`}
           onClick={() => setActiveTab('bossKill')}
+          style={{ cursor: 'pointer' }}
         >
           Boss Kill Time {activeTab === 'bossKill' && <span className={styles.activeTabIndicator}>▶</span>}
         </div>
         <div 
           className={`${styles.tab} ${activeTab === 'totalTime' ? styles.tabActive : ''}`}
           onClick={() => setActiveTab('totalTime')}
+          style={{ cursor: 'pointer' }}
         >
           Total Run Time {activeTab === 'totalTime' && <span className={styles.activeTabIndicator}>▶</span>}
         </div>
@@ -110,18 +123,21 @@ const DelveStats = ({ delve }) => {
         <div 
           className={`${styles.tab} ${activeView === 'matrix' ? styles.tabActive : ''}`}
           onClick={() => setActiveView('matrix')}
+          style={{ cursor: 'pointer' }}
         >
           Matrix View {activeView === 'matrix' && <span className={styles.activeTabIndicator}>▶</span>}
         </div>
         <div 
           className={`${styles.tab} ${activeView === 'character' ? styles.tabActive : ''}`}
           onClick={() => setActiveView('character')}
+          style={{ cursor: 'pointer' }}
         >
           By Character {activeView === 'character' && <span className={styles.activeTabIndicator}>▶</span>}
         </div>
         <div 
           className={`${styles.tab} ${activeView === 'tier' ? styles.tabActive : ''}`}
           onClick={() => setActiveView('tier')}
+          style={{ cursor: 'pointer' }}
         >
           By Tier {activeView === 'tier' && <span className={styles.activeTabIndicator}>▶</span>}
         </div>
@@ -215,8 +231,11 @@ const DelveStats = ({ delve }) => {
                 
                 <div className={styles.tierCardsGrid}>
                   {sortedTiers.map(tier => {
+                    // Convert tier to number for consistent comparison
+                    const tierNum = Number(tier.tier);
+                    
                     // Get all runs for this character and tier
-                    const runs = character.runs.filter(run => run.tier == tier.tier);
+                    const runs = character.runs.filter(run => Number(run.tier) === tierNum);
                     
                     if (runs.length === 0) return null;
                     
@@ -279,8 +298,11 @@ const DelveStats = ({ delve }) => {
                 
                 <div className={styles.characterCardsGrid}>
                   {sortedCharacters.map(character => {
+                    // Convert tier to number for consistent comparison
+                    const tierNum = Number(tier.tier);
+                    
                     // Get all runs for this character and tier
-                    const runs = character.runs.filter(run => run.tier == tier.tier);
+                    const runs = character.runs.filter(run => Number(run.tier) === tierNum);
                     
                     if (runs.length === 0) return null;
                     
