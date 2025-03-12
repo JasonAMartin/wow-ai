@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import SiteHeader from '../components/SiteHeader';
-import DelveStats from '../components/DelveStats'
+import DelveStats from '../components/DelveStats';
 import styles from '../styles/ViewDelveRuns.module.css';
 
 export default function ViewDelveRuns() {
@@ -178,9 +178,9 @@ export default function ViewDelveRuns() {
     <>
       <SiteHeader />
       <div className={styles.container}>
-        <h1 className={styles.title}>View Delve Runs</h1>
-        
         <div className={styles.contentWrapper}>
+          <h1 className={styles.title}>View Delve Runs</h1>
+          
           {loading ? (
             <div className={styles.loading}>Loading delve run data...</div>
           ) : error ? (
@@ -205,7 +205,7 @@ export default function ViewDelveRuns() {
                 readOnly
                 value={JSON.stringify(runsData, null, 2)}
                 className={styles.jsonTextarea}
-              ></textarea>
+              />
             </div>
           )}
         </div>

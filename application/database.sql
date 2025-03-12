@@ -22,6 +22,7 @@ CREATE TABLE Curios (
     curio_type TEXT NOT NULL CHECK (curio_type IN ('Combat', 'Utility')),
     owned INTEGER DEFAULT 0 CHECK (owned IN (0, 1)),
     rank INTEGER DEFAULT 0 CHECK (rank BETWEEN 0 AND 4),
+    curios_image TEXT NOT NULL,
     description TEXT
 );
 

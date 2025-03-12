@@ -2,8 +2,11 @@ import db from '../../../lib/db';
 
 export default function handler(req, res) {
   if (req.method === 'GET') {
-    // SQL query with JOINs to get all required data
-    const query = `
+    // Check if we need to filter by character ID
+    const characterId = req.query.characterId;
+    
+    // Base SQL query with JOINs
+    let query = `
       SELECT 
         dr.*,
         c.name as character_name, 
@@ -14,10 +17,20 @@ export default function handler(req, res) {
       FROM DelveRun dr
       LEFT JOIN Characters c ON dr.characters_id = c.id
       LEFT JOIN Delves d ON dr.delves_id = d.id
-      ORDER BY dr.createdAt DESC
     `;
     
-    db.all(query, [], (err, rows) => {
+    // Add character filter if specified
+    if (characterId) {
+      query += ` WHERE dr.characters_id = ?`;
+    }
+    
+    // Add ordering
+    query += ` ORDER BY dr.createdAt DESC`;
+    
+    // Parameters for the query
+    const params = characterId ? [characterId] : [];
+    
+    db.all(query, params, (err, rows) => {
       if (err) {
         console.error('Error fetching delve runs:', err);
         res.status(500).json({ error: 'Error fetching records' });

@@ -1,234 +1,8 @@
-.container {
-    min-height: 100vh;
-    padding: 2rem;
-    background-color: var(--primary-bg);
-  }
-  
-  .title {
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--gold-accent);
-    text-align: center;
-  }
-  
-  .contentWrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .statsSection {
-    margin-bottom: 3rem;
-  }
-  
-  .delveCard {
-    background-color: var(--card-bg);
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-  }
-  
-  .delveHeader {
-    background-color: var(--secondary-bg);
-    padding: 1.25rem;
-    border-bottom: 1px solid var(--gold-accent);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .delveName {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--gold-accent);
-    margin: 0;
-  }
-  
-  .delveZone {
-    font-size: 0.9rem;
+.matrixDate {
+    font-size: 0.8rem;
     color: var(--secondary-text);
-  }
-  
-  .tabsContainer {
-    display: flex;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .tab {
-    padding: 1rem 1.5rem;
-    color: var(--secondary-text);
-    cursor: pointer;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
-    font-weight: 500;
-  }
-  
-  .tab:hover {
-    color: var(--primary-text);
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .tabActive {
-    color: var(--gold-accent);
-    border-bottom: 3px solid var(--gold-accent);
-  }
-  
-  .statsContent {
-    padding: 1.5rem;
-  }
-  
-  .statsSectionTitle {
-    font-family: 'Cinzel', serif;
-    font-size: 1.25rem;
-    color: var(--gold-accent);
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-  }
-  
-  .statsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .statsCard {
-    background-color: rgba(34, 36, 48, 0.7);
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-    padding: 1.25rem;
-    transition: all 0.2s ease;
-  }
-  
-  .statsCard:hover {
-    border-color: var(--gold-accent);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transform: translateY(-2px);
-  }
-  
-  .statsHeader {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-  
-  .characterIcon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    margin-right: 0.75rem;
-    background-color: rgba(248, 183, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--gold-accent);
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
-  
-  .characterInfo {
-    flex: 1;
-  }
-  
-  .characterName {
-    font-weight: 600;
-    color: var(--primary-text);
-    margin-bottom: 0.25rem;
-  }
-  
-  .characterClass {
-    font-size: 0.85rem;
-    color: var(--secondary-text);
-  }
-  
-  .statsRow {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(57, 59, 66, 0.5);
-  }
-  
-  .statsRow:last-child {
-    border-bottom: none;
-  }
-  
-  .statLabel {
-    color: var(--secondary-text);
-    font-size: 0.9rem;
-  }
-  
-  .statValue {
-    color: var(--primary-text);
-    font-weight: 500;
-  }
-  
-  .fastest {
-    color: #4caf50;
-  }
-  
-  .slowest {
-    color: #f44336;
-  }
-  
-  .average {
-    color: #2196f3;
-  }
-  
-  .runCount {
-    text-align: right;
-    font-size: 0.85rem;
-    color: var(--secondary-text);
-    margin-top: 1rem;
-  }
-  
-  .emptyState {
-    padding: 3rem;
-    text-align: center;
-    color: var(--secondary-text);
-  }
-  
-  .jsonSection {
-    background-color: var(--card-bg);
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    margin: 2rem auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    width: 80%;
-  }
-  
-  .jsonTitle {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--gold-accent);
-    margin-bottom: 1.25rem;
-    text-align: center;
-  }
-  
-  .jsonTextarea {
-    width: 100%;
-    height: 300px;
-    background-color: var(--secondary-bg);
-    color: var(--secondary-text);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 1rem;
-    font-family: monospace;
-    resize: vertical;
-  }
-  
-  .loading {
-    text-align: center;
-    padding: 2rem;
-    color: var(--gold-accent);
-  }
-  
-  @media (max-width: 768px) {
+    margin-top: 0.25rem;
+  }@media (max-width: 768px) {
     .statsGrid {
       grid-template-columns: 1fr;
     }
@@ -245,4 +19,146 @@
     .jsonSection {
       width: 100%;
     }
+    
+    .tierCardsGrid, 
+    .characterCardsGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .matrixTable {
+      min-width: 500px;
+    }
+  }.tabActive {
+    color: var(--gold-accent);
+    border-bottom: 3px solid var(--gold-accent);
+  }
+  
+  .statsContent {
+    padding: 1.5rem;
+  }
+  
+  /* Matrix View Styles */
+  .matrixView {
+    width: 100%;
+    overflow-x: auto;
+    margin-left: 1rem;
+  }
+  
+  .matrixWrapper {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .matrixTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 650px;
+  }
+  
+  .matrixHeader {
+    background-color: var(--secondary-bg);
+    color: var(--gold-accent);
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  
+  .matrixHeader:first-child {
+    text-align: left;
+    border-top-left-radius: 4px;
+  }
+  
+  .matrixHeader:last-child {
+    border-top-right-radius: 4px;
+  }
+  
+  .matrixCell {
+    padding: 0.85rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+  }
+  
+  .matrixCell:first-child {
+    text-align: left;
+  }
+  
+  .matrixTable tr:nth-child(even) td {
+    background-color: rgba(34, 36, 48, 0.7);
+  }
+  
+  .matrixTable tr:hover td {
+    background-color: rgba(248, 183, 0, 0.05);
+  }
+  
+  .characterCell {
+    display: flex;
+    align-items: center;
+  }
+  
+  .characterCellInfo {
+    margin-left: 0.75rem;
+  }
+  
+  .characterClass {
+    font-size: 0.85rem;
+    color: var(--secondary-text);
+  }
+  
+  .matrixCellContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .matrixTime {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--gold-accent);
+  }
+  
+  .noRun {
+    color: var(--secondary-text);
+    opacity: 0.5;
+    font-size: 1.2rem;
+  }
+  
+  /* Character View Styles */
+  .characterView {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .characterSection {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
+  }
+  
+  .characterSection:last-child {
+    border-bottom: none;
+  }
+  
+  .characterSectionHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  
+  .characterSectionTitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    color: var(--primary-text);
+    margin-left: 1rem;
+  }
+  
+  .tierCardsGrid, .characterCardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
   }

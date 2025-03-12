@@ -1,5 +1,10 @@
 Project Overview for: /Users/darkknight/Code/wow-ai/application
+├── components
+│   ├── DelveStats.js
+│   ├── SiteHeader.js
+│   └── TimeStats.js
 ├── data
+│   ├── warcraftData copy.db
 │   └── warcraftData.db
 ├── lib
 │   └── db.js
@@ -8,6 +13,7 @@ Project Overview for: /Users/darkknight/Code/wow-ai/application
 │   │   ├── ai-context
 │   │   │   └── add.js
 │   │   ├── characters
+│   │   │   ├── [id].js
 │   │   │   ├── index.js
 │   │   │   └── update.js
 │   │   ├── curios
@@ -19,11 +25,12 @@ Project Overview for: /Users/darkknight/Code/wow-ai/application
 │   │   │   └── get.js
 │   │   └── delves
 │   │       └── index.js
+│   ├── characters
+│   │   └── id[s].js
 │   ├── _app.js
 │   ├── add-delve-run.js
 │   ├── get-curios.js
 │   ├── get-currency.js
-│   ├── get-delve-runs.js
 │   ├── get-gear.js
 │   ├── get-inventory.js
 │   ├── get-latest-ai-context.js
@@ -37,9 +44,27 @@ Project Overview for: /Users/darkknight/Code/wow-ai/application
 │   ├── update-gear.js
 │   ├── update-inventory.js
 │   ├── update-stats.js
-│   └── update-talents.js
+│   ├── update-talents.js
+│   └── view-delve-runs.js
+├── public
+│   └── images
+│       ├── ai-icon.png
+│       ├── bg-texture.jpg
+│       ├── bg-texture.png
+│       ├── character-avatar.png
+│       ├── character-icon.png
+│       ├── delve-icon.png
+│       ├── hero-bg.jpg
+│       ├── inv_10_engineering2_boxofbombs_dangerous_color3.jpg
+│       ├── inv_111_magnet_blackwater.jpg
+│       ├── inventory-icon.png
+│       └── wow-assistant-logo.png
 ├── styles
+│   ├── AddDelveRun.module.css
 │   ├── Home.module.css
+│   ├── SiteHeader.module.css
+│   ├── UpdateCurios.module.css
+│   ├── ViewDelveRuns.module.css
 │   └── globals.css
 ├── Dockerfile
 ├── database.sql
@@ -48,4 +73,6 @@ Project Overview for: /Users/darkknight/Code/wow-ai/application
 ├── grok-database-injection.sql
 ├── overview.md
 ├── package-lock.json
-└── package.json
+├── package.json
+├── theme.md
+└── todo.md
