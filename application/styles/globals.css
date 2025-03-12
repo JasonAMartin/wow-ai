@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-bg: #0B0D13;
+  --secondary-bg: #1A1C23;
+  --card-bg: #222430;
+  --header-bg: #070A13;
+  --primary-text: #FFFFFF;
+  --secondary-text: #B8BCCC;
+  --gold-accent: #F8B700;
+  --gold-accent-hover: #FFD54F;
+  --blue-accent: #0070F3;
+  --border-color: #393B42;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-image: url('/images/bg-texture.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  color: var(--primary-text);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: var(--blue-accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--gold-accent);
+}
+
+button, .button {
+  background-color: var(--gold-accent);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:hover, .button:hover {
+  background-color: var(--gold-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-secondary {
+  background-color: transparent;
+  border: 1px solid var(--gold-accent);
+  color: var(--gold-accent);
+}
+
+.button-secondary:hover {
+  background-color: rgba(248, 183, 0, 0.1);
+  color: var(--gold-accent-hover);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.bordered-gold {
+  border: 1px solid var(--gold-accent);
+}
+
+.text-gold {
+  color: var(--gold-accent);
+}
+
+.section {
+  margin: 3rem 0;
+}
+
+ul.fancy-list {
+  list-style: none;
+  margin-left: 1rem;
+}
+
+ul.fancy-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+ul.fancy-list li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--gold-accent);
+  border-radius: 2px;
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}

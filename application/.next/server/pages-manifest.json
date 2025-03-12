@@ -1,8 +1,7 @@
 {
-  "/_document": "pages/_document.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/": "pages/index.js",
-  "/api/curios/all": "pages/api/curios/all.js",
-  "/api/curios/update": "pages/api/curios/update.js"
+  "/_document": "pages/_document.js",
+  "/view-delve-runs": "pages/view-delve-runs.js",
+  "/api/delve-run/get": "pages/api/delve-run/get.js"
 }

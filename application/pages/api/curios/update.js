@@ -17,8 +17,8 @@ export default function handler(req, res) {
 
   // Update each curio record.
   curios.forEach((curio) => {
-    const updateQuery = `UPDATE Curios SET owned = ?, rank = ? WHERE id = ?`;
-    db.run(updateQuery, [curio.owned, curio.rank, curio.id], function (err) {
+    const updateQuery = `UPDATE Curios SET owned = ?, rank = ?, curios_image = ? WHERE id = ?`;
+    db.run(updateQuery, [curio.owned, curio.rank, curio.curios_image, curio.id], function (err) {
       if (err) {
         console.error(`Error updating curio id ${curio.id}:`, err);
         errors.push(`Curio ${curio.id}`);

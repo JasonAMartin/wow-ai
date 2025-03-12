@@ -1,0 +1,164 @@
+.container {
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: var(--primary-bg);
+  }
+  
+  .title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--gold-accent);
+    text-align: center;
+  }
+  
+  .tableContainer {
+    overflow-x: auto;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+  
+  .tableHeader {
+    background-color: var(--secondary-bg);
+    color: var(--gold-accent);
+    font-family: 'Cinzel', serif;
+    text-align: left;
+    font-weight: 600;
+    padding: 1rem;
+    border-bottom: 2px solid var(--gold-accent);
+  }
+  
+  .tableRow {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+  }
+  
+  .tableRow:hover {
+    background-color: rgba(248, 183, 0, 0.05) !important;
+  }
+  
+  .tableRow:nth-child(even) {
+    background-color: rgba(34, 36, 48, 0.7);
+  }
+  
+  .tableCell {
+    padding: 1rem;
+    color: var(--primary-text);
+    vertical-align: middle;
+  }
+  
+  .select {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 100%;
+    min-width: 100px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .select:hover {
+    border-color: var(--gold-accent);
+  }
+  
+  .select:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 0 2px rgba(248, 183, 0, 0.2);
+  }
+  
+  .updateButton {
+    background-color: var(--gold-accent);
+    color: #000;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    margin: 2rem auto;
+    display: block;
+    min-width: 200px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .updateButton:hover {
+    background-color: var(--gold-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .message {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  
+  .success {
+    background-color: rgba(0, 128, 0, 0.1);
+    color: #4caf50;
+    border: 1px solid #4caf50;
+  }
+  
+  .error {
+    background-color: rgba(255, 0, 0, 0.1);
+    color: #f44336;
+    border: 1px solid #f44336;
+  }
+  
+  .imageCell {
+    text-align: center;
+  }
+  
+  .curioImage {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+  }
+  
+  .imageInput {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .imageInput:hover {
+    border-color: var(--gold-accent);
+  }
+  
+  .imageInput:focus {
+    outline: none;
+    border-color: var(--gold-accent);
+    box-shadow: 0 0 0 2px rgba(248, 183, 0, 0.2);
+  }

@@ -1,0 +1,51 @@
+Project Overview for: /Users/darkknight/Code/wow-ai/application
+├── data
+│   └── warcraftData.db
+├── lib
+│   └── db.js
+├── pages
+│   ├── api
+│   │   ├── ai-context
+│   │   │   └── add.js
+│   │   ├── characters
+│   │   │   ├── index.js
+│   │   │   └── update.js
+│   │   ├── curios
+│   │   │   ├── all.js
+│   │   │   ├── index.js
+│   │   │   └── update.js
+│   │   ├── delve-run
+│   │   │   ├── add.js
+│   │   │   └── get.js
+│   │   └── delves
+│   │       └── index.js
+│   ├── _app.js
+│   ├── add-delve-run.js
+│   ├── get-curios.js
+│   ├── get-currency.js
+│   ├── get-delve-runs.js
+│   ├── get-gear.js
+│   ├── get-inventory.js
+│   ├── get-latest-ai-context.js
+│   ├── get-stats.js
+│   ├── get-talents.js
+│   ├── index.js
+│   ├── store-ai-context.js
+│   ├── update-character-data.js
+│   ├── update-curios.js
+│   ├── update-currency.js
+│   ├── update-gear.js
+│   ├── update-inventory.js
+│   ├── update-stats.js
+│   └── update-talents.js
+├── styles
+│   ├── Home.module.css
+│   └── globals.css
+├── Dockerfile
+├── database.sql
+├── delve-run-tests-grok-data.sql
+├── docker-compose.yml
+├── grok-database-injection.sql
+├── overview.md
+├── package-lock.json
+└── package.json
