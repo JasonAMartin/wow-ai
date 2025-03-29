@@ -3,9 +3,14 @@ import styles from '../styles/ViewDelveRuns.module.css';
 
 // Helper function to format seconds to MM:SS
 const formatTime = (seconds) => {
-  if (!seconds && seconds !== 0) return '--';
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
+  // Handle edge cases including null, undefined, or NaN
+  if (seconds == null || isNaN(seconds)) return '--';
+  
+  // Convert to number if it's a string
+  const secondsNum = typeof seconds === 'string' ? Number(seconds) : seconds;
+  
+  const mins = Math.floor(secondsNum / 60);
+  const secs = Math.floor(secondsNum % 60);
   return `${mins}:${secs.toString().padStart(2, '0')}`;
 };
 
@@ -36,7 +41,7 @@ const getClassInitial = (characterClass) => {
 };
 
 const DelveStats = ({ delve }) => {
-  const [activeTab, setActiveTab] = useState('bossKill');
+  const [activeTab, setActiveTab] = useState('bossKillTime');
   const [activeView, setActiveView] = useState('matrix');
   
   if (!delve) return null;
@@ -60,13 +65,24 @@ const DelveStats = ({ delve }) => {
   const getBestRun = (charId, tierLevel, timeType) => {
     if (!characters[charId] || !tiers[tierLevel]) return null;
     
-    // Convert tierLevel to number for consistent comparison
-    const tierNum = Number(tierLevel);
+    // Find all runs for this character and tier - using loose equality for flexibility
+    const characterRuns = characters[charId].runs.filter(run => run.tier == tierLevel);
     
-    // Find all runs for this character and tier
-    const characterRuns = characters[charId].runs.filter(run => Number(run.tier) === tierNum);
+    // Detailed debugging for this specific character and tier
+    console.log(`DETAIL: Looking for runs - Character ${charId}, Tier ${tierLevel}, Type ${timeType}`);
+    console.log(`DETAIL: Found ${characterRuns.length} runs`, characterRuns);
     
     if (characterRuns.length === 0) return null;
+    
+    // Log EVERY run's time value to see what we're working with
+    characterRuns.forEach((run, index) => {
+      console.log(`DETAIL: Run ${index} for char ${charId} tier ${tierLevel}:`, {
+        tier: run.tier,
+        timeType: timeType,
+        timeValue: run[timeType],
+        fullRun: run
+      });
+    });
     
     // Find the run with the fastest time
     let bestRun = null;
@@ -74,12 +90,35 @@ const DelveStats = ({ delve }) => {
     
     for (let i = 0; i < characterRuns.length; i++) {
       const run = characterRuns[i];
-      // Make sure the time field exists and is a valid number
-      const timeValue = Number(run[timeType]);
-      if (!isNaN(timeValue) && timeValue < bestTime) {
-        bestRun = run;
-        bestTime = timeValue;
+      
+      console.log(`DETAIL: Checking run ${i}`, {
+        hasTimeField: timeType in run,
+        timeValue: run[timeType],
+        typeofTime: typeof run[timeType]
+      });
+      
+      // Make sure the time field exists and is a valid number - using loose equality
+      if (run[timeType] != null) {
+        const timeValue = Number(run[timeType]);
+        console.log(`DETAIL: Valid time value found: ${timeValue}`);
+        
+        if (!isNaN(timeValue) && timeValue < bestTime) {
+          bestRun = run;
+          bestTime = timeValue;
+          console.log(`DETAIL: New best time: ${bestTime}`);
+        }
       }
+    }
+    
+    console.log(`DETAIL: Best run found:`, bestRun);
+    
+    // Check if the activeTab property exists in the best run
+    if (bestRun) {
+      console.log(`DETAIL: Does best run have ${timeType} property?`, {
+        propertyExists: timeType in bestRun,
+        propertyValue: bestRun[timeType],
+        allProperties: Object.keys(bestRun)
+      });
     }
     
     return bestRun;
@@ -104,11 +143,11 @@ const DelveStats = ({ delve }) => {
       
       <div className={styles.tabsContainer}>
         <div 
-          className={`${styles.tab} ${activeTab === 'bossKill' ? styles.tabActive : ''}`}
-          onClick={() => setActiveTab('bossKill')}
+          className={`${styles.tab} ${activeTab === 'bossKillTime' ? styles.tabActive : ''}`}
+          onClick={() => setActiveTab('bossKillTime')}
           style={{ cursor: 'pointer' }}
         >
-          Boss Kill Time {activeTab === 'bossKill' && <span className={styles.activeTabIndicator}>▶</span>}
+          Boss Kill Time {activeTab === 'bossKillTime' && <span className={styles.activeTabIndicator}>▶</span>}
         </div>
         <div 
           className={`${styles.tab} ${activeTab === 'totalTime' ? styles.tabActive : ''}`}
@@ -147,7 +186,7 @@ const DelveStats = ({ delve }) => {
         {activeView === 'matrix' && (
           <div className={styles.matrixView}>
             <h3 className={styles.statsSectionTitle}>
-              {activeTab === 'bossKill' ? 'Boss Kill' : 'Total Run'} Times by Character and Tier
+              {activeTab === 'bossKillTime' ? 'Boss Kill' : 'Total Run'} Times by Character and Tier
             </h3>
             
             <div className={styles.matrixWrapper}>
@@ -184,6 +223,13 @@ const DelveStats = ({ delve }) => {
                       </td>
                       {tiersToShow.map(tier => {
                         const bestRun = getBestRun(character.id, tier.tier, activeTab);
+                        console.log(`RENDER: Matrix cell for char ${character.id}, tier ${tier.tier}, tab ${activeTab}:`, {
+                          bestRun: bestRun,
+                          hasBestRun: bestRun != null,
+                          timeValue: bestRun ? bestRun[activeTab] : 'no run',
+                          formattedTime: bestRun ? formatTime(bestRun[activeTab]) : '--'
+                        });
+                        
                         return (
                           <td 
                             key={`cell-${character.id}-${tier.tier}`} 
@@ -192,7 +238,15 @@ const DelveStats = ({ delve }) => {
                             {bestRun ? (
                               <div className={styles.matrixCellContent}>
                                 <div className={styles.matrixTime}>
-                                  {bestRun[activeTab] ? formatTime(bestRun[activeTab]) : '--'}
+                                  {(() => {
+                                    const timeValue = bestRun[activeTab];
+                                    console.log(`DISPLAY: Formatting time value for ${activeTab}:`, {
+                                      rawValue: timeValue,
+                                      type: typeof timeValue,
+                                      formatted: formatTime(timeValue)
+                                    });
+                                    return timeValue != null ? formatTime(timeValue) : '--';
+                                  })()}
                                 </div>
                                 <div className={styles.matrixDate}>
                                   {new Date(bestRun.dateRun).toLocaleDateString()}
@@ -231,11 +285,8 @@ const DelveStats = ({ delve }) => {
                 
                 <div className={styles.tierCardsGrid}>
                   {sortedTiers.map(tier => {
-                    // Convert tier to number for consistent comparison
-                    const tierNum = Number(tier.tier);
-                    
-                    // Get all runs for this character and tier
-                    const runs = character.runs.filter(run => Number(run.tier) === tierNum);
+                    // Get all runs for this character and tier - using loose equality
+                    const runs = character.runs.filter(run => run.tier == tier.tier);
                     
                     if (runs.length === 0) return null;
                     
@@ -298,11 +349,8 @@ const DelveStats = ({ delve }) => {
                 
                 <div className={styles.characterCardsGrid}>
                   {sortedCharacters.map(character => {
-                    // Convert tier to number for consistent comparison
-                    const tierNum = Number(tier.tier);
-                    
-                    // Get all runs for this character and tier
-                    const runs = character.runs.filter(run => Number(run.tier) === tierNum);
+                    // Get all runs for this character and tier - using loose equality
+                    const runs = character.runs.filter(run => run.tier == tier.tier);
                     
                     if (runs.length === 0) return null;
                     

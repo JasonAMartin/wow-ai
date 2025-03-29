@@ -1,0 +1,32 @@
+{
+  "mcpServers": {
+    "mcp-installer": {
+      "command": "npx",
+      "args": [
+        "@anaisbetts/mcp-installer"
+      ]
+    },
+    "server-filesystem": {
+      "command": "npx",
+      "args": [
+ 	"-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/darkknight"
+      ]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    },
+  "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "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"
+      }
+    }
+  }
+}

@@ -52,20 +52,31 @@ export default function ViewDelveRuns() {
         
         delveGroups[delveId].characters[charId].runs.push(run);
         
-        // Ensure we're working with numbers for time values
-        if (run.bossKillTime !== null && run.bossKillTime !== undefined) {
+        // Ensure we're working with numbers for time values - using loose comparisons
+        if (run.bossKillTime != null) {
           const bossKillTime = Number(run.bossKillTime);
           if (!isNaN(bossKillTime)) {
             delveGroups[delveId].characters[charId].bossKillTimes.push(bossKillTime);
+          } else {
+            console.warn(`Invalid bossKillTime for run ${run.id}: ${run.bossKillTime}`);
           }
         }
         
-        if (run.totalTime !== null && run.totalTime !== undefined) {
+        if (run.totalTime != null) {
           const totalTime = Number(run.totalTime);
           if (!isNaN(totalTime)) {
             delveGroups[delveId].characters[charId].totalTimes.push(totalTime);
+          } else {
+            console.warn(`Invalid totalTime for run ${run.id}: ${run.totalTime}`);
           }
         }
+        
+        // Debug log to verify run data
+        console.log(`Added run for character ${charId} in delve ${delveId}:`, {
+          tier: run.tier,
+          bossKillTime: run.bossKillTime,
+          totalTime: run.totalTime
+        });
       }
       
       // Group by tier
@@ -82,15 +93,15 @@ export default function ViewDelveRuns() {
       
       delveGroups[delveId].tiers[tier].runs.push(run);
       
-      // Ensure we're working with numbers for time values
-      if (run.bossKillTime !== null && run.bossKillTime !== undefined) {
+      // Ensure we're working with numbers for time values - using loose comparisons
+      if (run.bossKillTime != null) {
         const bossKillTime = Number(run.bossKillTime);
         if (!isNaN(bossKillTime)) {
           delveGroups[delveId].tiers[tier].bossKillTimes.push(bossKillTime);
         }
       }
       
-      if (run.totalTime !== null && run.totalTime !== undefined) {
+      if (run.totalTime != null) {
         const totalTime = Number(run.totalTime);
         if (!isNaN(totalTime)) {
           delveGroups[delveId].tiers[tier].totalTimes.push(totalTime);
@@ -184,6 +195,33 @@ export default function ViewDelveRuns() {
         // Process the data for stats display
         const processed = processDelveRunData(data.runs || []);
         setProcessedData(processed);
+        
+        // Extra debugging to verify key time fields
+        if (data.runs && data.runs.length > 0) {
+          console.log('VERIFY DATA STRUCTURE - PROPERTY NAMES:');
+          console.log('Available properties on run objects:', Object.keys(data.runs[0]));
+          console.log('IMPORTANT: The time properties are named "bossKillTime" and "totalTime"');
+          
+          data.runs.slice(0, 3).forEach((run, i) => {
+            console.log(`Run ${i}:`, {
+              id: run.id,
+              tier: run.tier,
+              char: run.characters_id,
+              bossKillTime: {
+                value: run.bossKillTime,
+                type: typeof run.bossKillTime,
+                isNull: run.bossKillTime === null,
+                isUndefined: run.bossKillTime === undefined,
+              },
+              totalTime: {
+                value: run.totalTime,
+                type: typeof run.totalTime,
+                isNull: run.totalTime === null,
+                isUndefined: run.totalTime === undefined,
+              }
+            });
+          });
+        }
       } catch (err) {
         console.error('Error fetching delve runs:', err);
         setError(err.message);
