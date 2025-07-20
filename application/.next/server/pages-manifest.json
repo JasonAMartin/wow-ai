@@ -2,5 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/add-delve-run": "pages/add-delve-run.js",
+  "/update-character-data": "pages/update-character-data.js",
+  "/api/characters": "pages/api/characters.js",
+  "/api/curios": "pages/api/curios.js",
+  "/": "pages/index.js",
+  "/api/delves": "pages/api/delves.js"
 }
